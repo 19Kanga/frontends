@@ -1,6 +1,6 @@
 import { BRAND } from "@/types/brand";
 import Image from "next/image";
-import DropdownDefault from "../Dropdowns/DropdownDefault";
+// import DropdownDefault from "../Dropdowns/DropdownDefault";
 
 const brandData: BRAND[] = [
   {
@@ -55,7 +55,6 @@ const TableFour: React.FC = () => {
               Top Channels
             </h4>
           </div>
-          <DropdownDefault />
         </div>
 
         <div className="flex flex-col">
