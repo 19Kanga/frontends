@@ -1,5 +1,5 @@
 "use client"
-import { Mattresses, Products } from '../data/products'
+import { Mattresses, Products } from '@/data/products'
 import React, { useEffect, useState, useRef, Suspense } from 'react'
 import ProductCardAccessories from './ProductCardAccessories'
 import ReactPaginate from 'react-paginate'
