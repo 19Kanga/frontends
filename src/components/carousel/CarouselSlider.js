@@ -3,22 +3,23 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import '../../css/styles.css'
+import Image from 'next/image'
 
 function CarouselSlider() {
   return (
     <div className="carousel-container relative">
       <Carousel autoPlay={true} interval={6000} showIndicators={false} showThumbs={false} infiniteLoop={true} className="carousel">
         <div className="h-[100%]">
-          <img src="/HomeBanner.webp" alt="image1" />
+          <Image src="/HomeBanner.webp" alt="image1" />
         </div>
         <div className="h-[100%]">
-          <img src="/HomeBanner.webp" alt="image2" />
+          <Image src="/HomeBanner.webp" alt="image2" />
         </div>
         <div className="h-[100%]">
-          <img src="/HomeBanner.webp" alt="image3" />
+          <Image src="/HomeBanner.webp" alt="image3" />
         </div>
         <div className="h-[100%]">
-          <img src="/HomeBanner.webp" alt="image4" />
+          <Image src="/HomeBanner.webp" alt="image4" />
         </div>
       </Carousel>
       <div>

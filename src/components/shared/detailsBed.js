@@ -247,15 +247,15 @@ const DetailsBed = ({details}) => {
 
   useEffect(() => {
     updateBedSizeAmount();
-  }, [selectedImagePath]);
+  });
 
   useEffect(() => {
     updateBedTypeAmount();
-  }, [selectedImagePathType]);
+  });
 
   useEffect(() => {
     updateBedDepthAmount();
-  }, [selectedImagePathDepth]);
+  });
 
   const [shake, setShake] = useState(false);
 
@@ -615,8 +615,9 @@ const DetailsBed = ({details}) => {
                   {getTextForImageBedSize().text}
                 </div>
                 <div className="grid grid-cols-6 gap-4 pt-4 pb-10 my-0 text-sm gap-y-20 rounded-2xl justify-items-center max-xl:grid-cols-3 max-md:mt-15 max-sm:grid-cols-2 max-sm:items-center max-lg:justify-center max-sm:justify-between">
-                  {bedSize?.map((item) =>
-                  <div
+                  {bedSize?.map((item,i) =>
+                    <div
+                      key={i}
                     className={`h-[5rem] w-[5rem] max-md:w-[5rem] max-md:h-[5rem] px-10 rounded-lg relative cursor-pointer ${
                       selectedImagePath === item.pathimage &&
                       " border-[1px] border-black px-10"
@@ -660,8 +661,8 @@ const DetailsBed = ({details}) => {
               <div className="bg-[#f1feff] pt-7 pb-13 px-4 mt-8 flex flex-col rounded-xl ">
                 <Head title={getTextForImageBedType().text}/>
                 <div className="grid w-full grid-cols-6 gap-4 pt-4 pb-10 my-3 text-sm justify-items-center max-xl:grid-cols-3 max-md:mt-14 max-lg:grid-cols-3 max-sm:items-center max-xl:gap-15 max-md:gap-28 max-sm:justify-between">
-                  {bedType?.map((x)=>
-                    <Detail item={x} />
+                  {bedType?.map((x,i)=>
+                    <Detail key={i} item={x} />
                   )}
                 </div>
               </div>

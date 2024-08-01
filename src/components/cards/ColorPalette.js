@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from 'next/image'
 
 const ColorPalette = () => {
   const colors = [
@@ -84,7 +85,7 @@ const ColorPalette = () => {
                 className="w-25 sm:w-20 md:w-24 border-[1px] rounded-md cursor-pointer transition duration-300 ease-in-out"
                 onClick={() => handleColorClick(color)}
               >
-                <img
+                <Image
                   src={color} 
                   alt={label} 
                   className="w-full h-25 object-cover rounded-md"

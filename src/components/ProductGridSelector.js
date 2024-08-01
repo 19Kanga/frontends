@@ -13,7 +13,7 @@ const ProductGridSelector = ({ selectedGrid, setSelectedGrid }) => {
             window.removeEventListener('resize', handleResize);
             window.removeEventListener('orientationchange', handleOrientationChange)
         }
-    }, [])
+    })
     const handleResize = () => {
         if (!isMobile()) {
             if ((window.innerWidth > 992)) {
