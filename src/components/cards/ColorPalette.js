@@ -78,19 +78,21 @@ const ColorPalette = () => {
             </div>
           </div>
         )}
-        <div className="grid  grid-cols-3 xl:grid-cols-4 xl:gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 w-full gap-2">
+        <div className="grid  grid-cols-4 xl:grid-cols-6 xl:gap-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 w-full gap-1">
           {rowColors.map((color, index) => (
-            <div key={index} className="flex flex-col gap-2  items-center">
+            <div key={index} className="flex w-[5.25rem] flex-col items-center">
               <div
-                className="w-25 sm:w-20 md:w-24 border-[1px] rounded-md cursor-pointer transition duration-300 ease-in-out"
+                className="rounded-md w-full cursor-pointer transition duration-300 ease-in-out pb-2"
                 onClick={() => handleColorClick(color)}
               >
                 <Image
                   src={color} 
                   alt={label} 
-                  className="w-full h-25 object-cover rounded-md"
+                  width='100'
+                  height='100'
+                  className="w-[100%]  h-[5.25rem] object-cover rounded-md"
                 />
-                <p className="text-center text-sm font-semibold my-2">{getColorName(color)} {getPrice()}</p>
+                <p className="text-center text-[12px] font-semibold text-center my-2">{getColorName(color)} {getPrice()}</p>
               </div>
             </div>
           ))}
@@ -100,7 +102,7 @@ const ColorPalette = () => {
   };
 
   return (
-    <div className="flex flex-wrap gap-2 p-4 w-full">
+    <div className="flex flex-wrap gap-2 w-full">
       <div className="w-full mt-4 text-center">
         <div className="border-black border-[1px] w-[100%] mt-1 mx-auto p-3 cursor-pointer rounded-2xl text-center text-[13px] font-bold">
           {selectedColor ? selectedColor : 'Select a color'}

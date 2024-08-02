@@ -247,15 +247,15 @@ const DetailsBed = ({details}) => {
 
   useEffect(() => {
     updateBedSizeAmount();
-  });
+  }, [selectedImagePath]);
 
   useEffect(() => {
     updateBedTypeAmount();
-  });
+  }, [selectedImagePathType]);
 
   useEffect(() => {
     updateBedDepthAmount();
-  });
+  }, [selectedImagePathDepth]);
 
   const [shake, setShake] = useState(false);
 
@@ -618,7 +618,7 @@ const DetailsBed = ({details}) => {
                   {bedSize?.map((item,i) =>
                     <div
                       key={i}
-                    className={`h-[5rem] w-[5rem] max-md:w-[5rem] max-md:h-[5rem] px-10 rounded-lg relative cursor-pointer ${
+                      className={`h-[5rem] w-[5rem] max-md:w-[5rem] max-md:h-[5rem] px-10 rounded-lg relative cursor-pointer ${
                       selectedImagePath === item.pathimage &&
                       " border-[1px] border-black px-10"
                     }`}
@@ -881,12 +881,12 @@ const DetailsBed = ({details}) => {
                 />
               </div>
 
-              <div className="mt-12">
+              <div className="w-full mt-12">
                 <div>
                   {/* <p className="text-[#00acbb] font-semibold text-[1.2rem] mb-3">{amount}</p> */}
 
-                  <div className="flex items-center gap-5 max-md:justify-center my-7">
-                    <div className="flex border-black border-[1px] justify-between items-center rounded-2xl py-[0.6rem] px-3 w-[25%] text-sm max-sm:py-[0.3rem]">
+                  <div className="flex items-center gap-4 max-md:justify-center my-7">
+                    <div className="flex border-black border-[1px] justify-between items-center rounded-2xl py-[0.6rem] px-3 w-1/4 text-sm">
                       <svg
                         focusable="false"
                         className="w-3 h-3 cursor-pointer icon icon--minus"
@@ -913,12 +913,12 @@ const DetailsBed = ({details}) => {
                         ></path>
                       </svg>
                     </div>
-                    <div className='drawer-end'>
+                    <div className='drawer-end  w-1/4'>
                             <input id="my-drawer" type="checkbox" className="drawer-toggle" />
                             <div className="drawer-content">
                               <label htmlFor="my-drawer" className="drawer-button">
                                   <div
-                                    className={`filter cursor-pointer bg-[#00acbb] w-[100%] hover:bg-[#00666e] text-sm text-white font-bold py-[0.6rem] px-8 rounded-2xl max-sm:py-[0.3rem] ${shake ? "animate__animated animate__shakeX" : ""
+                                    className={`filter cursor-pointer bg-[#00acbb] w-[100%] hover:bg-[#00666e] text-sm text-white font-bold py-[0.6rem] text-center px-3 rounded-2xl ${shake ? "animate__animated animate__shakeX" : ""
                                       }`}
                                     // onClick={() => console.log("Add to cart clicked")}
                                   >
@@ -936,21 +936,24 @@ const DetailsBed = ({details}) => {
                                     </div>
                             </div>
                         </div>
+                        <div className='p-[0.4rem] border-[1px] border-black rounded-[50px]'>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       width="24"
                       height="24"
+                      fill='none'
                     >
                       <path fill="#ffffff" d="M0 0h24v24H0z" />
                       <path
                         d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z"
                         stroke="#000"
-                        stroke-width="2"
+                        stroke-width="1"
                       />
                     </svg>
+                    </div>
 
-                    <button className="rounded-2xl py-[0.6rem] border-[1px]  border-black px-3 w-[20%] text-sm max-sm:py-[0.3rem]">
+                    <button className="rounded-2xl py-[0.6rem] border-[1px]  border-black text-center px-3 text-sm w-1/4">
                       Order Swatch
                     </button>
                   </div>

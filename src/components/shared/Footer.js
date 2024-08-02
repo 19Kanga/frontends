@@ -220,15 +220,15 @@ const Footer = () => {
               </button>
             </form>
           </div>
-          <p className="text-[0.75rem] mb-8 max-md:hidden">
+          <p className="text-[0.75rem] mb-6 max-md:hidden">
             We won&apos;t share your details with anyone else.
           </p>
-          <div className="px-3 max-md:hidden">
+          <div className="px-0 max-md:hidden">
             <div>
               <p className="mb-2 font-bold max-lg:text-center">
                 Secure Payment By
               </p>
-              <div className="flex gap-1 mt-5 max-lg:justify-center max-lg:mb-12">
+              <div className="flex gap-1 mt-0 max-lg:justify-center max-lg:mb-12">
                 <Image src={visa} alt="visa" />
                 <Image src={mastercard1} alt="mastercard1" />
                 <Image src={mastercard2} alt="mastercard2" />
