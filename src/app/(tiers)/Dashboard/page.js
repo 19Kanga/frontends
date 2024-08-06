@@ -18,7 +18,7 @@ const ChartThree = dynamic(() => import("@/components/Charts/ChartThree"), {
 const Dashboard= () => {
   return (
     <>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
+      {/* <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
         <CardDataStats title="Total views" total="$3.456K" rate="0.43%" levelUp>
           <svg
             className="fill-primary dark:fill-white"
@@ -109,14 +109,15 @@ const Dashboard= () => {
         <ChartOne />
         <ChartTwo />
         <ChartThree />
-        {/* <MapOne /> */}
         <div className="col-span-12 xl:col-span-8">
           <TableOne />
         </div>
         <ChatCard />
-      </div>
+      </div> */}
+      <span className='w-full text-2xl font-bold text-center mt-25 h-50'>404 Error</span>
     </>
   );
 };
 
 export default Dashboard;
+  {/* <MapOne /> */}

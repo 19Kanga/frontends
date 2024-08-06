@@ -16,6 +16,7 @@ import fabric from "../../assets/fabric-swatches.png";
 import trustpilot from "../../assets/trustpilot-icon.png";
 import "../../css/styles.css";
 import { useRouter } from "next/navigation";
+import Cart from '@/components/shared/Cart'
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -245,1309 +246,1360 @@ const Navbar = () => {
   }, [isDropdownOpen]);
 
   return (
-    <div className="pt-3 max-xl:py-1">
-      <header className="flex flex-col relative max-xl:px-3 max-sm:px-1">
-        <nav className="h-[15vh]  py-3 flex items-center gap-[5%] max-xl:flex-col mb-1">
-          <div className="flex items-center w-[55%] justify-end gap-[10%] max-xl:gap-[5%]  max-xl:w-[100%] max-sm:h-[100%]">
-            <Link href={"/"}>
-              <Image
-                className="max-xl:w-32 max-sm:w-24"
-                src={logo}
-                width={170}
-                height={170}
-                alt="logo"
-              />
-            </Link>
-
-            <div className="flex items-center max-sm:self-end w-[100%]  max-md:px-2 relative">
-              <div className="flex items-center w-[100%] z-10 ">
-                {/* <button
-                  className="hidden max-md:block  w-[10%] text-[1.2rem] max-sm:relative max-sm:left-10  max-[400px]:py-[0.1rem] py-2 max-lg:border-[1px] cursor-pointer"
-                  onClick={sideDropdown}
-                >
-                  &#9776;
-                </button> */}
-
-                <div className="flex relative w-[100%] max-md:hidden">
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    className="border-[#0b1a44]  rounded-xl  bg-[#f2f2f2] border-[1.5px] outline-none h-[2.8rem] px-2  placeholder-bold  w-[100%] max-xl:w-[50%] "
-                    style={{ fontWeight: "bold", fontSize: "0.8rem" }}
-                  />
-                  <Image
-                    className="z-50 absolute right-3 max-xl:right-[52%] top-1/2 -translate-y-1/2"
-                    src={search}
-                    width={15}
-                    height={15}
-                    alt="search"
-                  />
-                </div>
-              </div>
-            </div>
+    <div>
+        <div className='row items-center justify-center text-white font-bold text-[0.85rem] max-sm:text-[0.8rem] px-10 text-center py-4 bg-black'>
+          <span>10% Discount on All Orders Over £1500 or more! Code: BLC10 | Offer Ends Soon.</span>
+        </div>
+        <div className='items-center justify-between w-full max-sm:flex-col max-sm:gap-1 max-sm:justify-center px-4 py-2 bg-gray row text-[#bb9369] fill-none text-[15px]'>
+          <div className='flex gap-4'>
+            <span className='flex items-center gap-2'><i className='fas fa-phone'></i>01924 465 009</span>
+            <span  className='flex items-center gap-2'><i className='fas fa-envelope'></i>info@sosofbeds.co.uk</span>
           </div>
-          {/* {isDropdownOpen && (
-            <div
-              className="fixed left-0 top-0 w-full h-full bg-[#00000066] z-50 max-md:block backdrop"
-          onClick={exitDropdown}
-            ></div>
-          )}
-
-          {matressesOpen && (
-            <div
-              className="fixed  left-0 top-0 w-full h-full bg-[#00000066] hidden z-50 max-md:block"
-              onClick={() => {
-                setIsMatressesOpen(false);
-                // setBedOpen(false);
-              }}
-            ></div>
-          )}
-          {BedOpen && (
-            <div
-              className="fixed  left-0 top-0 w-full h-full bg-[#00000066] hidden z-50 max-md:block"
-              onClick={() => setBedOpen(false)}
-            ></div>
-          )}
-
-          {shopBySize && (
-            <div
-              className="fixed  left-0 top-0 w-full h-full bg-[#00000066] hidden z-50 max-md:block"
-              onClick={() => setshopBySize(false)}
-            ></div>
-          )}
-          {shopByType && (
-            <div
-              className="fixed  left-0 top-0 w-full h-full bg-[#00000066] hidden z-50 max-md:block"
-              onClick={() => setShopByType(false)}
-            ></div>
-          )}
-          {shopByFirmness && (
-            <div
-              className="fixed  left-0 top-0 w-full h-full bg-[#00000066] hidden z-50 max-md:block"
-              onClick={() => setShopByFirmness(false)}
-            ></div>
-          )}
-
-          {shopByBedSize && (
-            <div
-              className="fixed  left-0 top-0 w-full h-full bg-[#00000066] hidden z-50 max-md:block"
-              onClick={() => setshopByBedSize(false)}
-            ></div>
-          )}
-
-          {shopByBedType && (
-            <div
-              className="fixed  left-0 top-0 w-full h-full bg-[#00000066] hidden z-50 max-md:block"
-              onClick={() => setShopByBedType(false)}
-            ></div>
-          )} */}
-
-          <div className="w-[40%] flex gap-[10%] max-xl:absolute max-xl:h-[15vh] max-xl:top-0 max-xl:items-center  right-0 max-xl:justify-end  max-xl:gap-[5%] max-xl:w-[80%] max-lg:w-[70%] max-md:w-[100%] max-xl:px-5 max-sm:items-center">
-            <div className="flex items-center cursor-pointer mr-5 max-sm:mr-2">
-              <div className="flex flex-col justify-center">
+          <div>
+            <span  className='flex items-center gap-2'>Summer sale discount off 50%! Shop Now</span>
+          </div>
+          <span  className='flex items-center gap-2'><i className='fas fa-location-dot'></i>Location</span>
+      </div>
+      <div className="pt-3 max-xl:py-1">
+        <header className="relative flex flex-col max-xl:px-3 max-sm:px-1">
+          <nav className="h-[15vh]  py-3 flex items-center justify-between gap-[5%] max-xl:flex-col mb-1 px-4">
+            <div className="flex items-center w-[55%] justify-end gap-[10%] max-xl:gap-[5%]  max-xl:w-[100%] max-sm:h-[100%]">
+              <Link href={"/"}>
                 <Image
-                  src={phoneimg}
-                  width={35}
-                  height={35}
-                  alt="phone"
-                  className="max-xl:w-5 max-xl:h-5"
+                  className="max-xl:w-32 max-sm:w-24"
+                  src={logo}
+                  width={170}
+                  height={170}
+                  alt="logo"
                 />
-                <span className="font-bold text-[0.6rem] hidden max-xl:inline ">
-                  phone
-                </span>
-              </div>
-              <span className="font-bold max-xl:text-[0.8rem] max-xl:hidden">
-                0151 548 1554
-              </span>
-            </div>
+              </Link>
 
-            <div className="flex items-center gap-10 max-sm:gap-5">
-              <div className="flex flex-col items-center gap-1 cursor-pointer">
-                <Image src={locationimg} width={13} height={13} alt="Showrooms" />
-                <span className="font-bold text-[0.6rem]">Showrooms</span>
-              </div>
+              <div className="flex items-center max-sm:self-end w-[100%]  max-md:px-2 relative">
+                <div className="flex items-center w-[100%] z-10 ">
+                  {/* <button
+                    className="hidden max-md:block  w-[10%] text-[1.2rem] max-sm:relative max-sm:left-10  max-[400px]:py-[0.1rem] py-2 max-lg:border-[1px] cursor-pointer"
+                    onClick={sideDropdown}
+                  >
+                    &#9776;
+                  </button> */}
 
-              <div className="flex flex-col items-center gap-1 cursor-pointer" onClick={() => {
-                  router.push('/paymentMethod/NewPaymentCardSetup')
-                }} >
-                <Image src={basket} width={18} height={18} alt="Basket" />
-                <span className="font-bold text-[0.6rem]">Basket</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 cursor-pointer" onClick={() => {
-                  router.push('/paymentMethod/NewPaymentCardSetup')
-                }} >
-                {/* <svg class="t4s-icon t4s-icon--cart" aria-hidden="true" focusable="false" role="presentation"><symbol id="icon-h-cart" width="20" height="20" viewBox="0 0 20 20" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                </symbol></svg> */}
-                <Image src={basket} width={18} height={18} alt="Cart" />
-                <span className="font-bold text-[0.6rem]">Cart</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 cursor-pointer" onClick={() => {
-                  router.push('/Login')
-                }}>
-                <Image src={userimg} width={18} height={18} alt="Account"  />
-                <span className="font-bold text-[0.6rem]">Account</span>
-              </div>
-            </div>
-          </div>
-        </nav>
-        <nav className=" relative  max-md:hidden  bg-black text-[#EEEEEE] px-3 flex justify-center">
-          <ul className="m-0 p-0 h-[100%]  text-[0.9rem] flex items-center gap-4 flex-wrap max-xl:text-[0.8rem]">
-            <li className="p-3 cursor-pointer hover:bg-[#08c] hover:text-white font-medium relative">
-              <Link href={'/'}>Home</Link>
-            </li>
-
-            <div className="flex flex-col items-center relative dropdown">
-              <li className="p-3  cursor-pointer hover:bg-[#08c] hover:text-white  font-medium relative listitem">
-                <Link href={'#'}>Mattresses</Link>
-              </li>
-
-              <div className=" bottom-[3%] relative max-xl:bottom-[-3%] max-lg:bottom-[-5%] text-black w-[65vw] bg-white shadow-xl  z-50 dropdowncontent mattress-content h-[60vh] max-lg:h-[72vh] max-lg:w-[72vw] hidden rounded-b-2xl">
-                <ul className="  top-0   w-[25%] h-[100%]  px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
-                  <li className="my-4  font-semibold text-[1rem] max-lg:text-[0.9rem]">
-                    {" "}
-                    Shop by Type
-                  </li>
-                  <li className="">
-                    <Link href="/products/Mattress/Memory Foam" className="hover:text-[#08c]">
-                      Memory Foam
-                    </Link>{" "}
-                  </li>
-                  <li className="">
-                    <Link href="/products/Mattress/Pocket Sprung" className="hover:text-[#08c]">
-                      Pocket Sprung
-                    </Link>
-                  </li>
-                  <li className="">
-                    {" "}
-                    <Link href="/products/Mattress/Orthopaedic" className="hover:text-[#08c]">
-                      Orthopaedic
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/products/Mattress/Latex" className="hover:text-[#08c]">
-                      Latex
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/products/Mattress/Miracoil" className="hover:text-[#08c]">
-                      Miracoil
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/products/Mattress/Natural Fillings" className="hover:text-[#08c]">
-                      Natural Fillings
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/products/Mattress/Cut Bed Mattresses" className="hover:text-[#08c]">
-                      Cut Bed Mattresses
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/products/Mattress/Kids Mattresses" className="hover:text-[#08c]">
-                      Kids Mattresses
-                    </Link>
-                  </li>
-                  {/* <li className="">
-                    <Link href="/mattresses/NextDayMattresses" className="hover:text-[#08c]">
-                      Next Day Mattresses
-                    </Link>
-                  </li> */}
-                </ul>
-                <ul className=" border-x-[1px] w-[25%]  h-[100%] px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
-                  <li className="my-4 font-semibold text-[1rem] max-lg:text-[0.9rem]">
-                    {" "}
-                    Shop by Firmness
-                  </li>
-                  <li className="">
-                    <Link href="/products/Mattress/Extra Firm" className="hover:text-[#08c]">
-                      Extra Firm
-                    </Link>{" "}
-                  </li>
-                  <li className="">
-                    <Link href="/products/Mattress/Firm" className="hover:text-[#08c]">
-                      Firm
-                    </Link>
-                  </li>
-                  <li className="">
-                    {" "}
-                    <Link href="/products/Mattress/Medium Firm" className="hover:text-[#08c]">
-                      Medium Firm
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/products/Mattress/Medium" className="hover:text-[#08c]">
-                      Medium
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/products/Mattress/Soft Firm" className="hover:text-[#08c]">
-                      Soft Firm
-                    </Link>
-                  </li>
-                </ul>
-                <ul className=" w-[25%]  h-[100%] flex flex-col px-10 box-border py-8  max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
-                  <li className="my-4 font-semibold text-[1rem] max-lg:text-[0.9rem]">
-                    {" "}
-                    Shop by Size
-                  </li>
-                  <li className="">
-                    <Link href="/mattresses/SuperKing" className="hover:text-[#08c]">
-                      Super King(6&apos;)
-                    </Link>{" "}
-                  </li>
-                  <li className="">
-                    <Link href="/mattresses/KingSize" className="hover:text-[#08c]">
-                      King Size(5&apos;)
-                    </Link>
-                  </li>
-                  <li className="">
-                    {" "}
-                    <Link href="/mattresses/Double" className="hover:text-[#08c]">
-                      Double(4&apos; 6&apos;&apos;)
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/mattresses/SmallDouble" className="hover:text-[#08c]">
-                      Small Double(4&apos;)
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/mattresses/Single" className="hover:text-[#08c]">
-                      Single(3&apos;)
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/mattresses/SmallSingle" className="hover:text-[#08c]">
-                      Small Single(2&apos; 6&apos;&apos;)
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/mattresses/European" className="hover:text-[#08c]">
-                      European
-                    </Link>
-                  </li>
-                </ul>
-
-                <ul className=" w-[25%]  h-[100%] relative ">
-                  <Image
-                    src="/mattress-menu.jpg"
-                    alt=""
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-b-2xl"
-                  />
-                </ul>
-
-                <div className="absolute bg-[white] w-[100%] bottom-0 h-[10%]  border-t-[1px] rounded-b-2xl">
-                  <button onClick={() => router.push('/products/Mattress')} className="bg-[#08c] absolute right-[10%] flex gap-5 items-center text-sm text-white px-4 py-[0.6rem]  h-[100%] hover:bg-[#44bcf7] transition border-color text duration-100 ease-out delay-0">
-                    <span> View All Matresses</span>
-                    <i className="fa fa-chevron-right" aria-hidden="true"></i>
-                  </button>
+                  <div className="flex relative w-[100%] max-md:hidden">
+                    <input
+                      type="text"
+                      placeholder="Search..."
+                      className="border-[#0b1a44]  rounded-xl  bg-[#f2f2f2] border-[1.5px] outline-none h-[2.8rem] px-2  placeholder-bold  w-[100%] max-xl:w-[50%] "
+                      style={{ fontWeight: "bold", fontSize: "0.8rem" }}
+                    />
+                    <Image
+                      className="z-50 absolute right-3 max-xl:right-[52%] top-1/2 -translate-y-1/2"
+                      src={search}
+                      width={15}
+                      height={15}
+                      alt="search"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
+            {/* {isDropdownOpen && (
+              <div
+                className="fixed left-0 top-0 w-full h-full bg-[#00000066] z-50 max-md:block backdrop"
+            onClick={exitDropdown}
+              ></div>
+            )}
 
-            <div className="flex flex-col items-center relative dropdown">
-              <li className="p-3  cursor-pointer hover:bg-[#08c] hover:text-white  font-medium relative listitem">
-                <Link href={'#'}>Beds</Link>
-              </li>
-              <div className="bottom-[3%] relative max-xl:bottom-[-3%] text-black max-lg:bottom-[-5%] w-[60vw] bg-white shadow-xl  z-50 dropdowncontent mattress-content h-[60vh] max-lg:h-[70vh] max-lg:w-[70vw] hidden rounded-b-2xl">
-                <ul className=" w-[33%]  h-[100%]  px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
-                  <li className="my-4  font-semibold text-[1rem] max-lg:text-[0.9rem]">
-                    {" "}
-                    Shop by Type
-                  </li>
-                  <li className="">
-                    <Link href="/products/[page]/[id]" as="/products/Beds/Memory Foam"  className="hover:text-[#08c]">
-                      Memory Foam
-                    </Link>{" "}
-                  </li>
-                  <li className="">
-                    <Link href="/products/[page]/[id]" as="/products/Beds/Pocket Sprung" className="hover:text-[#08c]">
-                      Pocket Sprung
-                    </Link>
-                  </li>
-                  <li className="">
-                    {" "}
-                    <Link href="/products/[page]/[id]" as="/products/Beds/Orthopaedic" className="hover:text-[#08c]">
-                      Orthopaedic
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/products/[page]/[id]" as="/products/Beds/Latex" className="hover:text-[#08c]">
-                      Latex
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/products/[page]/[id]" as="/products/Beds/Miracoil" className="hover:text-[#08c]">
-                      Miracoil
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/products/[page]/[id]" as="/products/Beds/Natural Fillings" className="hover:text-[#08c]">
-                      Natural Fillings
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/products/[page]/[id]" as="/products/Beds/Cut Bed Mattresses" className="hover:text-[#08c]">
-                      Cut Bed Mattresses
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/products/[page]/[id]" as="/products/Beds/Kids Mattresses" className="hover:text-[#08c]">
-                      Kids Mattresses
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/products/[page]/[id]" as="/products/Beds/Next Day Mattresses" className="hover:text-[#08c]">
-                      Next Day Mattresses
-                    </Link>
-                  </li>
-                </ul>
+            {matressesOpen && (
+              <div
+                className="fixed  left-0 top-0 w-full h-full bg-[#00000066] hidden z-50 max-md:block"
+                onClick={() => {
+                  setIsMatressesOpen(false);
+                  // setBedOpen(false);
+                }}
+              ></div>
+            )}
+            {BedOpen && (
+              <div
+                className="fixed  left-0 top-0 w-full h-full bg-[#00000066] hidden z-50 max-md:block"
+                onClick={() => setBedOpen(false)}
+              ></div>
+            )}
 
-                <ul className="border w-[33%] h-[100%]  px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
-                  <li className="my-4 font-semibold text-[1rem] max-lg:text-[0.9rem]">
-                    {" "}
-                    Shop by Size
-                  </li>
-                  <li className="">
-                    <Link href="/products/[page]/[id]" as="/products/Beds/Super Kings Beds" className="hover:text-[#08c]">
-                      Super Kings Beds(6&apos;)
-                    </Link>{" "}
-                  </li>
-                  <li className="">
-                    <Link href="/products/[page]/[id]" as="/products/Beds/KingSizeBeds" className="hover:text-[#08c]">
-                      King Size Beds(5&apos;)
-                    </Link>
-                  </li>
-                  <li className="">
-                    {" "}
-                    <Link href="/products/[page]/[id]" as="/products/Beds/Double Beds" className="hover:text-[#08c]">
-                      Double Beds(4&apos; 6&apos;&apos;)
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/products/[page]/[id]" as="/products/Beds/Small Double Beds" className="hover:text-[#08c]">
-                      Small Double Beds(4&apos;)
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/products/[page]/[id]" as="/products/Beds/Single Beds" className="hover:text-[#08c]">
-                      Single Beds(3&apos;)
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/products/[page]/[id]" as="/products/Beds/Small Single Beds" className="hover:text-[#08c]">
-                      Small Single Beds(2&apos; 6&apos;&apos;)
-                    </Link>
-                  </li>{" "}
-                  <li className=" absolute right-5 bottom-5">
-                    {" "}
-                    <Link
-                      // onClick={() => router.push('/beds')}
-                      href="/products/[page]" as="/products/beds"
-                      className="bg-[#08c]  text-white px-8 py-[0.8rem] inline-block h-[100%] hover:bg-[#3b82f680]  transition border-color text duration-100 ease-out delay-0 font-semibold"
+            {shopBySize && (
+              <div
+                className="fixed  left-0 top-0 w-full h-full bg-[#00000066] hidden z-50 max-md:block"
+                onClick={() => setshopBySize(false)}
+              ></div>
+            )}
+            {shopByType && (
+              <div
+                className="fixed  left-0 top-0 w-full h-full bg-[#00000066] hidden z-50 max-md:block"
+                onClick={() => setShopByType(false)}
+              ></div>
+            )}
+            {shopByFirmness && (
+              <div
+                className="fixed  left-0 top-0 w-full h-full bg-[#00000066] hidden z-50 max-md:block"
+                onClick={() => setShopByFirmness(false)}
+              ></div>
+            )}
+
+            {shopByBedSize && (
+              <div
+                className="fixed  left-0 top-0 w-full h-full bg-[#00000066] hidden z-50 max-md:block"
+                onClick={() => setshopByBedSize(false)}
+              ></div>
+            )}
+
+            {shopByBedType && (
+              <div
+                className="fixed  left-0 top-0 w-full h-full bg-[#00000066] hidden z-50 max-md:block"
+                onClick={() => setShopByBedType(false)}
+              ></div>
+            )} */}
+
+            <div className="flex gap-[10%] items-center max-xl:absolute max-xl:h-[15vh] max-xl:top-0 max-xl:items-center  right-0 max-xl:justify-end  max-xl:gap-[5%] max-xl:w-[80%] max-lg:w-[70%] max-md:w-[100%] max-xl:px-5 max-sm:items-center">
+              {/* <div className="flex items-center mr-5 cursor-pointer max-sm:mr-2">
+                <div className="flex flex-col justify-center">
+                  <Image
+                    src={phoneimg}
+                    width={35}
+                    height={35}
+                    alt="phone"
+                    className="max-xl:w-5 max-xl:h-5"
+                  />
+                  <span className="font-bold text-[0.6rem] hidden max-xl:inline ">
+                    phone
+                  </span>
+                </div>
+                <span className="font-bold max-xl:text-[0.8rem] max-xl:hidden">
+                  0151 548 1554
+                </span>
+              </div> */}
+
+              <div className="flex items-center gap-10 max-sm:gap-5">
+                {/* <div className="flex flex-col items-center gap-1 cursor-pointer">
+                  <Image src={locationimg} width={13} height={13} alt="Showrooms" />
+                  <span className="font-bold text-[0.6rem]">Showrooms</span>
+                </div> */}
+
+                <div className="flex flex-col items-center gap-1 cursor-pointer" onClick={() => {
+                    router.push('/paymentMethod/NewPaymentCardSetup')
+                  }} >
+                  {/* <Image src={basket} width={18} height={18} alt="Basket" /> */}
+                  <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="20"
+                      height="20"
+                      fill='none'
                     >
+                      <path fill="#ffffff" d="M0 0h24v24H0z" />
+                      <path
+                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z"
+                        stroke="#000"
+                        stroke-width="1"
+                      />
+                    </svg>
+                  {/* <span className="font-bold text-[0.6rem]">Whitlist</span> */}
+                </div>
+                <div className="flex flex-col items-center gap-1 cursor-pointer" >
+                  {/* onClick={() => {
+                    router.push('/paymentMethod/NewPaymentCardSetup')
+                  }} */}
+                  {/* <svg class="t4s-icon t4s-icon--cart" aria-hidden="true" focusable="false" role="presentation"><symbol id="icon-h-cart" width="20" height="20" viewBox="0 0 20 20" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                  </symbol></svg> */}
+                  {/* <Image src={basket} width={18} height={18} alt="Cart" /> */}
+                  {/* <i className='fas fa-cart-shopping text-[20px]'></i> */}
+                  <div className='drawer-end'>
+                            <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+                            <div className="drawer-content">
+                              <label htmlFor="my-drawer" className="drawer-button">
+                                  <div
+                                    className={`filter cursor-pointer font-bold text-center`}
+                                    // onClick={() => console.log("Add to cart clicked")}
+                                  >
+                                    <i className='fas fa-cart-shopping text-[20px] text-black'></i>
+                                  </div>
+                                  </label>
+                              </div>
+                            <div className="z-50 drawer-side">
+                                <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+                                <div className="relative flex min-h-full p-0 m-0 join join-vertical w-80 text-base-content">
+                                    <Cart />
+                                </div>
+                            </div>
+                        </div>
+                  {/* <span className="font-bold text-[0.6rem]">Cart</span> */}
+                </div>
+                <div className="flex flex-col items-center gap-1 cursor-pointer" onClick={() => {
+                    router.push('/Login')
+                  }}>
+                  {/* <Image src={userimg} width={18} height={18} alt="Account"  /> */}
+                  <i className='fas fa-user text-[20px] fill-none'></i>
+                  {/* <span className="font-bold text-[0.6rem]">Account</span> */}
+                </div>
+              </div>
+            </div>
+          </nav>
+          <nav className=" relative  max-md:hidden  bg-black text-[#EEEEEE] px-3 flex justify-center">
+            <ul className="m-0 p-0 h-[100%]  text-[0.9rem] flex items-center gap-4 flex-wrap max-xl:text-[0.8rem]">
+              <li className="p-3 cursor-pointer hover:bg-[#08c] hover:text-white font-medium relative">
+                <Link href={'/'}>Home</Link>
+              </li>
+
+              <div className="relative flex flex-col items-center dropdown">
+                <li className="p-3  cursor-pointer hover:bg-[#08c] hover:text-white  font-medium relative listitem">
+                  <Link href={'#'}>Mattresses</Link>
+                </li>
+
+                <div className=" bottom-[3%] absolute max-xl:bottom-[-3%] max-lg:bottom-[-5%] text-black w-[65vw] bg-white shadow-xl  z-50 dropdowncontent mattress-content h-[60vh] max-lg:h-[72vh] max-lg:w-[72vw] hidden rounded-b-2xl">
+                  <ul className="  top-0   w-[25%] h-[100%]  px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
+                    <li className="my-4  font-semibold text-[1rem] max-lg:text-[0.9rem]">
+                      {" "}
+                      Shop by Type
+                    </li>
+                    <li className="">
+                      <Link href="/products/Mattress/Memory Foam" className="hover:text-[#08c]">
+                        Memory Foam
+                      </Link>{" "}
+                    </li>
+                    <li className="">
+                      <Link href="/products/Mattress/Pocket Sprung" className="hover:text-[#08c]">
+                        Pocket Sprung
+                      </Link>
+                    </li>
+                    <li className="">
+                      {" "}
+                      <Link href="/products/Mattress/Orthopaedic" className="hover:text-[#08c]">
+                        Orthopaedic
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/products/Mattress/Latex" className="hover:text-[#08c]">
+                        Latex
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/products/Mattress/Miracoil" className="hover:text-[#08c]">
+                        Miracoil
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/products/Mattress/Natural Fillings" className="hover:text-[#08c]">
+                        Natural Fillings
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/products/Mattress/Cut Bed Mattresses" className="hover:text-[#08c]">
+                        Cut Bed Mattresses
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/products/Mattress/Kids Mattresses" className="hover:text-[#08c]">
+                        Kids Mattresses
+                      </Link>
+                    </li>
+                    {/* <li className="">
+                      <Link href="/mattresses/NextDayMattresses" className="hover:text-[#08c]">
+                        Next Day Mattresses
+                      </Link>
+                    </li> */}
+                  </ul>
+                  <ul className=" border-x-[1px] w-[25%]  h-[100%] px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
+                    <li className="my-4 font-semibold text-[1rem] max-lg:text-[0.9rem]">
+                      {" "}
+                      Shop by Firmness
+                    </li>
+                    <li className="">
+                      <Link href="/products/Mattress/Extra Firm" className="hover:text-[#08c]">
+                        Extra Firm
+                      </Link>{" "}
+                    </li>
+                    <li className="">
+                      <Link href="/products/Mattress/Firm" className="hover:text-[#08c]">
+                        Firm
+                      </Link>
+                    </li>
+                    <li className="">
+                      {" "}
+                      <Link href="/products/Mattress/Medium Firm" className="hover:text-[#08c]">
+                        Medium Firm
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/products/Mattress/Medium" className="hover:text-[#08c]">
+                        Medium
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/products/Mattress/Soft Firm" className="hover:text-[#08c]">
+                        Soft Firm
+                      </Link>
+                    </li>
+                  </ul>
+                  <ul className=" w-[25%]  h-[100%] flex flex-col px-10 box-border py-8  max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
+                    <li className="my-4 font-semibold text-[1rem] max-lg:text-[0.9rem]">
+                      {" "}
+                      Shop by Size
+                    </li>
+                    <li className="">
+                      <Link href="/mattresses/SuperKing" className="hover:text-[#08c]">
+                        Super King(6&apos;)
+                      </Link>{" "}
+                    </li>
+                    <li className="">
+                      <Link href="/mattresses/KingSize" className="hover:text-[#08c]">
+                        King Size(5&apos;)
+                      </Link>
+                    </li>
+                    <li className="">
+                      {" "}
+                      <Link href="/mattresses/Double" className="hover:text-[#08c]">
+                        Double(4&apos; 6&apos;&apos;)
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/mattresses/SmallDouble" className="hover:text-[#08c]">
+                        Small Double(4&apos;)
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/mattresses/Single" className="hover:text-[#08c]">
+                        Single(3&apos;)
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/mattresses/SmallSingle" className="hover:text-[#08c]">
+                        Small Single(2&apos; 6&apos;&apos;)
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/mattresses/European" className="hover:text-[#08c]">
+                        European
+                      </Link>
+                    </li>
+                  </ul>
+
+                  <ul className=" w-[25%]  h-[100%] relative ">
+                    <Image
+                      src="/mattress-menu.jpg"
+                      alt=""
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-b-2xl"
+                    />
+                  </ul>
+
+                  <div className="absolute bg-[white] w-[100%] bottom-0 h-[10%]  border-t-[1px] rounded-b-2xl">
+                    <button onClick={() => router.push('/products/Mattress')} className="bg-[#08c] absolute right-[10%] flex gap-5 items-center text-sm text-white px-4 py-[0.6rem]  h-[100%] hover:bg-[#44bcf7] transition border-color text duration-100 ease-out delay-0">
+                      <span> View All Matresses</span>
+                      <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative flex flex-col items-center dropdown">
+                <li className="p-3  cursor-pointer hover:bg-[#08c] hover:text-white  font-medium relative listitem">
+                  <Link href={'#'}>Beds</Link>
+                </li>
+                <div className="bottom-[3%] absolute max-xl:bottom-[-3%] text-black max-lg:bottom-[-5%] w-[60vw] bg-white shadow-xl  z-50 dropdowncontent mattress-content h-[60vh] max-lg:h-[70vh] max-lg:w-[70vw] hidden rounded-b-2xl">
+                  <ul className=" w-[33%]  h-[100%]  px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
+                    <li className="my-4  font-semibold text-[1rem] max-lg:text-[0.9rem]">
+                      {" "}
+                      Shop by Type
+                    </li>
+                    <li className="">
+                      <Link href="/products/[page]/[id]" as="/products/Beds/Memory Foam"  className="hover:text-[#08c]">
+                        Memory Foam
+                      </Link>{" "}
+                    </li>
+                    <li className="">
+                      <Link href="/products/[page]/[id]" as="/products/Beds/Pocket Sprung" className="hover:text-[#08c]">
+                        Pocket Sprung
+                      </Link>
+                    </li>
+                    <li className="">
+                      {" "}
+                      <Link href="/products/[page]/[id]" as="/products/Beds/Orthopaedic" className="hover:text-[#08c]">
+                        Orthopaedic
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/products/[page]/[id]" as="/products/Beds/Latex" className="hover:text-[#08c]">
+                        Latex
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/products/[page]/[id]" as="/products/Beds/Miracoil" className="hover:text-[#08c]">
+                        Miracoil
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/products/[page]/[id]" as="/products/Beds/Natural Fillings" className="hover:text-[#08c]">
+                        Natural Fillings
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/products/[page]/[id]" as="/products/Beds/Cut Bed Mattresses" className="hover:text-[#08c]">
+                        Cut Bed Mattresses
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/products/[page]/[id]" as="/products/Beds/Kids Mattresses" className="hover:text-[#08c]">
+                        Kids Mattresses
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/products/[page]/[id]" as="/products/Beds/Next Day Mattresses" className="hover:text-[#08c]">
+                        Next Day Mattresses
+                      </Link>
+                    </li>
+                  </ul>
+
+                  <ul className="border w-[33%] h-[100%]  px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
+                    <li className="my-4 font-semibold text-[1rem] max-lg:text-[0.9rem]">
+                      {" "}
+                      Shop by Size
+                    </li>
+                    <li className="">
+                      <Link href="/products/[page]/[id]" as="/products/Beds/Super Kings Beds" className="hover:text-[#08c]">
+                        Super Kings Beds(6&apos;)
+                      </Link>{" "}
+                    </li>
+                    <li className="">
+                      <Link href="/products/[page]/[id]" as="/products/Beds/KingSizeBeds" className="hover:text-[#08c]">
+                        King Size Beds(5&apos;)
+                      </Link>
+                    </li>
+                    <li className="">
+                      {" "}
+                      <Link href="/products/[page]/[id]" as="/products/Beds/Double Beds" className="hover:text-[#08c]">
+                        Double Beds(4&apos; 6&apos;&apos;)
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/products/[page]/[id]" as="/products/Beds/Small Double Beds" className="hover:text-[#08c]">
+                        Small Double Beds(4&apos;)
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/products/[page]/[id]" as="/products/Beds/Single Beds" className="hover:text-[#08c]">
+                        Single Beds(3&apos;)
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/products/[page]/[id]" as="/products/Beds/Small Single Beds" className="hover:text-[#08c]">
+                        Small Single Beds(2&apos; 6&apos;&apos;)
+                      </Link>
+                    </li>{" "}
+                    <li className="absolute right-5 bottom-5">
+                      {" "}
+                      <Link
+                        // onClick={() => router.push('/beds')}
+                        href="/products/[page]" as="/products/beds"
+                        className="bg-[#08c]  text-white px-8 py-[0.8rem] inline-block h-[100%] hover:bg-[#3b82f680]  transition border-color text duration-100 ease-out delay-0 font-semibold"
+                      >
+                        View All Beds
+                      </Link>
+                    </li>
+                  </ul>
+                  <ul className=" w-[33%] h-[100%] relative">
+                    <Image
+                      src="/divan-beds-menu.jpg"
+                      alt=""
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </ul>
+
+                  <div className="absolute bg-[white] w-[100%] bottom-0 h-[10%]  border-t-[1px] rounded-b-2xl">
+                    <button onClick={() => { router.push('/products/Beds'); exitBedDropdown() }} className="bg-[#08c] absolute right-[10%] flex gap-5 items-center text-sm text-white px-4 py-[0.6rem]  h-[100%] hover:bg-[#44bcf7] transition border-color text duration-100 ease-out delay-0">
+                      <span> View All Beds</span>
+                      <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="relative flex flex-col items-center dropdown">
+                <li className="p-3  cursor-pointer hover:bg-[#08c] hover:text-white  font-medium relative listitem">
+                  <span><Link href={'#'}>Accessories</Link></span>
+                </li>
+
+                <div onClick={exitAccessoriesDropdown} className=" text-black bottom-[3%] absolute max-xl:bottom-[-3%] max-lg:bottom-[-5%] w-[60vw] bg-white shadow-xl  z-50 dropdowncontent accessories-content h-[60vh] max-lg:h-[70vh] max-lg:w-[70vw] hidden rounded-b-2xl">
+                  <ul className="py-8 px-10 relative h-[100%] max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
+                    <li className="">
+                      <Link href="/accessories/Pillows" className="hover:text-[#08c]">
+                        Pillows
+                      </Link>{" "}
+                    </li>
+                    <li className="">
+                      <Link href="/accessories/Duvetts" className="hover:text-[#08c]">
+                        Duvetts
+                      </Link>
+                    </li>
+                    <li className="">
+                      {" "}
+                      <Link href="/accessories/MattressToppers" className="hover:text-[#08c]">
+                        Mattress Toppers
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/accessories/Headboards" className="hover:text-[#08c]">
+                        Headboards
+                      </Link>
+                    </li>
+                  </ul>
+
+                  <div className="absolute bg-[white] w-[100%] bottom-0 h-[10%]  border-t-[1px] rounded-b-2xl">
+                    <button onClick={() => router.push('/accessories')} className="bg-[#08c] absolute right-[10%] flex gap-5 items-center text-sm text-white px-4 py-[0.6rem]  h-[100%] hover:bg-[#44bcf7] transition border-color text duration-100 ease-out delay-0">
+                      <span> View All Accessories</span>
+                      <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="relative flex flex-col items-center dropdown">
+                <li className="p-3  cursor-pointer hover:bg-[#08c] hover:text-white  font-medium relative listitem">
+                  <span><Link href={'/sales'}>Sales</Link></span>
+                </li>
+
+                <div className="bottom-[3%] text-black absolute max-xl:bottom-[-3%] max-lg:bottom-[-5%] w-[60vw] bg-white shadow-xl  z-50 dropdowncontent sales-content h-[60vh] max-lg:h-[70vh] max-lg:w-[70vw] hidden rounded-b-2xl">
+                  <ul className="  w-[33%]  h-[100%]  px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
+                    <li className="my-4 font-semibold text-[1.2rem]">Sale</li>
+                    <li className="">
+                      <Link href="/sales/DivanBeds" className="hover:text-[#08c]">
+                        Divan Beds
+                      </Link>{" "}
+                    </li>
+                    <li className="">
+                      <Link href="/sales/DivanBasesOnly" className="hover:text-[#08c]">
+                        Divan Bases Only
+                      </Link>
+                    </li>
+                    <li className="">
+                      {" "}
+                      <Link href="/sales/BedFrames" className="hover:text-[#08c]">
+                        Bed Frames
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/sales/Mattresses" className="hover:text-[#08c]">
+                        Mattresses
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/sales/Headboards" className="hover:text-[#08c]">
+                        Headboards
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/sales/Furniture" className="hover:text-[#08c]">
+                        Furniture
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/sales" className="hover:text-[#08c]">
+                        All Sale Products
+                      </Link>
+                    </li>
+                  </ul>
+
+                  <ul className="  w-[33%] border-[1px] h-[100%]  px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
+                    <li className="my-4 font-semibold text-[1.2rem]">
+                      {" "}
+                      Clearance
+                    </li>
+                    <li className="">
+                      <Link href="/clearance/DivanBases" className="hover:text-[#08c]">
+                        Divan Bases
+                      </Link>{" "}
+                    </li>
+                    <li className="">
+                      <Link href="/clearance/Mattresses" className="hover:text-[#08c]">
+                        Mattresses
+                      </Link>
+                    </li>
+                    <li className="">
+                      {" "}
+                      <Link href="/clearance/BedFrames" className="hover:text-[#08c]">
+                        Bed Frames
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/clearance/Headboards" className="hover:text-[#08c]">
+                        Headboards
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/clearance/Furniture" className="hover:text-[#08c]">
+                        Furniture
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/clearance/ClearanceBundles" className="hover:text-[#08c]">
+                        Clearance Bundles
+                      </Link>
+                    </li>
+                  </ul>
+                  <ul className="  top-0  border-[2px] w-[33%]   h-[100%] relative">
+                    <Image
+                      src="/bedfactory-sale-menu.jpg"
+                      alt=""
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </ul>
+
+                  <div className="absolute bg-[white] w-[100%] bottom-0 h-[10%]  border-t-[1px] rounded-b-2xl ">
+                    <button onClick={() => router.push('/sales')} className="bg-[#08c] absolute right-[10%] flex gap-5 items-center text-sm text-white px-4 py-[0.6rem]  h-[100%] hover:bg-[#44bcf7] transition border-color text duration-100 ease-out delay-0">
+                      <span> View All Sales</span>
+                      <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              {/* <li className="  p-3  cursor-pointer hover:bg-[#08c] hover:text-white  font-semibold relative listitem">
+                <span>About Us</span>
+              </li> */}
+              {/* <li className="p-3  cursor-pointer hover:bg-[#08c] hover:text-white  font-semibold relative listitem">
+                <span>Deliver Information</span>
+              </li> */}
+              {/* <div className="relative flex flex-col items-center dropdown"> */}
+              {/* <li className="p-3 cursor-pointer hover:bg-[#08c] hover:text-white  font-semibold relative listitem">
+                <span>FAQs</span>
+              </li> */}
+
+              {/* <li className="p-3  cursor-pointer hover:bg-[#08c] hover:text-white  font-semibold relative listitem">
+                <span>Advice Centre</span>
+              </li> */}
+              <li className="p-3 cursor-pointer hover:bg-[#08c] hover:text-white font-medium relative">
+                <Link href={'/'}>Blog</Link>
+              </li>
+              <li className="p-3 cursor-pointer hover:bg-[#08c] hover:text-white font-medium relative">
+                <Link href={'/about-us'}>About Us</Link>
+              </li>
+              <li className="p-3 cursor-pointer hover:bg-[#08c] hover:text-white font-medium relative">
+                <Link href={'/Faq'}>FAQ</Link>
+              </li>
+              <li className="p-3 cursor-pointer hover:bg-[#08c] hover:text-white font-medium relative">
+                <Link href={'/'}>Order Swatches</Link>
+              </li>
+              {/* <li className="relative p-3 font-medium cursor-pointer listitem">
+                <span>Order Swatches</span>
+              </li> */}
+            </ul>
+          </nav>
+
+          <div className=" relative w-[100%] hidden max-md:flex border-[2px] border-[#e3e3e5]">
+            <div
+              className="w-[10%] cursor-pointer flex items-center justify-center hamburger-icon"
+              onClick={toggleDropdown}
+            >
+              <span className="text-[1.2rem] block  font-bold">&#9776;</span>
+            </div>
+            <input
+              type="text"
+              placeholder="Search..."
+              className="   bg-[#f2f2f2]  border-[1.5px] border-[#e3e3e5] h-[2.8rem] px-2  placeholder-bold  w-[80%] "
+              style={{ fontWeight: "bold", fontSize: "0.8rem" }}
+            />
+            <div className="w-[10%] flex justify-center items-center cursor-pointer">
+              <Image
+                className="z-50 cursor-pointer"
+                src={search}
+                width={15}
+                height={15}
+                alt="searchbox"
+              />
+            </div>
+          </div>
+
+          <div className="z-50 hidden max-md:block">
+            {isDropdownOpen && (
+              <div
+                className={`absolute top-0 h-[100vh] custom-animation bg-white left-0 border-[2px] animate__animated border-[#e3e3e5] dropdown-content w-[100%] ${isDropdownOpen
+                  ? "animate__slideInLeft"
+                  : "animate__slideOutLeft"
+                  }`}
+              >
+                <div className="text-[0.9rem]  flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
+                  <span>Menu</span>
+                  {""}
+                  <div onClick={exitDropdown} className="flex items-center gap-1">
+                    <span>Close</span>
+                    {""}
+                    <span className="text-[1.5rem]">&times;</span>
+                  </div>
+                </div>
+                <div className="h-[100%] w-[100%]">
+                  <div
+                    onClick={displayMatresses}
+                    className="text-[0.9rem]  border-[1px] p-4 flex  gap-8 items-center cursor-pointer font-bold"
+                  >
+                    <span> Mattresses</span>{" "}
+                    <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                  </div>
+
+                  <div
+                    onClick={displayBed}
+                    className="text-[0.9rem] p-4 border-[1px] flex gap-8 cursor-pointer items-center  font-bold"
+                  >
+                    <span> Beds</span>{" "}
+                    <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                  </div>
+                  <div
+                    onClick={displayAccessories}
+                    className="text-[0.9rem] flex gap-8 p-4 items-center border-[1px]   cursor-pointer  font-bold"
+                  >
+                    <span> Accessories</span>{" "}
+                    <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                  </div>
+                  <div onClick={() => { router.push('/sales'); exitDropdown() }} className="text-[0.9rem] p-4 border-[1px] items-center  flex gap-8 cursor-pointer  font-bold">
+                    <span> Sale</span>{" "}
+                    <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                  </div>
+
+                  <div className="py-3 leading-8">
+                    <div className="text-[0.9rem] px-4 py-2 cursor-pointer  ">
+                      About Us
+                    </div>
+                    <div className="text-[0.9rem] px-4 py-2  cursor-pointer  ">
+                      Delivery Information
+                    </div>
+                    <div className="text-[0.9rem] px-4 py-2  cursor-pointer">
+                      FAQs
+                    </div>
+                    <div className="text-[0.9rem] px-4 py-2  cursor-pointer ">
+                      Advise Centre
+                    </div>
+                    <div className="text-[0.9rem] px-4 py-2  cursor-pointer">
+                      Contact Us
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            <div>
+              <div className="relative">
+                {/* Matresses Open */}
+                {matressesOpen && (
+                  <div className="mattress-dropdown h-[100vh] fixed bg-white top-0 left-0 w-[100%]">
+                    <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
+                      <div className="flex items-center gap-5">
+                        <i
+                          className="fa fa-chevron-left"
+                          aria-hidden="true"
+                          onClick={displayMenu}
+                        ></i>{" "}
+                        <span>Mattresses</span>{" "}
+                      </div>
+                      <div
+                        onClick={exitMatressesDropdown}
+                        className="flex items-center gap-1"
+                      >
+                        <span>Close</span>{" "}
+                        <span className="text-[1.5rem]">&times;</span>
+                      </div>
+                    </div>
+                    <div
+                      onClick={displayShops}
+                      className="text-[0.9rem] flex p-4 gap-8 items-center cursor-pointer hover:bg-[#08c] hover:text-white font-semibold"
+                    >
+                      <span> Shop by Size</span>{" "}
+                      <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                    </div>
+
+                    <div
+                      onClick={displayShopsSizes}
+                      className="text-[0.9rem] p-4 flex gap-8 items-center cursor-pointer hover:bg-[#08c] hover:text-white font-semibold"
+                    >
+                      <span> Shop by Type</span>{" "}
+                      <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                    </div>
+                    <div
+                      onClick={displayShopByFirmness}
+                      className="text-[0.9rem]  gap-8 items-center p-4 flex cursor-pointer hover:bg-[#08c] hover:text-white font-semibold"
+                    >
+                      <span> Shop by Firmness</span>{" "}
+                      <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                    </div>
+                    <div onClick={() => { router.push('/mattresses'); exitDropdown() }} className="text-[0.9rem] p-4 flex gap-8 items-center cursor-pointer text-[#08c] font-semibold">
+                      <span> All Matresses</span>{" "}
+                    </div>
+                  </div>
+                )}
+
+                {shopBySize && (
+                  <div className="bg-white  fixed top-0 w-[100%] h-[100vh] left-0">
+                    <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
+                      <div className="flex items-center gap-5">
+                        <i
+                          className="fa fa-chevron-left"
+                          aria-hidden="true"
+                          onClick={showMattresesBySize}
+                        ></i>{" "}
+                        <span>Shop By Size</span>{" "}
+                      </div>
+                      <div
+                        onClick={exitShopDropdown}
+                        className="flex items-center gap-1"
+                      >
+                        <span>Close</span>{" "}
+                        <span className="text-[1.5rem]">&times;</span>
+                      </div>
+                    </div>
+                    <div className="leading-8">
+                      <div onClick={() => exitShopDropdown()} className="text-[0.9rem] border px-4 py-2  items-center cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span>Super King(6&apos;)</span>{" "}
+                      </div>
+
+                      <div onClick={() => exitShopDropdown()} className="text-[0.9rem] px-4 border py-2  cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span> King Size(5&apos;)</span>{" "}
+                      </div>
+                      <div onClick={() => exitShopDropdown()} className="text-[0.9rem] px-4 py-2 border fles cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span> Double(4&apos; 6&apos;&apos;)</span>{" "}
+                      </div>
+                      <div onClick={() => exitShopDropdown()} className="text-[0.9rem] px-4 py-2 border  cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span> Small Double(4&apos;)</span>{" "}
+                      </div>
+                      <div onClick={() => exitShopDropdown()} className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span> Single(3&apos;)</span>{" "}
+                      </div>
+                      <div onClick={() => exitShopDropdown()} className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span>Small Single(2&apos; 6&apos;&apos;)</span>{" "}
+                      </div>
+                      <div onClick={() => exitShopDropdown()} className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span>European</span>{" "}
+                      </div>
+                      <div onClick={() => exitShopDropdown()} className="text-[0.9rem] px-4 py-2 border bg-[#eee] cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <Link href="/products/Mattress" className="text-[#08c] font-semibold">
+                          View All Matresses
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {shopByType && (
+                  <div className="bg-white  fixed top-0 w-[100%]  h-[100vh] left-0">
+                    <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
+                      <div className="flex items-center gap-5">
+                        <i
+                          className="fa fa-chevron-left"
+                          aria-hidden="true"
+                          onClick={showMattresesByType}
+                        ></i>{" "}
+                        <span>Shop By Type</span>{" "}
+                      </div>
+                      <div
+                        onClick={exitShopByTypeDropdown}
+                        className="flex items-center gap-1"
+                      >
+                        <span>Close</span>{" "}
+                        <span className="text-[1.5rem]">&times;</span>
+                      </div>
+                    </div>
+
+                    <div className="leading-8" onClick={exitShopByTypeDropdown}>
+                      <div className="text-[0.9rem] border  px-4 py-2  items-center cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span>Memory Foam</span>{" "}
+                      </div>
+
+                      <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span>Pocket Sprung</span>{" "}
+                      </div>
+                      <div className="text-[0.9rem] px-4 py-2 border fles cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span>Orthopaedic</span>{" "}
+                      </div>
+                      <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span>Latex</span>{" "}
+                      </div>
+                      {/* <div className="text-[0.9rem] px-4 py-2  cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                      <span>Miracoil</span>{" "}
+                    </div>
+                    <div className="text-[0.9rem] px-4 py-2  cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                      <span>Cot Bed Mattresses</span>{" "}
+                    </div> */}
+                      <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span>Natural Fillings</span>{" "}
+                      </div>
+
+                      <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span>Kids Mattresses</span>{" "}
+                      </div>
+                      <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span>Next Day Mattresses</span>{" "}
+                      </div>
+                      <div className="text-[0.9rem] px-4 py-2 border bg-[#eee] cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <Link href="/products/Mattress" className="text-[#08c] font-semibold">
+                          View All Matresses
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {shopByFirmness && (
+                  <div className="bg-white  fixed top-0 w-[100%] h-[100vh] left-0">
+                    <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
+                      <div className="flex items-center gap-5">
+                        <i
+                          className="fa fa-chevron-left"
+                          aria-hidden="true"
+                          onClick={showMattresesByFirmness}
+                        ></i>{" "}
+                        <span>Shop By Firmness</span>{" "}
+                      </div>
+                      <div
+                        onClick={exitShopByFirmness}
+                        className="flex items-center gap-1"
+                      >
+                        <span>Close</span>{" "}
+                        <span className="text-[1.5rem]">&times;</span>
+                      </div>
+                    </div>
+                    <div className="leading-8" onClick={exitShopByFirmness}>
+                      <div className="text-[0.9rem]  px-4 py-2 border items-center cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span>Extra Firm</span>{" "}
+                      </div>
+
+                      <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span>Firm</span>{" "}
+                      </div>
+                      <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span>Medium-Firm</span>{" "}
+                      </div>
+                      <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span>Medium</span>{" "}
+                      </div>
+                      <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <span>Soft-Medium</span>{" "}
+                      </div>
+
+                      <div className="text-[0.9rem] px-4 py-2 border bg-[#eee] cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                        <Link href="/products/Mattress" className="text-[#08c] font-semibold">
+                          View All Matresses
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Bed Open */}
+
+            {BedOpen && (
+              <div className="mattress-dropdown h-[100vh] fixed bg-white top-0 left-0 w-[100%]">
+                <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
+                  <div className="flex items-center gap-5">
+                    {" "}
+                    <i
+                      className="fa fa-chevron-left"
+                      aria-hidden="true"
+                      onClick={displayMenu}
+                    ></i>{" "}
+                    <span>Bed</span>{" "}
+                  </div>
+                  <div
+                    onClick={exitBedDropdown}
+                    className="flex items-center gap-1"
+                  >
+                    <span>Close</span>{" "}
+                    <span className="text-[1.5rem]">&times;</span>
+                  </div>
+                </div>
+                <div
+                  onClick={displayBedShops}
+                  className="text-[0.9rem] flex p-4 border gap-8 items-center cursor-pointer  font-semibold"
+                >
+                  <span> Shop by Size</span>{" "}
+                  <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+
+                <div
+                  onClick={displayShopsBedTypes}
+                  className="text-[0.9rem] p-4 border flex gap-8 items-center cursor-pointer  font-semibold"
+                >
+                  <span> Shop by Type</span>{" "}
+                  <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+                <div
+                  onClick={displayShopsBedMaterials}
+                  className="text-[0.9rem] p-4 flex border gap-8 items-center cursor-pointer  font-semibold"
+                >
+                  <span> Shop by Material</span>{" "}
+                  <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+                <div onClick={() => { router.push('/beds'); exitBedDropdown() }} className="text-[0.9rem] bg-[#eee] text-[#08c] border p-4 flex gap-8 items-center cursor-pointer  font-semibold">
+                  <span> All Beds</span>{" "}
+                </div>
+              </div>
+            )}
+
+            {shopByBedSize && (
+              <div className="bg-white  fixed top-0 w-[100%]  h-[100vh] left-0">
+                <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
+                  <div className="flex items-center gap-5">
+                    <i
+                      className="fa fa-chevron-left"
+                      aria-hidden="true"
+                      onClick={showBedsBySize}
+                    ></i>{" "}
+                    <span>Shop By Size</span>{" "}
+                  </div>
+                  <div
+                    onClick={exitBedSizeDropdown}
+                    className="flex items-center gap-1"
+                  >
+                    <span>Close</span>{" "}
+                    <span className="text-[1.5rem]">&times;</span>
+                  </div>
+                </div>
+                <div className="leading-8" onClick={exitBedSizeDropdown}>
+                  <div className="text-[0.9rem]  px-4 py-2  items-center cursor-pointer  hover:text-white font-semibold">
+                    <span>SuperKing Beds(6&apos;)</span>{" "}
+                  </div>
+
+                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
+                    <span> King Size Beds(5&apos;)</span>{" "}
+                  </div>
+                  <div className="text-[0.9rem] px-4 py-2 fles cursor-pointer   font-semibold">
+                    <span> Double Beds(4&apos; 6&apos;&apos;)</span>{" "}
+                  </div>
+                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
+                    <span> Small Double Beds(4&apos;)</span>{" "}
+                  </div>
+                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
+                    <span> Single Beds(3&apos;)</span>{" "}
+                  </div>
+                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
+                    <span>Small Single Beds(2&apos; 6&apos;&apos;)</span>{" "}
+                  </div>
+
+                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
+                    <Link href="/beds" className="text-[#08c] font-semibold">
                       View All Beds
                     </Link>
-                  </li>
-                </ul>
-                <ul className=" w-[33%] h-[100%] relative">
-                  <Image
-                    src="/divan-beds-menu.jpg"
-                    alt=""
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </ul>
-
-                <div className="absolute bg-[white] w-[100%] bottom-0 h-[10%]  border-t-[1px] rounded-b-2xl">
-                  <button onClick={() => { router.push('/products/beds'); exitBedDropdown() }} className="bg-[#08c] absolute right-[10%] flex gap-5 items-center text-sm text-white px-4 py-[0.6rem]  h-[100%] hover:bg-[#44bcf7] transition border-color text duration-100 ease-out delay-0">
-                    <span> View All Beds</span>
-                    <i className="fa fa-chevron-right" aria-hidden="true"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col items-center relative dropdown">
-              <li className="p-3  cursor-pointer hover:bg-[#08c] hover:text-white  font-medium relative listitem">
-                <span><Link href={'#'}>Accessories</Link></span>
-              </li>
-
-              <div onClick={exitAccessoriesDropdown} className=" text-black bottom-[3%] relative max-xl:bottom-[-3%] max-lg:bottom-[-5%] w-[60vw] bg-white shadow-xl  z-50 dropdowncontent accessories-content h-[60vh] max-lg:h-[70vh] max-lg:w-[70vw] hidden rounded-b-2xl">
-                <ul className="py-8 px-10 relative h-[100%] max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
-                  <li className="">
-                    <Link href="/accessories/Pillows" className="hover:text-[#08c]">
-                      Pillows
-                    </Link>{" "}
-                  </li>
-                  <li className="">
-                    <Link href="/accessories/Duvetts" className="hover:text-[#08c]">
-                      Duvetts
-                    </Link>
-                  </li>
-                  <li className="">
-                    {" "}
-                    <Link href="/accessories/MattressToppers" className="hover:text-[#08c]">
-                      Mattress Toppers
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/accessories/Headboards" className="hover:text-[#08c]">
-                      Headboards
-                    </Link>
-                  </li>
-                </ul>
-
-                <div className="absolute bg-[white] w-[100%] bottom-0 h-[10%]  border-t-[1px] rounded-b-2xl">
-                  <button onClick={() => router.push('/accessories')} className="bg-[#08c] absolute right-[10%] flex gap-5 items-center text-sm text-white px-4 py-[0.6rem]  h-[100%] hover:bg-[#44bcf7] transition border-color text duration-100 ease-out delay-0">
-                    <span> View All Accessories</span>
-                    <i className="fa fa-chevron-right" aria-hidden="true"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col items-center relative dropdown">
-              <li className="p-3  cursor-pointer hover:bg-[#08c] hover:text-white  font-medium relative listitem">
-                <span><Link href={'/sales'}>Sales</Link></span>
-              </li>
-
-              <div className="bottom-[3%] text-black relative max-xl:bottom-[-3%] max-lg:bottom-[-5%] w-[60vw] bg-white shadow-xl  z-50 dropdowncontent sales-content h-[60vh] max-lg:h-[70vh] max-lg:w-[70vw] hidden rounded-b-2xl">
-                <ul className="  w-[33%]  h-[100%]  px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
-                  <li className="my-4 font-semibold text-[1.2rem]">Sale</li>
-                  <li className="">
-                    <Link href="/sales/DivanBeds" className="hover:text-[#08c]">
-                      Divan Beds
-                    </Link>{" "}
-                  </li>
-                  <li className="">
-                    <Link href="/sales/DivanBasesOnly" className="hover:text-[#08c]">
-                      Divan Bases Only
-                    </Link>
-                  </li>
-                  <li className="">
-                    {" "}
-                    <Link href="/sales/BedFrames" className="hover:text-[#08c]">
-                      Bed Frames
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/sales/Mattresses" className="hover:text-[#08c]">
-                      Mattresses
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/sales/Headboards" className="hover:text-[#08c]">
-                      Headboards
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/sales/Furniture" className="hover:text-[#08c]">
-                      Furniture
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/sales" className="hover:text-[#08c]">
-                      All Sale Products
-                    </Link>
-                  </li>
-                </ul>
-
-                <ul className="  w-[33%] border-[1px] h-[100%]  px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
-                  <li className="my-4 font-semibold text-[1.2rem]">
-                    {" "}
-                    Clearance
-                  </li>
-                  <li className="">
-                    <Link href="/clearance/DivanBases" className="hover:text-[#08c]">
-                      Divan Bases
-                    </Link>{" "}
-                  </li>
-                  <li className="">
-                    <Link href="/clearance/Mattresses" className="hover:text-[#08c]">
-                      Mattresses
-                    </Link>
-                  </li>
-                  <li className="">
-                    {" "}
-                    <Link href="/clearance/BedFrames" className="hover:text-[#08c]">
-                      Bed Frames
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/clearance/Headboards" className="hover:text-[#08c]">
-                      Headboards
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/clearance/Furniture" className="hover:text-[#08c]">
-                      Furniture
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href="/clearance/ClearanceBundles" className="hover:text-[#08c]">
-                      Clearance Bundles
-                    </Link>
-                  </li>
-                </ul>
-                <ul className="  top-0  border-[2px] w-[33%]   h-[100%] relative">
-                  <Image
-                    src="/bedfactory-sale-menu.jpg"
-                    alt=""
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </ul>
-
-                <div className="absolute bg-[white] w-[100%] bottom-0 h-[10%]  border-t-[1px] rounded-b-2xl ">
-                  <button onClick={() => router.push('/sales')} className="bg-[#08c] absolute right-[10%] flex gap-5 items-center text-sm text-white px-4 py-[0.6rem]  h-[100%] hover:bg-[#44bcf7] transition border-color text duration-100 ease-out delay-0">
-                    <span> View All Sales</span>
-                    <i className="fa fa-chevron-right" aria-hidden="true"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            {/* <li className="  p-3  cursor-pointer hover:bg-[#08c] hover:text-white  font-semibold relative listitem">
-              <span>About Us</span>
-            </li> */}
-            {/* <li className="p-3  cursor-pointer hover:bg-[#08c] hover:text-white  font-semibold relative listitem">
-              <span>Deliver Information</span>
-            </li> */}
-            {/* <div className="flex flex-col items-center relative dropdown"> */}
-            {/* <li className="p-3 cursor-pointer hover:bg-[#08c] hover:text-white  font-semibold relative listitem">
-              <span>FAQs</span>
-            </li> */}
-
-            {/* <li className="p-3  cursor-pointer hover:bg-[#08c] hover:text-white  font-semibold relative listitem">
-              <span>Advice Centre</span>
-            </li> */}
-            <li className="p-3 cursor-pointer hover:bg-[#08c] hover:text-white font-medium relative">
-              <Link href={'/'}>Blog</Link>
-            </li>
-            <li className="p-3 cursor-pointer hover:bg-[#08c] hover:text-white font-medium relative">
-              <Link href={'/about-us'}>About Us</Link>
-            </li>
-            <li className="p-3 cursor-pointer hover:bg-[#08c] hover:text-white font-medium relative">
-              <Link href={'/Faq'}>FAQ</Link>
-            </li>
-            <li className="p-3 cursor-pointer hover:bg-[#08c] hover:text-white font-medium relative">
-              <Link href={'/'}>Order Swatches</Link>
-            </li>
-            {/* <li className="p-3  cursor-pointer  font-medium relative listitem">
-              <span>Order Swatches</span>
-            </li> */}
-          </ul>
-        </nav>
-
-        <div className=" relative w-[100%] hidden max-md:flex border-[2px] border-[#e3e3e5]">
-          <div
-            className="w-[10%] cursor-pointer flex items-center justify-center hamburger-icon"
-            onClick={toggleDropdown}
-          >
-            <span className="text-[1.2rem] block  font-bold">&#9776;</span>
-          </div>
-          <input
-            type="text"
-            placeholder="Search..."
-            className="   bg-[#f2f2f2]  border-[1.5px] border-[#e3e3e5] h-[2.8rem] px-2  placeholder-bold  w-[80%] "
-            style={{ fontWeight: "bold", fontSize: "0.8rem" }}
-          />
-          <div className="w-[10%] flex justify-center items-center cursor-pointer">
-            <Image
-              className="z-50  cursor-pointer"
-              src={search}
-              width={15}
-              height={15}
-              alt="searchbox"
-            />
-          </div>
-        </div>
-
-        <div className="z-50 hidden max-md:block">
-          {isDropdownOpen && (
-            <div
-              className={`absolute top-0 h-[100vh] custom-animation bg-white left-0 border-[2px] animate__animated border-[#e3e3e5] dropdown-content w-[100%] ${isDropdownOpen
-                ? "animate__slideInLeft"
-                : "animate__slideOutLeft"
-                }`}
-            >
-              <div className="text-[0.9rem]  flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
-                <span>Menu</span>
-                {""}
-                <div onClick={exitDropdown} className="flex items-center gap-1">
-                  <span>Close</span>
-                  {""}
-                  <span className="text-[1.5rem]">&times;</span>
-                </div>
-              </div>
-              <div className="h-[100%] w-[100%]">
-                <div
-                  onClick={displayMatresses}
-                  className="text-[0.9rem]  border-[1px] p-4 flex  gap-8 items-center cursor-pointer font-bold"
-                >
-                  <span> Mattresses</span>{" "}
-                  <i className="fa fa-chevron-right" aria-hidden="true"></i>
-                </div>
-
-                <div
-                  onClick={displayBed}
-                  className="text-[0.9rem] p-4 border-[1px] flex gap-8 cursor-pointer items-center  font-bold"
-                >
-                  <span> Beds</span>{" "}
-                  <i className="fa fa-chevron-right" aria-hidden="true"></i>
-                </div>
-                <div
-                  onClick={displayAccessories}
-                  className="text-[0.9rem] flex gap-8 p-4 items-center border-[1px]   cursor-pointer  font-bold"
-                >
-                  <span> Accessories</span>{" "}
-                  <i className="fa fa-chevron-right" aria-hidden="true"></i>
-                </div>
-                <div onClick={() => { router.push('/sales'); exitDropdown() }} className="text-[0.9rem] p-4 border-[1px] items-center  flex gap-8 cursor-pointer  font-bold">
-                  <span> Sale</span>{" "}
-                  <i className="fa fa-chevron-right" aria-hidden="true"></i>
-                </div>
-
-                <div className="leading-8 py-3">
-                  <div className="text-[0.9rem] px-4 py-2 cursor-pointer  ">
-                    About Us
-                  </div>
-                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer  ">
-                    Delivery Information
-                  </div>
-                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer">
-                    FAQs
-                  </div>
-                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer ">
-                    Advise Centre
-                  </div>
-                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer">
-                    Contact Us
                   </div>
                 </div>
               </div>
-            </div>
-          )}
-
-          <div>
-            <div className="relative">
-              {/* Matresses Open */}
-              {matressesOpen && (
-                <div className="mattress-dropdown h-[100vh] fixed bg-white top-0 left-0 w-[100%]">
-                  <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
-                    <div className="flex items-center gap-5">
-                      <i
-                        className="fa fa-chevron-left"
-                        aria-hidden="true"
-                        onClick={displayMenu}
-                      ></i>{" "}
-                      <span>Mattresses</span>{" "}
-                    </div>
-                    <div
-                      onClick={exitMatressesDropdown}
-                      className="flex items-center gap-1"
-                    >
-                      <span>Close</span>{" "}
-                      <span className="text-[1.5rem]">&times;</span>
-                    </div>
+            )}
+            {shopByBedType && (
+              <div className="bg-white  fixed top-0 w-[100%] h-[100vh] left-0">
+                <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
+                  <div className="flex items-center gap-5">
+                    <i
+                      className="fa fa-chevron-left"
+                      aria-hidden="true"
+                      onClick={showBedsByType}
+                    ></i>{" "}
+                    <span>Shop By Type</span>{" "}
                   </div>
                   <div
-                    onClick={displayShops}
-                    className="text-[0.9rem] flex p-4 gap-8 items-center cursor-pointer hover:bg-[#08c] hover:text-white font-semibold"
+                    onClick={exitShopByBedTypeDropdown}
+                    className="flex items-center gap-1"
                   >
-                    <span> Shop by Size</span>{" "}
-                    <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                    <span>Close</span>{" "}
+                    <span className="text-[1.5rem]">&times;</span>
+                  </div>
+                </div>
+                <div className="leading-8" >
+                  <div onClick={exitShopByBedTypeDropdown} className="text-[0.9rem]  px-4 py-2  items-center cursor-pointer  hover:text-white font-semibold">
+                    <span>Bed frames</span>{" "}
                   </div>
 
+                  <div onClick={exitShopByBedTypeDropdown} className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
+                    <span> Divan beds</span>{" "}
+                  </div>
+                  <div onClick={exitShopByBedTypeDropdown} className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
+                    <span>Guests Beds</span>{" "}
+                  </div>
+                  <div onClick={exitShopByBedTypeDropdown} className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
+                    <span>Next Day Beds</span>{" "}
+                  </div>
+                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
+                    <div className="flex items-center gap-5" onClick={displayDiscountBeds}>
+                      <span>Discount Beds</span>{" "}
+                      <i
+                        className="fa fa-chevron-right"
+                        aria-hidden="true"
+
+                      ></i>{" "}
+                    </div>
+                  </div>
+                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
+                    <div className="flex items-center gap-5" onClick={displayLoftBeds}>
+                      <span>Loft Beds</span>{" "}
+                      <i
+                        className="fa fa-chevron-right"
+                        aria-hidden="true"
+
+                      ></i>{" "}
+                    </div>
+                  </div>
+
+                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold" onClick={exitShopByBedTypeDropdown}>
+                    <Link href="/beds" className="text-[#08c] font-semibold">
+                      View All Beds
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {shopByBedMaterial && (
+              <div className="bg-white  fixed top-0 w-[100%] h-[100vh] left-0">
+                <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
+                  <div className="flex items-center gap-5">
+                    <i
+                      className="fa fa-chevron-left"
+                      aria-hidden="true"
+                      onClick={showBedsByMaterial}
+                    ></i>{" "}
+                    <span>Shop By Material</span>{" "}
+                  </div>
                   <div
-                    onClick={displayShopsSizes}
-                    className="text-[0.9rem] p-4 flex gap-8 items-center cursor-pointer hover:bg-[#08c] hover:text-white font-semibold"
+                    onClick={exitShopByBedMaterialDropdown}
+                    className="flex items-center gap-1"
                   >
-                    <span> Shop by Type</span>{" "}
-                    <i className="fa fa-chevron-right" aria-hidden="true"></i>
-                  </div>
-                  <div
-                    onClick={displayShopByFirmness}
-                    className="text-[0.9rem]  gap-8 items-center p-4 flex cursor-pointer hover:bg-[#08c] hover:text-white font-semibold"
-                  >
-                    <span> Shop by Firmness</span>{" "}
-                    <i className="fa fa-chevron-right" aria-hidden="true"></i>
-                  </div>
-                  <div onClick={() => { router.push('/mattresses'); exitDropdown() }} className="text-[0.9rem] p-4 flex gap-8 items-center cursor-pointer text-[#08c] font-semibold">
-                    <span> All Matresses</span>{" "}
+                    <span>Close</span>{" "}
+                    <span className="text-[1.5rem]">&times;</span>
                   </div>
                 </div>
-              )}
-
-              {shopBySize && (
-                <div className="bg-white  fixed top-0 w-[100%] h-[100vh] left-0">
-                  <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
-                    <div className="flex items-center gap-5">
-                      <i
-                        className="fa fa-chevron-left"
-                        aria-hidden="true"
-                        onClick={showMattresesBySize}
-                      ></i>{" "}
-                      <span>Shop By Size</span>{" "}
-                    </div>
-                    <div
-                      onClick={exitShopDropdown}
-                      className="flex items-center gap-1"
-                    >
-                      <span>Close</span>{" "}
-                      <span className="text-[1.5rem]">&times;</span>
-                    </div>
-                  </div>
-                  <div className="leading-8">
-                    <div onClick={() => exitShopDropdown()} className="text-[0.9rem] border px-4 py-2  items-center cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span>Super King(6&apos;)</span>{" "}
-                    </div>
-
-                    <div onClick={() => exitShopDropdown()} className="text-[0.9rem] px-4 border py-2  cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span> King Size(5&apos;)</span>{" "}
-                    </div>
-                    <div onClick={() => exitShopDropdown()} className="text-[0.9rem] px-4 py-2 border fles cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span> Double(4&apos; 6&apos;&apos;)</span>{" "}
-                    </div>
-                    <div onClick={() => exitShopDropdown()} className="text-[0.9rem] px-4 py-2 border  cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span> Small Double(4&apos;)</span>{" "}
-                    </div>
-                    <div onClick={() => exitShopDropdown()} className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span> Single(3&apos;)</span>{" "}
-                    </div>
-                    <div onClick={() => exitShopDropdown()} className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span>Small Single(2&apos; 6&apos;&apos;)</span>{" "}
-                    </div>
-                    <div onClick={() => exitShopDropdown()} className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span>European</span>{" "}
-                    </div>
-                    <div onClick={() => exitShopDropdown()} className="text-[0.9rem] px-4 py-2 border bg-[#eee] cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <Link href="/products/Mattress" className="text-[#08c] font-semibold">
-                        View All Matresses
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {shopByType && (
-                <div className="bg-white  fixed top-0 w-[100%]  h-[100vh] left-0">
-                  <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
-                    <div className="flex items-center gap-5">
-                      <i
-                        className="fa fa-chevron-left"
-                        aria-hidden="true"
-                        onClick={showMattresesByType}
-                      ></i>{" "}
-                      <span>Shop By Type</span>{" "}
-                    </div>
-                    <div
-                      onClick={exitShopByTypeDropdown}
-                      className="flex items-center gap-1"
-                    >
-                      <span>Close</span>{" "}
-                      <span className="text-[1.5rem]">&times;</span>
-                    </div>
+                <div className="leading-8" onClick={exitShopByBedMaterialDropdown}>
+                  <div className="text-[0.9rem]  px-4 py-2  items-center cursor-pointer  hover:text-white font-semibold">
+                    <span>Wooden Bed frames</span>{" "}
                   </div>
 
-                  <div className="leading-8" onClick={exitShopByTypeDropdown}>
-                    <div className="text-[0.9rem] border  px-4 py-2  items-center cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span>Memory Foam</span>{" "}
-                    </div>
-
-                    <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span>Pocket Sprung</span>{" "}
-                    </div>
-                    <div className="text-[0.9rem] px-4 py-2 border fles cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span>Orthopaedic</span>{" "}
-                    </div>
-                    <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span>Latex</span>{" "}
-                    </div>
-                    {/* <div className="text-[0.9rem] px-4 py-2  cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                    <span>Miracoil</span>{" "}
+                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
+                    <span>Fabric Bed Frames</span>{" "}
                   </div>
-                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                    <span>Cot Bed Mattresses</span>{" "}
-                  </div> */}
-                    <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span>Natural Fillings</span>{" "}
-                    </div>
-
-                    <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span>Kids Mattresses</span>{" "}
-                    </div>
-                    <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span>Next Day Mattresses</span>{" "}
-                    </div>
-                    <div className="text-[0.9rem] px-4 py-2 border bg-[#eee] cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <Link href="/products/Mattress" className="text-[#08c] font-semibold">
-                        View All Matresses
-                      </Link>
-                    </div>
+                  <div className="text-[0.9rem] px-4 py-2 fles cursor-pointer   font-semibold">
+                    <span> Metal Frame Beds</span>{" "}
                   </div>
-                </div>
-              )}
 
-              {shopByFirmness && (
-                <div className="bg-white  fixed top-0 w-[100%] h-[100vh] left-0">
-                  <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
-                    <div className="flex items-center gap-5">
-                      <i
-                        className="fa fa-chevron-left"
-                        aria-hidden="true"
-                        onClick={showMattresesByFirmness}
-                      ></i>{" "}
-                      <span>Shop By Firmness</span>{" "}
-                    </div>
-                    <div
-                      onClick={exitShopByFirmness}
-                      className="flex items-center gap-1"
-                    >
-                      <span>Close</span>{" "}
-                      <span className="text-[1.5rem]">&times;</span>
-                    </div>
+                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
+                    <Link href="/beds" className="text-[#08c] font-semibold">
+                      View All Beds
+                    </Link>
                   </div>
-                  <div className="leading-8" onClick={exitShopByFirmness}>
-                    <div className="text-[0.9rem]  px-4 py-2 border items-center cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span>Extra Firm</span>{" "}
-                    </div>
-
-                    <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span>Firm</span>{" "}
-                    </div>
-                    <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span>Medium-Firm</span>{" "}
-                    </div>
-                    <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span>Medium</span>{" "}
-                    </div>
-                    <div className="text-[0.9rem] px-4 py-2 border cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <span>Soft-Medium</span>{" "}
-                    </div>
-
-                    <div className="text-[0.9rem] px-4 py-2 border bg-[#eee] cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                      <Link href="/products/Mattress" className="text-[#08c] font-semibold">
-                        View All Matresses
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Bed Open */}
-
-          {BedOpen && (
-            <div className="mattress-dropdown h-[100vh] fixed bg-white top-0 left-0 w-[100%]">
-              <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
-                <div className="flex gap-5 items-center">
-                  {" "}
-                  <i
-                    className="fa fa-chevron-left"
-                    aria-hidden="true"
-                    onClick={displayMenu}
-                  ></i>{" "}
-                  <span>Bed</span>{" "}
-                </div>
-                <div
-                  onClick={exitBedDropdown}
-                  className="flex items-center gap-1"
-                >
-                  <span>Close</span>{" "}
-                  <span className="text-[1.5rem]">&times;</span>
                 </div>
               </div>
-              <div
-                onClick={displayBedShops}
-                className="text-[0.9rem] flex p-4 border gap-8 items-center cursor-pointer  font-semibold"
-              >
-                <span> Shop by Size</span>{" "}
-                <i className="fa fa-chevron-right" aria-hidden="true"></i>
-              </div>
-
-              <div
-                onClick={displayShopsBedTypes}
-                className="text-[0.9rem] p-4 border flex gap-8 items-center cursor-pointer  font-semibold"
-              >
-                <span> Shop by Type</span>{" "}
-                <i className="fa fa-chevron-right" aria-hidden="true"></i>
-              </div>
-              <div
-                onClick={displayShopsBedMaterials}
-                className="text-[0.9rem] p-4 flex border gap-8 items-center cursor-pointer  font-semibold"
-              >
-                <span> Shop by Material</span>{" "}
-                <i className="fa fa-chevron-right" aria-hidden="true"></i>
-              </div>
-              <div onClick={() => { router.push('/beds'); exitBedDropdown() }} className="text-[0.9rem] bg-[#eee] text-[#08c] border p-4 flex gap-8 items-center cursor-pointer  font-semibold">
-                <span> All Beds</span>{" "}
-              </div>
-            </div>
-          )}
-
-          {shopByBedSize && (
-            <div className="bg-white  fixed top-0 w-[100%]  h-[100vh] left-0">
-              <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
-                <div className="flex items-center gap-5">
-                  <i
-                    className="fa fa-chevron-left"
-                    aria-hidden="true"
-                    onClick={showBedsBySize}
-                  ></i>{" "}
-                  <span>Shop By Size</span>{" "}
-                </div>
-                <div
-                  onClick={exitBedSizeDropdown}
-                  className="flex items-center gap-1"
-                >
-                  <span>Close</span>{" "}
-                  <span className="text-[1.5rem]">&times;</span>
-                </div>
-              </div>
-              <div className="leading-8" onClick={exitBedSizeDropdown}>
-                <div className="text-[0.9rem]  px-4 py-2  items-center cursor-pointer  hover:text-white font-semibold">
-                  <span>SuperKing Beds(6&apos;)</span>{" "}
-                </div>
-
-                <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                  <span> King Size Beds(5&apos;)</span>{" "}
-                </div>
-                <div className="text-[0.9rem] px-4 py-2 fles cursor-pointer   font-semibold">
-                  <span> Double Beds(4&apos; 6&apos;&apos;)</span>{" "}
-                </div>
-                <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                  <span> Small Double Beds(4&apos;)</span>{" "}
-                </div>
-                <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                  <span> Single Beds(3&apos;)</span>{" "}
-                </div>
-                <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                  <span>Small Single Beds(2&apos; 6&apos;&apos;)</span>{" "}
-                </div>
-
-                <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                  <Link href="/beds" className="text-[#08c] font-semibold">
-                    View All Beds
-                  </Link>
-                </div>
-              </div>
-            </div>
-          )}
-          {shopByBedType && (
-            <div className="bg-white  fixed top-0 w-[100%] h-[100vh] left-0">
-              <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
-                <div className="flex items-center gap-5">
-                  <i
-                    className="fa fa-chevron-left"
-                    aria-hidden="true"
-                    onClick={showBedsByType}
-                  ></i>{" "}
-                  <span>Shop By Type</span>{" "}
-                </div>
-                <div
-                  onClick={exitShopByBedTypeDropdown}
-                  className="flex items-center gap-1"
-                >
-                  <span>Close</span>{" "}
-                  <span className="text-[1.5rem]">&times;</span>
-                </div>
-              </div>
-              <div className="leading-8" >
-                <div onClick={exitShopByBedTypeDropdown} className="text-[0.9rem]  px-4 py-2  items-center cursor-pointer  hover:text-white font-semibold">
-                  <span>Bed frames</span>{" "}
-                </div>
-
-                <div onClick={exitShopByBedTypeDropdown} className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                  <span> Divan beds</span>{" "}
-                </div>
-                <div onClick={exitShopByBedTypeDropdown} className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                  <span>Guests Beds</span>{" "}
-                </div>
-                <div onClick={exitShopByBedTypeDropdown} className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                  <span>Next Day Beds</span>{" "}
-                </div>
-                <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                  <div className="flex items-center gap-5" onClick={displayDiscountBeds}>
+            )}
+            {discountBeds && (
+              <div className="bg-white  fixed top-0 w-[100%] h-[100vh] left-0">
+                <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
+                  <div className="flex items-center gap-5">
+                    <i
+                      className="fa fa-chevron-left"
+                      aria-hidden="true"
+                      onClick={displayDiscountBeds}
+                    ></i>{" "}
                     <span>Discount Beds</span>{" "}
-                    <i
-                      className="fa fa-chevron-right"
-                      aria-hidden="true"
-
-                    ></i>{" "}
+                  </div>
+                  <div
+                    onClick={exitDiscountBedsDropdown}
+                    className="flex items-center gap-1"
+                  >
+                    <span>Close</span>{" "}
+                    <span className="text-[1.5rem]">&times;</span>
                   </div>
                 </div>
-                <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                  <div className="flex items-center gap-5" onClick={displayLoftBeds}>
+                <div className="leading-8" onClick={exitDiscountBedsDropdown}>
+                  <div className="text-[0.9rem]  px-4 py-2  items-center cursor-pointer  hover:text-white font-semibold">
+                    <span>Small Single (2&apos; 6&apos;&apos;)
+                    </span>{" "}
+                  </div>
+
+                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
+                    <span>Single (3&apos;)
+                    </span>{" "}
+                  </div>
+                  <div className="text-[0.9rem] px-4 py-2 fles cursor-pointer   font-semibold">
+                    <span> Small Double (4&apos;)
+                    </span>{" "}
+                  </div>
+                  <div className="text-[0.9rem] px-4 py-2 fles cursor-pointer   font-semibold">
+                    <span> Double (4&apos; 6&apos;&apos;)
+                    </span>{" "}
+                  </div>
+
+                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
+                    <Link href="/beds" className="text-[#08c] font-semibold">
+                      View All Beds
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+            {showLoftBeds && (
+              <div className="bg-white  fixed top-0 w-[100%] h-[100vh] left-0">
+                <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
+                  <div className="flex items-center gap-5">
+                    <i
+                      className="fa fa-chevron-left"
+                      aria-hidden="true"
+                      onClick={() => { setShowLoftBeds(p => !p); setBedOpen(false); setShopByBedType(true) }}
+                    ></i>{" "}
                     <span>Loft Beds</span>{" "}
-                    <i
-                      className="fa fa-chevron-right"
-                      aria-hidden="true"
-
-                    ></i>{" "}
+                  </div>
+                  <div
+                    onClick={exitDisplayLoftBeds}
+                    className="flex items-center gap-1"
+                  >
+                    <span>Close</span>{" "}
+                    <span className="text-[1.5rem]">&times;</span>
                   </div>
                 </div>
+                <div className="leading-8" onClick={exitDisplayLoftBeds}>
+                  <div className="text-[0.9rem]  px-4 py-2  items-center cursor-pointer  hover:text-white font-semibold">
+                    <span>Double (4&apos; 6&apos;&apos;) - 4 Pieces
+                    </span>{" "}
+                  </div>
 
-                <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold" onClick={exitShopByBedTypeDropdown}>
-                  <Link href="/beds" className="text-[#08c] font-semibold">
-                    View All Beds
-                  </Link>
+                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
+                    <span>King Size (5&apos; 4&apos;&apos;) - 4 Pieces
+                    </span>{" "}
+                  </div>
+                  <div className="text-[0.9rem] px-4 py-2 fles cursor-pointer   font-semibold">
+                    <span>Superking (6&apos;) - 4 Pieces
+                    </span>{" "}
+                  </div>
+
+                  <div className="text-[0.9rem] px-4 py-2 fles cursor-pointer   font-semibold">
+                    <span>Single Bed (3&apos; 2&apos;&apos;) - 2 Pieces
+                    </span>{" "}
+                  </div>
+
+                  <div className="text-[0.9rem] px-4 py-2 fles cursor-pointer   font-semibold">
+                    <span>Single Bed (2&apos; 6&apos;&apos;) - 2 Pieces
+                    </span>{" "}
+                  </div>
+
+                  <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
+                    <Link href="/beds" className="text-[#08c] font-semibold">
+                      View All Beds
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
 
-          {shopByBedMaterial && (
-            <div className="bg-white  fixed top-0 w-[100%] h-[100vh] left-0">
-              <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
-                <div className="flex items-center gap-5">
-                  <i
-                    className="fa fa-chevron-left"
-                    aria-hidden="true"
-                    onClick={showBedsByMaterial}
-                  ></i>{" "}
-                  <span>Shop By Material</span>{" "}
+            {matressesOpen && (
+              <div className="mattress-dropdown h-[100vh] fixed bg-white top-0 left-0 w-[100%]">
+                <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
+                  <div className="flex items-center gap-5">
+                    <i
+                      className="fa fa-chevron-left"
+                      aria-hidden="true"
+                      onClick={displayMenu}
+                    ></i>{" "}
+                    <span>Mattresses</span>{" "}
+                  </div>
+                  <div
+                    onClick={exitMatressesDropdown}
+                    className="flex items-center gap-1"
+                  >
+                    <span>Close</span>{" "}
+                    <span className="text-[1.5rem]">&times;</span>
+                  </div>
                 </div>
                 <div
-                  onClick={exitShopByBedMaterialDropdown}
-                  className="flex items-center gap-1"
+                  onClick={displayShops}
+                  className="text-[0.9rem] flex p-4 border gap-8 items-center cursor-pointer  font-semibold"
                 >
-                  <span>Close</span>{" "}
-                  <span className="text-[1.5rem]">&times;</span>
-                </div>
-              </div>
-              <div className="leading-8" onClick={exitShopByBedMaterialDropdown}>
-                <div className="text-[0.9rem]  px-4 py-2  items-center cursor-pointer  hover:text-white font-semibold">
-                  <span>Wooden Bed frames</span>{" "}
+                  <span> Shop by Size</span>{" "}
+                  <i className="fa fa-chevron-right" aria-hidden="true"></i>
                 </div>
 
-                <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                  <span>Fabric Bed Frames</span>{" "}
-                </div>
-                <div className="text-[0.9rem] px-4 py-2 fles cursor-pointer   font-semibold">
-                  <span> Metal Frame Beds</span>{" "}
-                </div>
-
-                <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                  <Link href="/beds" className="text-[#08c] font-semibold">
-                    View All Beds
-                  </Link>
-                </div>
-              </div>
-            </div>
-          )}
-          {discountBeds && (
-            <div className="bg-white  fixed top-0 w-[100%] h-[100vh] left-0">
-              <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
-                <div className="flex items-center gap-5">
-                  <i
-                    className="fa fa-chevron-left"
-                    aria-hidden="true"
-                    onClick={displayDiscountBeds}
-                  ></i>{" "}
-                  <span>Discount Beds</span>{" "}
+                <div
+                  onClick={displayShopsSizes}
+                  className="text-[0.9rem] p-4 flex border gap-8 items-center cursor-pointer  font-semibold"
+                >
+                  <span> Shop by Type</span>{" "}
+                  <i className="fa fa-chevron-right" aria-hidden="true"></i>
                 </div>
                 <div
-                  onClick={exitDiscountBedsDropdown}
-                  className="flex items-center gap-1"
+                  onClick={displayShopByFirmness}
+                  className="text-[0.9rem]  gap-8 border items-center p-4 flex cursor-pointer  font-semibold"
                 >
-                  <span>Close</span>{" "}
-                  <span className="text-[1.5rem]">&times;</span>
+                  <span> Shop by Firmness</span>{" "}
+                  <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+                <div onClick={() => { router.push('/mattresses'); exitMatressesDropdown() }} className="text-[0.9rem] p-4 bg-[#eee] flex gap-8 items-center cursor-pointer text-[#08c] font-semibold">
+                  <span> All Matresses</span>{" "}
                 </div>
               </div>
-              <div className="leading-8" onClick={exitDiscountBedsDropdown}>
-                <div className="text-[0.9rem]  px-4 py-2  items-center cursor-pointer  hover:text-white font-semibold">
-                  <span>Small Single (2&apos; 6&apos;&apos;)
-                  </span>{" "}
+            )}
+
+            {accessoriesOpen && (
+              <div className="mattress-dropdown h-[100vh] fixed bg-white top-0 left-0 w-[100%]">
+                <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
+                  <div className="flex items-center gap-5">
+                    <i
+                      className="fa fa-chevron-left"
+                      aria-hidden="true"
+                      onClick={displayMenu}
+                    ></i>{" "}
+                    <span>Accessories</span>{" "}
+                  </div>
+                  <div
+                    onClick={exitAccessoriesDropdown}
+                    className="flex items-center gap-1"
+                  >
+                    <span>Close</span>{" "}
+                    <span className="text-[1.5rem]">&times;</span>
+                  </div>
+                </div>
+                <div onClick={exitAccessoriesDropdown} className="text-[0.9rem] border flex p-4 gap-8 items-center cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                  <span>Pillows</span>{" "}
                 </div>
 
-                <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                  <span>Single (3&apos;)
-                  </span>{" "}
+                <div onClick={exitAccessoriesDropdown} className="text-[0.9rem] border p-4 flex gap-8 items-center cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                  <span> Duvets</span>{" "}
                 </div>
-                <div className="text-[0.9rem] px-4 py-2 fles cursor-pointer   font-semibold">
-                  <span> Small Double (4&apos;)
-                  </span>{" "}
+                <div onClick={exitAccessoriesDropdown} className="text-[0.9rem] border gap-8 items-center p-4 flex cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                  <span>Mattress Protectors</span>{" "}
                 </div>
-                <div className="text-[0.9rem] px-4 py-2 fles cursor-pointer   font-semibold">
-                  <span> Double (4&apos; 6&apos;&apos;)
-                  </span>{" "}
+                <div onClick={exitAccessoriesDropdown} className="text-[0.9rem] border gap-8 items-center p-4 flex cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                  <span>Mattress Toppers</span>{" "}
                 </div>
+                <div onClick={exitAccessoriesDropdown} className="text-[0.9rem] border gap-8 items-center p-4 flex cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
+                  <span>Headboards</span>{" "}
+                </div>
+                <div onClick={() => { router.push('/accessories'); exitAccessoriesDropdown() }} className="text-[0.9rem] p-4 border bg-[#eee] flex gap-8 items-center cursor-pointer text-[#08c] font-semibold">
+                  <span> All Accessories</span>{" "}
+                </div>
+              </div>
+            )}
+          </div>
 
-                <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                  <Link href="/beds" className="text-[#08c] font-semibold">
-                    View All Beds
-                  </Link>
-                </div>
-              </div>
-            </div>
-          )}
-          {showLoftBeds && (
-            <div className="bg-white  fixed top-0 w-[100%] h-[100vh] left-0">
-              <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
-                <div className="flex items-center gap-5">
-                  <i
-                    className="fa fa-chevron-left"
-                    aria-hidden="true"
-                    onClick={() => { setShowLoftBeds(p => !p); setBedOpen(false); setShopByBedType(true) }}
-                  ></i>{" "}
-                  <span>Loft Beds</span>{" "}
-                </div>
-                <div
-                  onClick={exitDisplayLoftBeds}
-                  className="flex items-center gap-1"
-                >
-                  <span>Close</span>{" "}
-                  <span className="text-[1.5rem]">&times;</span>
-                </div>
-              </div>
-              <div className="leading-8" onClick={exitDisplayLoftBeds}>
-                <div className="text-[0.9rem]  px-4 py-2  items-center cursor-pointer  hover:text-white font-semibold">
-                  <span>Double (4&apos; 6&apos;&apos;) - 4 Pieces
-                  </span>{" "}
-                </div>
-
-                <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                  <span>King Size (5&apos; 4&apos;&apos;) - 4 Pieces
-                  </span>{" "}
-                </div>
-                <div className="text-[0.9rem] px-4 py-2 fles cursor-pointer   font-semibold">
-                  <span>Superking (6&apos;) - 4 Pieces
-                  </span>{" "}
-                </div>
-
-                <div className="text-[0.9rem] px-4 py-2 fles cursor-pointer   font-semibold">
-                  <span>Single Bed (3&apos; 2&apos;&apos;) - 2 Pieces
-                  </span>{" "}
-                </div>
-
-                <div className="text-[0.9rem] px-4 py-2 fles cursor-pointer   font-semibold">
-                  <span>Single Bed (2&apos; 6&apos;&apos;) - 2 Pieces
-                  </span>{" "}
-                </div>
-
-                <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                  <Link href="/beds" className="text-[#08c] font-semibold">
-                    View All Beds
-                  </Link>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {matressesOpen && (
-            <div className="mattress-dropdown h-[100vh] fixed bg-white top-0 left-0 w-[100%]">
-              <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
-                <div className="flex items-center gap-5">
-                  <i
-                    className="fa fa-chevron-left"
-                    aria-hidden="true"
-                    onClick={displayMenu}
-                  ></i>{" "}
-                  <span>Mattresses</span>{" "}
-                </div>
-                <div
-                  onClick={exitMatressesDropdown}
-                  className="flex items-center gap-1"
-                >
-                  <span>Close</span>{" "}
-                  <span className="text-[1.5rem]">&times;</span>
-                </div>
-              </div>
-              <div
-                onClick={displayShops}
-                className="text-[0.9rem] flex p-4 border gap-8 items-center cursor-pointer  font-semibold"
-              >
-                <span> Shop by Size</span>{" "}
-                <i className="fa fa-chevron-right" aria-hidden="true"></i>
-              </div>
-
-              <div
-                onClick={displayShopsSizes}
-                className="text-[0.9rem] p-4 flex border gap-8 items-center cursor-pointer  font-semibold"
-              >
-                <span> Shop by Type</span>{" "}
-                <i className="fa fa-chevron-right" aria-hidden="true"></i>
-              </div>
-              <div
-                onClick={displayShopByFirmness}
-                className="text-[0.9rem]  gap-8 border items-center p-4 flex cursor-pointer  font-semibold"
-              >
-                <span> Shop by Firmness</span>{" "}
-                <i className="fa fa-chevron-right" aria-hidden="true"></i>
-              </div>
-              <div onClick={() => { router.push('/mattresses'); exitMatressesDropdown() }} className="text-[0.9rem] p-4 bg-[#eee] flex gap-8 items-center cursor-pointer text-[#08c] font-semibold">
-                <span> All Matresses</span>{" "}
-              </div>
-            </div>
-          )}
-
-          {accessoriesOpen && (
-            <div className="mattress-dropdown h-[100vh] fixed bg-white top-0 left-0 w-[100%]">
-              <div className="text-[0.9rem] flex justify-between items-center p-3 cursor-pointer bg-[#08c] text-white font-semibold">
-                <div className="flex items-center gap-5">
-                  <i
-                    className="fa fa-chevron-left"
-                    aria-hidden="true"
-                    onClick={displayMenu}
-                  ></i>{" "}
-                  <span>Accessories</span>{" "}
-                </div>
-                <div
-                  onClick={exitAccessoriesDropdown}
-                  className="flex items-center gap-1"
-                >
-                  <span>Close</span>{" "}
-                  <span className="text-[1.5rem]">&times;</span>
-                </div>
-              </div>
-              <div onClick={exitAccessoriesDropdown} className="text-[0.9rem] border flex p-4 gap-8 items-center cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                <span>Pillows</span>{" "}
-              </div>
-
-              <div onClick={exitAccessoriesDropdown} className="text-[0.9rem] border p-4 flex gap-8 items-center cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                <span> Duvets</span>{" "}
-              </div>
-              <div onClick={exitAccessoriesDropdown} className="text-[0.9rem] border gap-8 items-center p-4 flex cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                <span>Mattress Protectors</span>{" "}
-              </div>
-              <div onClick={exitAccessoriesDropdown} className="text-[0.9rem] border gap-8 items-center p-4 flex cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                <span>Mattress Toppers</span>{" "}
-              </div>
-              <div onClick={exitAccessoriesDropdown} className="text-[0.9rem] border gap-8 items-center p-4 flex cursor-pointer hover:bg-[#08c] hover:text-white font-semibold">
-                <span>Headboards</span>{" "}
-              </div>
-              <div onClick={() => { router.push('/accessories'); exitAccessoriesDropdown() }} className="text-[0.9rem] p-4 border bg-[#eee] flex gap-8 items-center cursor-pointer text-[#08c] font-semibold">
-                <span> All Accessories</span>{" "}
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* <nav className="h-[10vh] py-3 relative max-md:hidden">
-          <ul className="p-0 m-0 w-[75%] absolute left-1/2  top-0 h-[100%] flex justify-between -translate-x-1/2  px-2 items-center max-xl:text-[0.8rem] max-2xl:w-[100%] max-md:hidden">
-            <li className="flex items-center gap-2 cursor-pointer">
-              <Image src={pricematch} width={23} height={23} alt="price" />
-              <span>Price Match Guarantee</span>
-            </li>
-            <li className="flex items-center gap-2 cursor-pointer">
-              <Image src={delivery} width={23} height={23} alt="delivery" />
-              <span>Free Delivery Over</span>
-            </li>
-            <li className="flex items-center gap-2 cursor-pointer">
-              <Image src={fabric} width={23} height={23} alt="fabric" />
-              <span>Free Fabric Samples</span>
-            </li>
-            <li className="flex items-center gap-2 cursor-pointer">
-              <Image src={trustpilot} width={23} height={23} alt="trustpilot" />
-              <span>Five Star Trust Pilot Reviews</span>
-            </li>
-          </ul>
-        </nav> */}
-      </header>
+          {/* <nav className="h-[10vh] py-3 relative max-md:hidden">
+            <ul className="p-0 m-0 w-[75%] absolute left-1/2  top-0 h-[100%] flex justify-between -translate-x-1/2  px-2 items-center max-xl:text-[0.8rem] max-2xl:w-[100%] max-md:hidden">
+              <li className="flex items-center gap-2 cursor-pointer">
+                <Image src={pricematch} width={23} height={23} alt="price" />
+                <span>Price Match Guarantee</span>
+              </li>
+              <li className="flex items-center gap-2 cursor-pointer">
+                <Image src={delivery} width={23} height={23} alt="delivery" />
+                <span>Free Delivery Over</span>
+              </li>
+              <li className="flex items-center gap-2 cursor-pointer">
+                <Image src={fabric} width={23} height={23} alt="fabric" />
+                <span>Free Fabric Samples</span>
+              </li>
+              <li className="flex items-center gap-2 cursor-pointer">
+                <Image src={trustpilot} width={23} height={23} alt="trustpilot" />
+                <span>Five Star Trust Pilot Reviews</span>
+              </li>
+            </ul>
+          </nav> */}
+        </header>
+      </div>
     </div>
   );
 };

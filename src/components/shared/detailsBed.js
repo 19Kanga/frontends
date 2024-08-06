@@ -6,6 +6,7 @@ import "animate.css/animate.min.css";
 import Image from "next/image";
 import SlipLids from "@/components/cards/SlipLids";
 import ColorPalette from "@/components/cards/ColorPalette";
+import Cart from '@/components/shared/Cart'
 // import "@/css/styles.css";
 import ProductbaseDropdown from "@/components/ProductbaseDropdown";
 import BedSizeTable from "@/components/BedSizeTable";
@@ -929,11 +930,9 @@ const DetailsBed = ({details}) => {
                             <div className="z-50 drawer-side">
                                 <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
                         {/* <ProductFilter pageType={pages} /> */}
-                                <div className="relative min-h-full p-0 m-0 join join-vertical menu w-80 text-base-content">
-                                    <div className='h-[90vh] overflow-auto  p-4'>
-                                        <div className='mb-3 text-xl font-medium text-bold ms-4 text-primary'>Filter</div>
-                                      </div>
-                                    </div>
+                                <div className="relative min-h-full flex p-0 m-0 join join-vertical menu w-80 text-base-content">
+                                    <Cart />
+                                </div>
                             </div>
                         </div>
                         <div className='p-[0.4rem] border-[1px] border-black rounded-[50px]'>

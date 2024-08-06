@@ -50,21 +50,25 @@
     .z-100{
         z-index:1000
     }
+    .text-gray-600{
+        --tw-text-opacity: 0.6;
+		color: rgb(118 118 118 / var(--tw-text-opacity));
+    }
 
 
 	 /* BUTTON */
-    .db-btn {
+    /* .db-btn {
         @apply inline-flex items-center justify-center gap-2 rounded-md shadow-db-card capitalize text-sm font-normal py-2.5 px-4 transition;
-    }
+    } */
     .db-btn-full {
         @apply flex items-center justify-center gap-2 w-full rounded-lg shadow-db-card capitalize text-sm font-medium py-2.5 px-4 transition;
     }
-    .xmark-btn {
+    /* .xmark-btn {
         @apply w-6 h-6 text-base leading-6 text-center text-gray-500 transition bg-gray-100 rounded-full hover:text-primary hover:bg-red-100;
-    }
-    .db-btn-outline {
+    } */
+    /* .db-btn-outline {
         @apply inline-flex items-center justify-center gap-1.5 rounded-md capitalize text-sm font-normal py-1.5 px-3 border transition border-gray-200 text-gray-700 bg-white hover:border-primary/20 hover:bg-primary/5 hover:text-primary;
-    }
+    } */
     .db-btn-outline i {
         @apply text-xs;
     }
@@ -77,9 +81,9 @@
     .db-btn-outline.success {
         @apply text-green-600 border-green-500 hover:bg-green-50;
     }
-    .db-btn-outline.danger {
+    /* .db-btn-outline.danger {
         @apply text-red-600 border-red-500 hover:bg-red-50;
-    }
+    } */
     .db-btn-outline.info {
         @apply border-cyan-500 text-cyan-600 hover:bg-cyan-50;
     }
@@ -111,9 +115,7 @@
     .db-btn-fill.blue {
         @apply text-blue-600 bg-blue-100 hover:bg-blue-200;
     }
-    .db-btn-fill.gray {
-        @apply text-gray-600 bg-gray-200 hover:bg-gray-300;
-    }
+    
     .db-btn-fill.red {
         @apply text-red-600 bg-red-100 hover:bg-red-200;
     }

@@ -59,12 +59,12 @@ export default function Home() {
       <div className="col-12 pb-12 px-[4.3%]">
       <div className='xl-[100%] my-10'>
         <div className="divider divider-info"  >
-          <div style={{ fontWeight: 600, fontSize: '24px' }}>Our Collections</div></div>
+          <div style={{ fontWeight: 600, fontSize: '24px',padding:'0 2% 0 2%' }}>Our Collections</div></div>
       </div>
 
       <div className='w-[100%] bg-gray-200'>
         {/* <div className=''> */}
-          <div className="grid grid-cols-3 gap-6 max-md:gap-y-10 max-sm:gap-x-12 max-sm:gap-y-5 max-xl:grid-cols-2 overflow-x-hidden pb-10">
+          <div className="grid grid-cols-3 gap-6 pb-10 overflow-x-hidden max-md:gap-y-10 max-sm:gap-x-12 max-sm:gap-y-5 max-xl:grid-cols-2">
             {images.map((imageUrl, index) => (
               <HomeCards
                 key={index}
@@ -78,7 +78,7 @@ export default function Home() {
       </div>
       <div className=''>
       <div >
-      <div className='fw-1000 text-center mt-8 mb-3 trending-text' >Trending
+      <div className='mt-8 mb-3 text-center fw-1000 trending-text' >Trending
       </div>
       <div className="underline-container ">
       <div className="underline"></div>
@@ -86,23 +86,23 @@ export default function Home() {
       </div>
       </div>
       <div className='trending-text-below'>Top view in this weeks</div>
-        {/* <div className='row grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-8 my-8'> */}
-        <div className='list py-8'>
+        {/* <div className='grid grid-cols-2 gap-8 my-8 row lg:grid-cols-4 md:grid-cols-3'> */}
+        <div className='py-8 list'>
         {/* {Products.slice(0, 16).map((item, i) => (<ProductListMatress key={i} {...item} index={i} />))} */}
           <ProductListMatress CallingFrom='Mattress' pageType={'Mattress'} selectedGrid={selectedGrid} setSelectedGrid={setSelectedGrid} />
         </div>
-        <div className='text-center my-8'>
-          <button className="btn btn-outline rounded-full font-bold border-[3px]">Load More</button>
+        <div className='my-8 text-center'>
+          <button className="btn btn-outline rounded-full font-bold border-[2px] px-4 py-1">Load More</button>
         </div>
-        <div className='row grid md:grid-cols-2 gap-15 my-16' >
-          <div className='h-[300px] w-[100%] relative' >
+        <div className='grid gap-8 my-16 md:grid-cols-2' >
+          <div className='h-[100%] w-[100%] relative' >
             <img src='/offer-1.png' className='w-[100%] h-[100%]' style={{ objectFit: 'cover' }}></img>
             <div className='offer-text text-[#FFF8F0]'>
               <div className='text-[24px] md:text-[18px] lg:text-[24px] font-[500] text-center text-nowrap'>LOOKBOOK 2023</div>
               <div className='text-[14px] md:text-[12px] lg:text-[14px] font-[600] text-center text-nowrap' style={{ lineHeight: "24PX" }}>MAKE LOVE THIS LOOK</div>
             </div>
           </div>
-          <div className='h-[300px] w-[100%] relative' >
+          <div className='h-[100%] w-[100%] relative' >
             <img src='/offer-2.png' className='w-[100%] h-[100%]' style={{ objectFit: 'cover' }}></img>
             <div className='offer-text text-[#1C2C39]'>
               <div className='text-[18px] md:text-[14px] lg:text-[18px] font-[500] text-center mb-5 text-nowrap'>SUMMER SALE</div>
