@@ -21,7 +21,7 @@ export default function ProductCreate(){
     <div className="drawer-body">
       <div>
         <div className="form-row">
-          <div className="form-col-12 sm:form-col-6">
+          <div className="lg:form-col-12 sm:form-col-6">
             <label for="name" className="db-field-title required">Name</label>
             <input
               type="text"
@@ -31,7 +31,7 @@ export default function ProductCreate(){
             {/* <small className="db-field-alert" v-if="errors.name">{{ errors.name[0] }}</small> */}
           </div>
 
-          <div className="form-col-12 sm:form-col-6">
+          <div className="lg:form-col-12 sm:form-col-6">
             <label for="sku" className="db-field-title required">SKU</label>
             <div className="db-group-field">
               <input
@@ -39,12 +39,12 @@ export default function ProductCreate(){
                 id="sku"
                 className="db-field-control"
               />
-              <button type="button" className="lab lab-fill-shuffle"><i className='fas fa-shuffle'></i></button>
+              <button type="button" className="lab lab-fill-shuffle"></button>
             </div>
             {/* <small className="db-field-alert" v-if="errors.sku">{{ errors.sku[0] }}</small> */}
           </div>
 
-          <div className="form-col-12 sm:form-col-6">
+          <div className="lg:form-col-12 sm:form-col-6">
             <label for="product_category_id" className="db-field-title required">
               Category
             </label>
@@ -71,7 +71,7 @@ export default function ProductCreate(){
             </small> */}
           </div>
 
-          <div className="form-col-12 sm:form-col-6">
+          <div className="lg:form-col-12 sm:form-col-6">
             <label for="barcode_id" className="db-field-title required">barcode</label>
             <input
                 type="text"
@@ -97,7 +97,7 @@ export default function ProductCreate(){
             </small> */}
           </div>
 
-          <div className="form-col-12 sm:form-col-6">
+          <div className="lg:form-col-12 sm:form-col-6">
             <label for="buying_price" className="db-field-title required">Buying Price</label>
             <input
               type="text"
@@ -109,7 +109,7 @@ export default function ProductCreate(){
             }}</small> */}
           </div>
 
-          <div className="form-col-12 sm:form-col-6">
+          <div className="lg:form-col-12 sm:form-col-6">
             <label for="selling_price" className="db-field-title required">
               Selling Price
             </label>
@@ -123,7 +123,7 @@ export default function ProductCreate(){
             }}</small> */}
           </div>
 
-          <div className="form-col-12 sm:form-col-6">
+          <div className="lg:form-col-12 sm:form-col-6">
             <label for="tax_id" className="db-field-title">Tax</label>
             <input
                 type="text"
@@ -151,7 +151,7 @@ export default function ProductCreate(){
             }}</small> */}
           </div>
 
-          <div className="form-col-12 sm:form-col-6">
+          <div className="lg:form-col-12 sm:form-col-6">
             <label for="product_brand_id" className="db-field-title">Brand</label>
             <input
                 type="text"
@@ -177,7 +177,7 @@ export default function ProductCreate(){
             </small> */}
           </div>
 
-          <div className="form-col-12 sm:form-col-6">
+          <div className="lg:form-col-12 sm:form-col-6">
             <label className="db-field-title required">Status</label>
             <div className="db-field-radio-group">
               <div className="db-field-radio">
@@ -205,7 +205,7 @@ export default function ProductCreate(){
             </div>
           </div>
 
-          <div className="form-col-12 sm:form-col-6">
+          <div className="lg:form-col-12 sm:form-col-6">
             <label className="db-field-title required" for="yes">Can Purchasable</label>
             <div className="db-field-radio-group">
               <div className="db-field-radio">
@@ -233,7 +233,7 @@ export default function ProductCreate(){
             </div>
           </div>
 
-          <div className="form-col-12 sm:form-col-6">
+          <div className="lg:form-col-12 sm:form-col-6">
             <label className="db-field-title required" for="enable">Show Stock out</label>
             <div className="db-field-radio-group">
               <div className="db-field-radio">
@@ -261,7 +261,7 @@ export default function ProductCreate(){
             </div>
           </div>
 
-          <div className="form-col-12 sm:form-col-6">
+          <div className="lg:form-col-12 sm:form-col-6">
             <label className="db-field-title required" for="refundableYes">Refundable</label>
             <div className="db-field-radio-group">
               <div className="db-field-radio">
@@ -289,7 +289,7 @@ export default function ProductCreate(){
             </div>
           </div>
 
-          <div className="form-col-12 sm:form-col-6">
+          <div className="lg:form-col-12 sm:form-col-6">
             <label for="maximum_purchase_quantity" className="db-field-title required">
                 Maximum Purchase Quantity
             </label>
@@ -303,7 +303,7 @@ export default function ProductCreate(){
             </small> */}
           </div>
 
-          <div className="form-col-12 sm:form-col-6">
+          <div className="lg:form-col-12 sm:form-col-6">
             <label for="low_stock_quantity_warning" className="db-field-title required">
                 Low Stock Quantity Warning
             </label>
@@ -317,7 +317,7 @@ export default function ProductCreate(){
             </small> */}
           </div>
 
-          <div className="form-col-12 sm:form-col-6">
+          <div className="lg:form-col-12 sm:form-col-6">
             <label for="unit" className="db-field-title required">Unit</label>
             <input
                 type="text"
@@ -343,7 +343,7 @@ export default function ProductCreate(){
             </small> */}
           </div>
 
-          <div className="form-col-12 sm:form-col-6">
+          <div className="lg:form-col-12 sm:form-col-6">
             <label for="weight" className="db-field-title">
                 Weight
             </label>

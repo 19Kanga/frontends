@@ -178,28 +178,28 @@ export default function Cart() {
                                 {active ?
                                 <>
                                 <div className='flex items-center justify-between'>
-                                    <span className='text-start font-medium text-[1.2rem]'>Total price</span>
-                                    <span className='text-end font-medium text-[1.2rem]'>£150.00</span>
+                                    <span className='text-start font-medium text-[1rem]'>Total price</span>
+                                    <span className='text-end font-medium text-[1rem]'>£150.00</span>
                                 </div>
                                 <div className='flex items-center justify-between'>
-                                    <span className='text-start font-medium text-[1.2rem]'>Pay on delivery of god</span>
-                                    <span className='text-end font-medium text-[1.2rem]'>£150.00</span>
+                                    <span className='text-start font-medium text-[1rem]'>Pay on delivery of god</span>
+                                    <span className='text-end font-medium text-[1rem]'>£150.00</span>
                                 </div>
                                 <div className='flex items-center justify-between'>
-                                    <span className='text-start font-semibold text-[1.2rem]'>Pay now</span>
-                                    <span className='text-end font-semibold text-[1.2rem]'>£250.00</span>
+                                    <span className='text-start font-semibold text-[1rem]'>Pay now</span>
+                                    <span className='text-end font-semibold text-[1rem]'>£250.00</span>
                                 </div></>:
                                 <div className='flex items-center justify-between'>
-                                    <span className='text-start font-semibold text-[1.2rem]'>Total price</span>
-                                    <span className='text-end font-semibold text-[1.2rem]'>£350.00</span>
+                                    <span className='text-start font-semibold text-[1rem]'>Total price</span>
+                                    <span className='text-end font-semibold text-[1rem]'>£350.00</span>
                                 </div>
                                 }
                             </div>
                             <div className='flex flex-col items-center gap-1 mt-3 lg:items-end'>
-                                <p className='text-[1rem] text-[#878787]'>Tax included and shipping calculated and checkout</p>
+                                <p className='text-[.85rem] text-[#878787]'>Tax included and shipping calculated and checkout</p>
                                 <div className='flex items-center gap-2'>
                                     <input type='checkbox' value='ok'/>
-                                    <span className='text-[1rem] text-[#878787]'>I agree with the terms and conditions</span>
+                                    <span className='text-[.85rem] text-[#878787]'>I agree with the terms and conditions</span>
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3 py-2 lg:items-end">
@@ -209,7 +209,7 @@ export default function Cart() {
                         </div>
                     </div>
                     <div className='relative mt-11 border-[2px] rounded-sm border-[#00acbb] py-15 px-6 w-full'>
-                        <span className='absolute px-5 py-3 text-2xl font-bold -translate-x-1/2 bg-white -top-7 left-1/2'>Estimate shipping</span>
+                        <span className='absolute px-5 py-3 text-xl font-bold -translate-x-1/2 bg-white -top-7 left-1/2'>Estimate shipping</span>
                         <div>
                             <div className='gap-5 row max-md:flex-col'>
                                 <div className="flex flex-col gap-1 lg:w-[23.6%] max-md:w-[100%]">

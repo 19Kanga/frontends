@@ -36,7 +36,7 @@ const Pages = () => {
 
             <div>
                 <Banner title={pages+' & '+title} />
-                <div className="products-body w-full mt-5 py-10 pb-15 px-[4.3%] ">
+                <div className="products-body w-full py-10 pb-15 px-[4.3%] ">
                     <div className="header flex justify-between items-center">
                         <div className="">
                             <input id="my-drawer" type="checkbox" className="drawer-toggle" />

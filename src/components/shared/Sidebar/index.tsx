@@ -434,7 +434,7 @@ const menuGroups = [
           </svg>
         ),
         label: "Settings",
-        route: "/Dashboard/settings",
+        route: "/Dashboard/settings/",
         // children: [
         //   { label: "Sign In", route: "/auth/signin" },
         //   { label: "Sign Up", route: "/auth/signup" },
@@ -456,15 +456,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         }`}
       >
         {/* <!-- SIDEBAR HEADER --> */}
-        <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5" style={{paddingBottom:0}}>
+        <div className="flex items-center justify-between gap-2 px-6" style={{paddingBottom:0}}>
           <Link href="/">
+            
             <Image
-              width={130}
-              height={15}
-              src={logo}
-              alt="Logo"
-              priority
-              style={{width: '143px',height: '90px'}}
+                  className="w-33 h-29"
+                  src={logo}
+                  width={100}
+                  height={1}
+                  alt="logo"
             />
           </Link>
 

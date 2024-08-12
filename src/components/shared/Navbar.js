@@ -247,29 +247,40 @@ const Navbar = () => {
 
   return (
     <div>
-        <div className='row items-center justify-center text-white font-bold text-[0.85rem] max-sm:text-[0.8rem] px-10 text-center py-4 bg-black'>
-          <span>10% Discount on All Orders Over £1500 or more! Code: BLC10 | Offer Ends Soon.</span>
-        </div>
-        <div className='items-center justify-between w-full max-sm:flex-col max-sm:gap-1 max-sm:justify-center px-4 py-2 bg-gray row text-[#bb9369] fill-none text-[15px]'>
-          <div className='flex gap-4'>
-            <span className='flex items-center gap-2'><i className='fas fa-phone'></i>01924 465 009</span>
-            <span  className='flex items-center gap-2'><i className='fas fa-envelope'></i>info@sosofbeds.co.uk</span>
+      <div className="max-xl:pb-1">
+        <header className="relative flex flex-col max-xl:px-3 max-sm:px-0">
+          <div className='w-full flex flex-col' >
+          <div className='row items-center justify-center text-white font-medium text-[0.85rem] max-sm:text-[0.8rem] px-10 text-center py-4 bg-black'>
+            <span>10% Discount on All Orders Over £1500 or more! Code: BLC10 | Offer Ends Soon.</span>
           </div>
-          <div>
-            <span  className='flex items-center gap-2'>Summer sale discount off 50%! Shop Now</span>
+          <div className='items-center w-full max-sm:flex-col max-sm:justify-center px-4 py-3 bg-gray row text-[#bb9369] fill-none text-[11px]'>
+            <div className='flex w-[33.3%] max-md:w-[100%] gap-4 max-md:justify-center'>
+              <span className='flex items-center gap-2'><i className='fas fa-phone'></i>01924 465 009</span>
+              <span  className='flex items-center gap-2'><i className='fas fa-envelope'></i>info@sosofbeds.co.uk</span>
+            </div>
+            <div className='w-[33.3%] max-md:w-[100%] flex justify-center '>
+              <span  className='gap-2 text-center'>Summer sale discount off 50%! Shop Now</span>
+            </div>
+            <div className='w-[33.3%] max-md:w-[100%] flex justify-end max-md:justify-center'>
+            <span  className='flex items-center gap-2'><i className='fas fa-location-dot'></i>Location</span>
+            </div>
           </div>
-          <span  className='flex items-center gap-2'><i className='fas fa-location-dot'></i>Location</span>
-      </div>
-      <div className="pt-3 max-xl:py-1">
-        <header className="relative flex flex-col max-xl:px-3 max-sm:px-1">
-          <nav className="h-[15vh]  py-3 flex items-center justify-between gap-[5%] max-xl:flex-col mb-1 px-4">
+          </div>
+          <nav className="lg:py-3 flex items-center justify-between gap-[5%] px-4">
             <div className="flex items-center w-[55%] justify-end gap-[10%] max-xl:gap-[5%]  max-xl:w-[100%] max-sm:h-[100%]">
               <Link href={"/"}>
                 <Image
-                  className="max-xl:w-32 max-sm:w-24"
+                  className="max-xl:w-32 max-sm:hidden lg:w-40 lg:h-18"
                   src={logo}
-                  width={170}
-                  height={170}
+                  width={100}
+                  height={50}
+                  alt="logo"
+                />
+                <Image
+                  className="max-sm:w-25 max-sm:h-20 lg:hidden"
+                  src={logo}
+                  width={100}
+                  height={10}
                   alt="logo"
                 />
               </Link>
@@ -287,11 +298,11 @@ const Navbar = () => {
                     <input
                       type="text"
                       placeholder="Search..."
-                      className="border-[#0b1a44]  rounded-xl  bg-[#f2f2f2] border-[1.5px] outline-none h-[2.8rem] px-2  placeholder-bold  w-[100%] max-xl:w-[50%] "
-                      style={{ fontWeight: "bold", fontSize: "0.8rem" }}
+                      className="border-[#0b1a44] border-[0.5px] rounded-[50px] outline-none py-3 px-5  placeholder-bold  w-[100%] max-xl:w-[50%] "
+                      style={{ fontWeight: "normal", fontSize: "0.9rem" }}
                     />
                     <Image
-                      className="z-50 absolute right-3 max-xl:right-[52%] top-1/2 -translate-y-1/2"
+                      className="z-20 absolute right-3 max-xl:right-[52%] top-1/2 -translate-y-1/2"
                       src={search}
                       width={15}
                       height={15}
@@ -357,7 +368,7 @@ const Navbar = () => {
               ></div>
             )} */}
 
-            <div className="flex gap-[10%] items-center max-xl:absolute max-xl:h-[15vh] max-xl:top-0 max-xl:items-center  right-0 max-xl:justify-end  max-xl:gap-[5%] max-xl:w-[80%] max-lg:w-[70%] max-md:w-[100%] max-xl:px-5 max-sm:items-center">
+            <div className="flex gap-[5%] items-center">
               {/* <div className="flex items-center mr-5 cursor-pointer max-sm:mr-2">
                 <div className="flex flex-col justify-center">
                   <Image
@@ -376,13 +387,13 @@ const Navbar = () => {
                 </span>
               </div> */}
 
-              <div className="flex items-center gap-10 max-sm:gap-5">
+              <div className="flex items-center gap-6 max-sm:gap-5">
                 {/* <div className="flex flex-col items-center gap-1 cursor-pointer">
                   <Image src={locationimg} width={13} height={13} alt="Showrooms" />
                   <span className="font-bold text-[0.6rem]">Showrooms</span>
                 </div> */}
 
-                <div className="flex flex-col items-center gap-1 cursor-pointer" onClick={() => {
+                <div className="flex relative flex-col items-center gap-1 cursor-pointer" onClick={() => {
                     router.push('/paymentMethod/NewPaymentCardSetup')
                   }} >
                   {/* <Image src={basket} width={18} height={18} alt="Basket" /> */}
@@ -400,50 +411,23 @@ const Navbar = () => {
                         stroke-width="1"
                       />
                     </svg>
-                  {/* <span className="font-bold text-[0.6rem]">Whitlist</span> */}
+                    <div className='absolute -right-[30%] -top-[45%] rounded-[50px] text-[.65rem] px-1 py-0 flex items-center justify-center bg-[#bb9369] font-bold text-white'>2</div>
                 </div>
-                <div className="flex flex-col items-center gap-1 cursor-pointer" >
-                  {/* onClick={() => {
-                    router.push('/paymentMethod/NewPaymentCardSetup')
-                  }} */}
-                  {/* <svg class="t4s-icon t4s-icon--cart" aria-hidden="true" focusable="false" role="presentation"><symbol id="icon-h-cart" width="20" height="20" viewBox="0 0 20 20" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                  </symbol></svg> */}
-                  {/* <Image src={basket} width={18} height={18} alt="Cart" /> */}
-                  {/* <i className='fas fa-cart-shopping text-[20px]'></i> */}
-                  <div className='drawer-end'>
-                            <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-                            <div className="drawer-content">
-                              <label htmlFor="my-drawer" className="drawer-button">
-                                  <div
-                                    className={`filter cursor-pointer font-bold text-center`}
-                                    // onClick={() => console.log("Add to cart clicked")}
-                                  >
-                                    <i className='fas fa-cart-shopping text-[20px] text-black'></i>
-                                  </div>
-                                  </label>
-                              </div>
-                            <div className="z-50 drawer-side">
-                                <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-                                <div className="relative flex min-h-full p-0 m-0 join join-vertical w-80 text-base-content">
-                                    <Cart />
-                                </div>
-                            </div>
-                        </div>
-                  {/* <span className="font-bold text-[0.6rem]">Cart</span> */}
+                <div onClick={() => {router.push('/Cart')}} 
+                  className="flex relative flex-col items-center gap-1 cursor-pointer" >
+                  <i className='fas fa-cart-shopping text-[20px]'></i>
+                  <div className='absolute -right-[30%] -top-[45%] rounded-[50px] text-[.65rem] px-1 py-0 flex items-center justify-center bg-[#bb9369] font-bold text-white'>10</div>
                 </div>
                 <div className="flex flex-col items-center gap-1 cursor-pointer" onClick={() => {
                     router.push('/Login')
                   }}>
-                  {/* <Image src={userimg} width={18} height={18} alt="Account"  /> */}
                   <i className='fas fa-user text-[20px] fill-none'></i>
-                  {/* <span className="font-bold text-[0.6rem]">Account</span> */}
                 </div>
               </div>
             </div>
           </nav>
           <nav className=" relative  max-md:hidden  bg-black text-[#EEEEEE] px-3 flex justify-center">
-            <ul className="m-0 p-0 h-[100%]  text-[0.9rem] flex items-center gap-4 flex-wrap max-xl:text-[0.8rem]">
+            <ul className="m-0 p-0 h-[100%]  text-[0.75rem] flex items-center gap-3 flex-wrap max-xl:text-[0.8rem]">
               <li className="p-3 cursor-pointer hover:bg-[#08c] hover:text-white font-medium relative">
                 <Link href={'/'}>Home</Link>
               </li>
@@ -453,8 +437,8 @@ const Navbar = () => {
                   <Link href={'#'}>Mattresses</Link>
                 </li>
 
-                <div className=" bottom-[3%] absolute max-xl:bottom-[-3%] max-lg:bottom-[-5%] text-black w-[65vw] bg-white shadow-xl  z-50 dropdowncontent mattress-content h-[60vh] max-lg:h-[72vh] max-lg:w-[72vw] hidden rounded-b-2xl">
-                  <ul className="  top-0   w-[25%] h-[100%]  px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
+                <div className="max-xl:bottom-[-3%] max-lg:bottom-[-5%] text-black w-[65vw] bg-white shadow-xl  z-20 dropdowncontent mattress-content max-lg:w-[72vw] hidden rounded-b-2xl">
+                  <ul className="w-[25%] border-x-[1px] border-black h-[100%]  px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
                     <li className="my-4  font-semibold text-[1rem] max-lg:text-[0.9rem]">
                       {" "}
                       Shop by Type
@@ -506,8 +490,8 @@ const Navbar = () => {
                       </Link>
                     </li> */}
                   </ul>
-                  <ul className=" border-x-[1px] w-[25%]  h-[100%] px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
-                    <li className="my-4 font-semibold text-[1rem] max-lg:text-[0.9rem]">
+                  <ul className=" border-x-[1px] border-black w-[25%]  h-[100%] px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
+                    <li className="my-3 font-semibold text-[1rem] max-lg:text-[0.9rem]">
                       {" "}
                       Shop by Firmness
                     </li>
@@ -538,8 +522,8 @@ const Navbar = () => {
                       </Link>
                     </li>
                   </ul>
-                  <ul className=" w-[25%]  h-[100%] flex flex-col px-10 box-border py-8  max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
-                    <li className="my-4 font-semibold text-[1rem] max-lg:text-[0.9rem]">
+                  <ul className=" w-[25%]   h-[100%] flex flex-col px-10 box-border py-8  max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
+                    <li className="my-3 font-semibold text-[1rem] max-lg:text-[0.9rem]">
                       {" "}
                       Shop by Size
                     </li>
@@ -581,7 +565,7 @@ const Navbar = () => {
                     </li>
                   </ul>
 
-                  <ul className=" w-[25%]  h-[100%] relative ">
+                  <ul className=" w-[25%] border-x-[1px] border-black  h-[100%] absolute right-0 ">
                     <Image
                       src="/mattress-menu.jpg"
                       alt=""
@@ -604,55 +588,55 @@ const Navbar = () => {
                 <li className="p-3  cursor-pointer hover:bg-[#08c] hover:text-white  font-medium relative listitem">
                   <Link href={'#'}>Beds</Link>
                 </li>
-                <div className="bottom-[3%] absolute max-xl:bottom-[-3%] text-black max-lg:bottom-[-5%] w-[60vw] bg-white shadow-xl  z-50 dropdowncontent mattress-content h-[60vh] max-lg:h-[70vh] max-lg:w-[70vw] hidden rounded-b-2xl">
+                <div className="bottom-[3%] absolute max-xl:bottom-[-3%] text-black max-lg:bottom-[-5%] w-[60vw] bg-white shadow-xl  z-20 dropdowncontent mattress-content h-[60vh] max-lg:h-[70vh] max-lg:w-[70vw] hidden rounded-b-2xl">
                   <ul className=" w-[33%]  h-[100%]  px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
                     <li className="my-4  font-semibold text-[1rem] max-lg:text-[0.9rem]">
                       {" "}
                       Shop by Type
                     </li>
                     <li className="">
-                      <Link href="/products/[page]/[id]" as="/products/Beds/Memory Foam"  className="hover:text-[#08c]">
+                      <Link href="/products/Beds/Memory Foam" className="hover:text-[#08c]">
                         Memory Foam
                       </Link>{" "}
                     </li>
                     <li className="">
-                      <Link href="/products/[page]/[id]" as="/products/Beds/Pocket Sprung" className="hover:text-[#08c]">
+                      <Link href="/products/Beds/Pocket Sprung" className="hover:text-[#08c]">
                         Pocket Sprung
                       </Link>
                     </li>
                     <li className="">
                       {" "}
-                      <Link href="/products/[page]/[id]" as="/products/Beds/Orthopaedic" className="hover:text-[#08c]">
+                      <Link href="/products/Beds/Orthopaedic" className="hover:text-[#08c]">
                         Orthopaedic
                       </Link>
                     </li>
                     <li className="">
-                      <Link href="/products/[page]/[id]" as="/products/Beds/Latex" className="hover:text-[#08c]">
+                      <Link href="/products/Beds/Latex" className="hover:text-[#08c]">
                         Latex
                       </Link>
                     </li>
                     <li className="">
-                      <Link href="/products/[page]/[id]" as="/products/Beds/Miracoil" className="hover:text-[#08c]">
+                      <Link href="/products/Beds/Miracoil" className="hover:text-[#08c]">
                         Miracoil
                       </Link>
                     </li>
                     <li className="">
-                      <Link href="/products/[page]/[id]" as="/products/Beds/Natural Fillings" className="hover:text-[#08c]">
+                      <Link href="/products/Beds/Natural Fillings" className="hover:text-[#08c]">
                         Natural Fillings
                       </Link>
                     </li>
                     <li className="">
-                      <Link href="/products/[page]/[id]" as="/products/Beds/Cut Bed Mattresses" className="hover:text-[#08c]">
+                      <Link href="/products/Beds/Cut Bed Mattresses" className="hover:text-[#08c]">
                         Cut Bed Mattresses
                       </Link>
                     </li>
                     <li className="">
-                      <Link href="/products/[page]/[id]" as="/products/Beds/Kids Mattresses" className="hover:text-[#08c]">
+                      <Link href="/products/Beds/Kids Mattresses" className="hover:text-[#08c]">
                         Kids Mattresses
                       </Link>
                     </li>
                     <li className="">
-                      <Link href="/products/[page]/[id]" as="/products/Beds/Next Day Mattresses" className="hover:text-[#08c]">
+                      <Link href="/products/Beds/Next Day Mattresses" className="hover:text-[#08c]">
                         Next Day Mattresses
                       </Link>
                     </li>
@@ -664,33 +648,33 @@ const Navbar = () => {
                       Shop by Size
                     </li>
                     <li className="">
-                      <Link href="/products/[page]/[id]" as="/products/Beds/Super Kings Beds" className="hover:text-[#08c]">
+                      <Link href="/products/Beds/Super Kings Beds" className="hover:text-[#08c]">
                         Super Kings Beds(6&apos;)
                       </Link>{" "}
                     </li>
                     <li className="">
-                      <Link href="/products/[page]/[id]" as="/products/Beds/KingSizeBeds" className="hover:text-[#08c]">
+                      <Link href="/products/Beds/KingSizeBeds" className="hover:text-[#08c]">
                         King Size Beds(5&apos;)
                       </Link>
                     </li>
                     <li className="">
                       {" "}
-                      <Link href="/products/[page]/[id]" as="/products/Beds/Double Beds" className="hover:text-[#08c]">
+                      <Link href="/products/Beds/Double Beds" className="hover:text-[#08c]">
                         Double Beds(4&apos; 6&apos;&apos;)
                       </Link>
                     </li>
                     <li className="">
-                      <Link href="/products/[page]/[id]" as="/products/Beds/Small Double Beds" className="hover:text-[#08c]">
+                      <Link href="/products/Beds/Small Double Beds" className="hover:text-[#08c]">
                         Small Double Beds(4&apos;)
                       </Link>
                     </li>
                     <li className="">
-                      <Link href="/products/[page]/[id]" as="/products/Beds/Single Beds" className="hover:text-[#08c]">
+                      <Link href="/products/Beds/Single Beds" className="hover:text-[#08c]">
                         Single Beds(3&apos;)
                       </Link>
                     </li>
                     <li className="">
-                      <Link href="/products/[page]/[id]" as="/products/Beds/Small Single Beds" className="hover:text-[#08c]">
+                      <Link href="/products/Beds/Small Single Beds" className="hover:text-[#08c]">
                         Small Single Beds(2&apos; 6&apos;&apos;)
                       </Link>
                     </li>{" "}
@@ -698,7 +682,7 @@ const Navbar = () => {
                       {" "}
                       <Link
                         // onClick={() => router.push('/beds')}
-                        href="/products/[page]" as="/products/beds"
+                        href="/products/Beds"
                         className="bg-[#08c]  text-white px-8 py-[0.8rem] inline-block h-[100%] hover:bg-[#3b82f680]  transition border-color text duration-100 ease-out delay-0 font-semibold"
                       >
                         View All Beds
@@ -727,7 +711,7 @@ const Navbar = () => {
                   <span><Link href={'#'}>Accessories</Link></span>
                 </li>
 
-                <div onClick={exitAccessoriesDropdown} className=" text-black bottom-[3%] absolute max-xl:bottom-[-3%] max-lg:bottom-[-5%] w-[60vw] bg-white shadow-xl  z-50 dropdowncontent accessories-content h-[60vh] max-lg:h-[70vh] max-lg:w-[70vw] hidden rounded-b-2xl">
+                <div onClick={exitAccessoriesDropdown} className=" text-black bottom-[3%] absolute max-xl:bottom-[-3%] max-lg:bottom-[-5%] w-[60vw] bg-white shadow-xl  z-20 dropdowncontent accessories-content h-[60vh] max-lg:h-[70vh] max-lg:w-[70vw] hidden rounded-b-2xl">
                   <ul className="py-8 px-10 relative h-[100%] max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
                     <li className="">
                       <Link href="/accessories/Pillows" className="hover:text-[#08c]">
@@ -765,7 +749,7 @@ const Navbar = () => {
                   <span><Link href={'/sales'}>Sales</Link></span>
                 </li>
 
-                <div className="bottom-[3%] text-black absolute max-xl:bottom-[-3%] max-lg:bottom-[-5%] w-[60vw] bg-white shadow-xl  z-50 dropdowncontent sales-content h-[60vh] max-lg:h-[70vh] max-lg:w-[70vw] hidden rounded-b-2xl">
+                <div className="bottom-[3%] text-black absolute max-xl:bottom-[-3%] max-lg:bottom-[-5%] w-[60vw] bg-white shadow-xl  z-20 dropdowncontent sales-content h-[60vh] max-lg:h-[70vh] max-lg:w-[70vw] hidden rounded-b-2xl">
                   <ul className="  w-[33%]  h-[100%]  px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
                     <li className="my-4 font-semibold text-[1.2rem]">Sale</li>
                     <li className="">
@@ -892,7 +876,7 @@ const Navbar = () => {
             </ul>
           </nav>
 
-          <div className=" relative w-[100%] hidden max-md:flex border-[2px] border-[#e3e3e5]">
+          <div className=" sticky w-[100%] hidden max-md:flex border-[2px] border-[#e3e3e5]">
             <div
               className="w-[10%] cursor-pointer flex items-center justify-center hamburger-icon"
               onClick={toggleDropdown}
@@ -907,7 +891,7 @@ const Navbar = () => {
             />
             <div className="w-[10%] flex justify-center items-center cursor-pointer">
               <Image
-                className="z-50 cursor-pointer"
+                className="z-20 cursor-pointer"
                 src={search}
                 width={15}
                 height={15}
@@ -916,10 +900,10 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="z-50 hidden max-md:block">
+          <div className="z-20 hidden max-md:block">
             {isDropdownOpen && (
               <div
-                className={`absolute top-0 h-[100vh] custom-animation bg-white left-0 border-[2px] animate__animated border-[#e3e3e5] dropdown-content w-[100%] ${isDropdownOpen
+                className={`fixed top-0 h-[100vh] custom-animation bg-white left-0 border-[2px] animate__animated border-[#e3e3e5] dropdown-content w-[100%] ${isDropdownOpen
                   ? "animate__slideInLeft"
                   : "animate__slideOutLeft"
                   }`}
@@ -1026,7 +1010,7 @@ const Navbar = () => {
                       <span> Shop by Firmness</span>{" "}
                       <i className="fa fa-chevron-right" aria-hidden="true"></i>
                     </div>
-                    <div onClick={() => { router.push('/mattresses'); exitDropdown() }} className="text-[0.9rem] p-4 flex gap-8 items-center cursor-pointer text-[#08c] font-semibold">
+                    <div onClick={() => { router.push('/products/Mattress'); exitDropdown() }} className="text-[0.9rem] p-4 flex gap-8 items-center cursor-pointer text-[#08c] font-semibold">
                       <span> All Matresses</span>{" "}
                     </div>
                   </div>
@@ -1234,7 +1218,7 @@ const Navbar = () => {
                   <span> Shop by Material</span>{" "}
                   <i className="fa fa-chevron-right" aria-hidden="true"></i>
                 </div>
-                <div onClick={() => { router.push('/beds'); exitBedDropdown() }} className="text-[0.9rem] bg-[#eee] text-[#08c] border p-4 flex gap-8 items-center cursor-pointer  font-semibold">
+                <div onClick={() => { router.push('/products/Beds'); exitBedDropdown() }} className="text-[0.9rem] bg-[#eee] text-[#08c] border p-4 flex gap-8 items-center cursor-pointer  font-semibold">
                   <span> All Beds</span>{" "}
                 </div>
               </div>
@@ -1281,7 +1265,7 @@ const Navbar = () => {
                   </div>
 
                   <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                    <Link href="/beds" className="text-[#08c] font-semibold">
+                    <Link href="/products/Beds" className="text-[#08c] font-semibold">
                       View All Beds
                     </Link>
                   </div>
@@ -1343,7 +1327,7 @@ const Navbar = () => {
                   </div>
 
                   <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold" onClick={exitShopByBedTypeDropdown}>
-                    <Link href="/beds" className="text-[#08c] font-semibold">
+                    <Link href="/products/Beds" className="text-[#08c] font-semibold">
                       View All Beds
                     </Link>
                   </div>
@@ -1383,7 +1367,7 @@ const Navbar = () => {
                   </div>
 
                   <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                    <Link href="/beds" className="text-[#08c] font-semibold">
+                    <Link href="/products/Beds" className="text-[#08c] font-semibold">
                       View All Beds
                     </Link>
                   </div>
@@ -1429,7 +1413,7 @@ const Navbar = () => {
                   </div>
 
                   <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                    <Link href="/beds" className="text-[#08c] font-semibold">
+                    <Link href="/products/Beds" className="text-[#08c] font-semibold">
                       View All Beds
                     </Link>
                   </div>
@@ -1481,7 +1465,7 @@ const Navbar = () => {
                   </div>
 
                   <div className="text-[0.9rem] px-4 py-2  cursor-pointer   font-semibold">
-                    <Link href="/beds" className="text-[#08c] font-semibold">
+                    <Link href="/products/Beds" className="text-[#08c] font-semibold">
                       View All Beds
                     </Link>
                   </div>

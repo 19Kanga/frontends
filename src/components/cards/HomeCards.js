@@ -17,10 +17,11 @@ const HomeCards = ({ index, imageUrl, buttons }) => {
       >
         <Image
           src={imageUrl}
-          width={400}
-          height={400}
+          width='500'
+          height='400'
           alt={`Card ${index + 1}`}
-          style={{objectFit:'contain',height:'100%'}}
+          className='scal'
+          style={{objectFit:'cover', width:'100%',height:'389px',}}
         />
         <div className="absolute bottom-0 left-0 flex justify-center flex-col items-center w-[100%] shadow-xl max-md:max-md:shadow-none py-2 max-md:py-0 " style={{background: 'rgba(207, 206, 202, 0.7)'
         }}>

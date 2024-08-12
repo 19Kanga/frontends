@@ -18,8 +18,8 @@ export default function Login() {
             <div className="rounded-sm bg-white dark:bg-boxdark">
                 <div className="flex flex-wrap items-center">
                     <div className="hidden w-full xl:block xl:w-1/2" style={{ padding: '0 3em' }}>
-                        <div className="px-26 py-17.5 text-center">
-                            <Link className="mb-5.5 inline-block" href="/">
+                        <div className="px-26 py-4 text-center">
+                            <Link className="mb-0 inline-block" href="/">
                                 <Image
                                     className="hidden dark:block"
                                     src={logo}
@@ -32,19 +32,15 @@ export default function Login() {
                                     }}
                                 />
                                 <Image
-                                    className="dark:hidden"
+                                    className="dark:hidden w-40 h-38"
                                     src={logo}
                                     alt="Logo"
-                                    width={65}
+                                    width={100}
                                     height={60}
-                                    style={{
-                                        height: '100px',
-                                        width: '120px'
-                                    }}
                                 />
                             </Link>
 
-                            <p className="2xl:px-20 font-medium" style={{ paddingBottom: '2em' }}>
+                            <p className="2xl:px-20 font-medium" style={{ paddingBottom: '1em' }}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
                                 suspendisse.
                             </p>
@@ -174,8 +170,8 @@ export default function Login() {
                         </div>
                     </div>
 
-                    <div className="w-full border-stroke dark:border-strokedark xl:w-1/2 xl:border-l-2 md:pt-14" style={{ padding: '0 3em' }}>
-                        <div className="w-full p-4 sm:p-12.5 xl:p-17.5">
+                    <div className="w-full flex border-stroke max-md:h-[100vh] max-md:items-center dark:border-strokedark xl:w-1/2 xl:border-l-2  max-md:px-3 md:pt-5 px-12">
+                        <div className="w-full p-4 sm:p-10.5 xl:p-10">
                             {/* <span className="mb-1.5 block font-medium">Start for free</span> */}
                             <h2 className="mb-9 text-xl font-bold text-black dark:text-white sm:text-title-xl2">
                                 Sign In to SoSoftBeds

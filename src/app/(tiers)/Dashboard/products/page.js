@@ -151,7 +151,7 @@ export default function Products() {
                             </tbody>
                         </table>
                     </div>
-                <div class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-6">
+                <div class="flex max-sm:flex-col max-sm:gap-2 items-center justify-between border-t border-gray-200 bg-white px-4 py-6">
                     <span className='text-[0.8rem] opacity-6'>Showing 1 to 10 of 108 entries</span>
                     <ReactPaginate
                         pageLinkClassName='text-primary py-1 px-2 border-2 border-primary/6 rounded-sm'

@@ -6,6 +6,7 @@ import ChartTwo from "@/components/Charts/ChartTwo";
 import ChatCard from "@/components/Chat/ChatCard";
 import TableOne from "@/components/Tables/TableOne";
 import CardDataStats from "@/components/CardDataStats";
+import Image from 'next/image'
 
 // const MapOne = dynamic(() => import("@/components/Maps/MapOne"), {
 //   ssr: false,
@@ -18,7 +19,7 @@ const ChartThree = dynamic(() => import("@/components/Charts/ChartThree"), {
 const Dashboard= () => {
   return (
     <>
-      {/* <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
         <CardDataStats title="Total views" total="$3.456K" rate="0.43%" levelUp>
           <svg
             className="fill-primary dark:fill-white"
@@ -113,8 +114,9 @@ const Dashboard= () => {
           <TableOne />
         </div>
         <ChatCard />
-      </div> */}
-      <span className='w-full text-2xl font-bold text-center mt-25 h-50'>404 Error</span>
+      </div>
+      <Image src='/images/loader.svg' width='100' height='100' />
+      {/* <span className='w-full text-2xl font-bold text-center mt-25 h-50'>404 Error</span> */}
     </>
   );
 };

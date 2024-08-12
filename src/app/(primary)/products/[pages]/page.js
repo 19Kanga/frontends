@@ -32,7 +32,7 @@ const ProductListingPage = () => {
 
             <div>
                 <Banner title={pages} />
-                <div className="products-body col-12 mt-5 py-5 px-[4.3%]">
+                <div className="products-body col-12 py-5 px-[4.3%]">
                     <div className="header flex justify-between items-center">
                         <div className="">
                             <input id="my-drawer" type="checkbox" className="drawer-toggle" />

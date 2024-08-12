@@ -2,12 +2,14 @@
 import React, { useState, ReactNode } from "react";
 import Sidebar from "@/components/shared/Sidebar";
 import Header from "@/components/shared/Header";
+import './dashboard.css'
+import './app.css'
 
 export default function DefaultLayout({children}) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
     <>
-      {/* <div className="flex" style={{ backgroundColor: 'rgb(241 245 249 / 1)' }}>
+      <div className="flex" style={{ backgroundColor: 'rgb(241 245 249 / 1)' }}>
 
         <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
@@ -22,8 +24,8 @@ export default function DefaultLayout({children}) {
           </main>
         </div>
 
-      </div> */}
-      <span className='text-2xl font-bold text-center mt-25 w-full h-50'>404 Error</span>
+      </div>
+      {/* <span className='text-2xl font-bold text-center mt-25 w-full h-50'>404 Error</span> */}
     </>
   );
 }

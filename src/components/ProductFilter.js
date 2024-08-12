@@ -4,7 +4,7 @@ import React from 'react'
 const ProductFilter = ({ pageType }) => {
     return (
 
-        <div className="relative min-h-full p-0 m-0 join join-vertical menu w-80 bg-base-200 text-base-content">
+        <div className="fixed min-h-full p-0 m-0 join join-vertical menu w-80 bg-base-200 text-base-content">
             <div className='h-[90vh] overflow-auto  p-4'>
                 <div className='mb-3 text-xl font-medium text-bold ms-4 text-primary'>Filter</div>
                 <hr className=''></hr>

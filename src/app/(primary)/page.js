@@ -64,7 +64,7 @@ export default function Home() {
 
       <div className='w-[100%] bg-gray-200'>
         {/* <div className=''> */}
-          <div className="grid grid-cols-3 gap-6 pb-10 overflow-x-hidden max-md:gap-y-10 max-sm:gap-x-12 max-sm:gap-y-5 max-xl:grid-cols-2">
+          <div className="grid grid-cols-3 gap-10 pb-10 overflow-x-hidden max-md:gap-y-10 max-sm:gap-x-5 max-sm:gap-y-5 max-xl:grid-cols-2">
             {images.map((imageUrl, index) => (
               <HomeCards
                 key={index}
