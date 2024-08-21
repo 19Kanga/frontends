@@ -13,7 +13,7 @@ export default function ProductCreate(){
         });
     }
     return(
-<div id="sidebar" className="drawer">
+<div id="sidebar" className="drawer" style={{display:'block'}}>
     <div className="drawer-header">
       <h3 className="drawer-title">products</h3>
       <button onClick={sideDrawerHide} className="fa-solid fa-xmark close-btn"></button>
@@ -22,7 +22,7 @@ export default function ProductCreate(){
       <div>
         <div className="form-row">
           <div className="lg:form-col-12 sm:form-col-6">
-            <label for="name" className="db-field-title required">Name</label>
+            <label htmlFor="name" className="db-field-title required">Name</label>
             <input
               type="text"
               id="name"
@@ -32,7 +32,7 @@ export default function ProductCreate(){
           </div>
 
           <div className="lg:form-col-12 sm:form-col-6">
-            <label for="sku" className="db-field-title required">SKU</label>
+            <label htmlFor="sku" className="db-field-title required">SKU</label>
             <div className="db-group-field">
               <input
                 type="text"
@@ -45,7 +45,7 @@ export default function ProductCreate(){
           </div>
 
           <div className="lg:form-col-12 sm:form-col-6">
-            <label for="product_category_id" className="db-field-title required">
+            <label htmlFor="product_category_id" className="db-field-title required">
               Category
             </label>
             <input
@@ -72,7 +72,7 @@ export default function ProductCreate(){
           </div>
 
           <div className="lg:form-col-12 sm:form-col-6">
-            <label for="barcode_id" className="db-field-title required">barcode</label>
+            <label htmlFor="barcode_id" className="db-field-title required">barcode</label>
             <input
                 type="text"
                 id="sku"
@@ -98,7 +98,7 @@ export default function ProductCreate(){
           </div>
 
           <div className="lg:form-col-12 sm:form-col-6">
-            <label for="buying_price" className="db-field-title required">Buying Price</label>
+            <label htmlFor="buying_price" className="db-field-title required">Buying Price</label>
             <input
               type="text"
               id="buying_price"
@@ -110,7 +110,7 @@ export default function ProductCreate(){
           </div>
 
           <div className="lg:form-col-12 sm:form-col-6">
-            <label for="selling_price" className="db-field-title required">
+            <label htmlFor="selling_price" className="db-field-title required">
               Selling Price
             </label>
             <input
@@ -124,7 +124,7 @@ export default function ProductCreate(){
           </div>
 
           <div className="lg:form-col-12 sm:form-col-6">
-            <label for="tax_id" className="db-field-title">Tax</label>
+            <label htmlFor="tax_id" className="db-field-title">Tax</label>
             <input
                 type="text"
                 id="sku"
@@ -152,7 +152,7 @@ export default function ProductCreate(){
           </div>
 
           <div className="lg:form-col-12 sm:form-col-6">
-            <label for="product_brand_id" className="db-field-title">Brand</label>
+            <label htmlFor="product_brand_id" className="db-field-title">Brand</label>
             <input
                 type="text"
                 id="sku"
@@ -179,7 +179,7 @@ export default function ProductCreate(){
 
           <div className="lg:form-col-12 sm:form-col-6">
             <label className="db-field-title required">Status</label>
-            <div className="db-field-radio-group">
+            <div className="db-field-radio-group flex gap-2 max-md:gap-1">
               <div className="db-field-radio">
                 <div className="custom-radio">
                   <input
@@ -189,7 +189,7 @@ export default function ProductCreate(){
                   />
                   <span className="custom-radio-span"></span>
                 </div>
-                <label for="active" className="db-field-label">active</label>
+                <label htmlFor="active" className="db-field-label">active</label>
               </div>
               <div className="db-field-radio">
                 <div className="custom-radio">
@@ -200,13 +200,13 @@ export default function ProductCreate(){
                   />
                   <span className="custom-radio-span"></span>
                 </div>
-                <label for="inactive" className="db-field-label">Inactive</label>
+                <label htmlFor="inactive" className="db-field-label">Inactive</label>
               </div>
             </div>
           </div>
 
           <div className="lg:form-col-12 sm:form-col-6">
-            <label className="db-field-title required" for="yes">Can Purchasable</label>
+            <label className="db-field-title required" htmlFor="yes">Can Purchasable</label>
             <div className="db-field-radio-group">
               <div className="db-field-radio">
                 <div className="custom-radio">
@@ -217,7 +217,7 @@ export default function ProductCreate(){
                   />
                   <span className="custom-radio-span"></span>
                 </div>
-                <label for="yes" className="db-field-label">Yes</label>
+                <label htmlFor="yes" className="db-field-label">Yes</label>
               </div>
               <div className="db-field-radio">
                 <div className="custom-radio">
@@ -228,13 +228,13 @@ export default function ProductCreate(){
                   />
                   <span className="custom-radio-span"></span>
                 </div>
-                <label for="no" className="db-field-label">No</label>
+                <label htmlFor="no" className="db-field-label">No</label>
               </div>
             </div>
           </div>
 
           <div className="lg:form-col-12 sm:form-col-6">
-            <label className="db-field-title required" for="enable">Show Stock out</label>
+            <label className="db-field-title required" htmlFor="enable">Show Stock out</label>
             <div className="db-field-radio-group">
               <div className="db-field-radio">
                 <div className="custom-radio">
@@ -245,7 +245,7 @@ export default function ProductCreate(){
                   />
                   <span className="custom-radio-span"></span>
                 </div>
-                <label for="enable" className="db-field-label">Enable</label>
+                <label htmlFor="enable" className="db-field-label">Enable</label>
               </div>
               <div className="db-field-radio">
                 <div className="custom-radio">
@@ -256,13 +256,13 @@ export default function ProductCreate(){
                   />
                   <span className="custom-radio-span"></span>
                 </div>
-                <label for="disable" className="db-field-label">Disable</label>
+                <label htmlFor="disable" className="db-field-label">Disable</label>
               </div>
             </div>
           </div>
 
           <div className="lg:form-col-12 sm:form-col-6">
-            <label className="db-field-title required" for="refundableYes">Refundable</label>
+            <label className="db-field-title required" htmlFor="refundableYes">Refundable</label>
             <div className="db-field-radio-group">
               <div className="db-field-radio">
                 <div className="custom-radio">
@@ -273,7 +273,7 @@ export default function ProductCreate(){
                   />
                   <span className="custom-radio-span"></span>
                 </div>
-                <label for="refundableYes" className="db-field-label">Yes</label>
+                <label htmlFor="refundableYes" className="db-field-label">Yes</label>
               </div>
               <div className="db-field-radio">
                 <div className="custom-radio">
@@ -284,13 +284,13 @@ export default function ProductCreate(){
                   />
                   <span className="custom-radio-span"></span>
                 </div>
-                <label for="refundableNo" className="db-field-label">No</label>
+                <label htmlFor="refundableNo" className="db-field-label">No</label>
               </div>
             </div>
           </div>
 
           <div className="lg:form-col-12 sm:form-col-6">
-            <label for="maximum_purchase_quantity" className="db-field-title required">
+            <label htmlFor="maximum_purchase_quantity" className="db-field-title required">
                 Maximum Purchase Quantity
             </label>
             <input
@@ -304,7 +304,7 @@ export default function ProductCreate(){
           </div>
 
           <div className="lg:form-col-12 sm:form-col-6">
-            <label for="low_stock_quantity_warning" className="db-field-title required">
+            <label htmlFor="low_stock_quantity_warning" className="db-field-title required">
                 Low Stock Quantity Warning
             </label>
             <input
@@ -318,7 +318,7 @@ export default function ProductCreate(){
           </div>
 
           <div className="lg:form-col-12 sm:form-col-6">
-            <label for="unit" className="db-field-title required">Unit</label>
+            <label htmlFor="unit" className="db-field-title required">Unit</label>
             <input
                 type="text"
                 id="sku"
@@ -344,7 +344,7 @@ export default function ProductCreate(){
           </div>
 
           <div className="lg:form-col-12 sm:form-col-6">
-            <label for="weight" className="db-field-title">
+            <label htmlFor="weight" className="db-field-title">
                 Weight
             </label>
             <input
@@ -358,7 +358,7 @@ export default function ProductCreate(){
           </div>
 
           <div className="form-col-12">
-                    <label for="tags" className="db-field-title">Tags</label>
+                    <label htmlFor="tags" className="db-field-title">Tags</label>
                             <input
                                 type="text"
                                 id="sku"
@@ -370,7 +370,7 @@ export default function ProductCreate(){
                  
 
           <div className="form-col-12">
-            <label for="description" className="db-field-title">Description</label>
+            <label htmlFor="description" className="db-field-title">Description</label>
                 <textarea className="db-field-control" rows='5' placeholder='description'></textarea>
               {/* <quill-editor
                 id="description"

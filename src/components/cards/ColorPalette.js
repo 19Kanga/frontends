@@ -78,7 +78,7 @@ const ColorPalette = () => {
             </div>
           </div>
         )}
-        <div className="grid  grid-cols-4 xl:grid-cols-6 xl:gap-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 w-full gap-1">
+        <div className="grid grid-cols-6 gap-4 max-md:gap-7 max-md:gap-y-3 max-md:grid-cols-3 w-full">
           {rowColors.map((color, index) => (
             <div key={index} className="flex w-[5.25rem] flex-col items-center">
               <div

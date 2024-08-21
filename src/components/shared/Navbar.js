@@ -246,22 +246,22 @@ const Navbar = () => {
   }, [isDropdownOpen]);
 
   return (
-    <div>
-      <div className="max-xl:pb-1">
-        <header className="relative flex flex-col max-xl:px-3 max-sm:px-0">
+    // <div>
+      <div className="">
+        <header className="relative flex flex-col max-sm:px-0">
           <div className='w-full flex flex-col' >
           <div className='row items-center justify-center text-white font-medium text-[0.85rem] max-sm:text-[0.8rem] px-10 text-center py-4 bg-black'>
             <span>10% Discount on All Orders Over £1500 or more! Code: BLC10 | Offer Ends Soon.</span>
           </div>
           <div className='items-center w-full max-sm:flex-col max-sm:justify-center px-4 py-3 bg-gray row text-[#bb9369] fill-none text-[11px]'>
-            <div className='flex w-[33.3%] max-md:w-[100%] gap-4 max-md:justify-center'>
+            <div className='flex w-[33.3%] max-md:w-[100%] max-xl:w-[33.33%] gap-4 max-md:justify-center'>
               <span className='flex items-center gap-2'><i className='fas fa-phone'></i>01924 465 009</span>
               <span  className='flex items-center gap-2'><i className='fas fa-envelope'></i>info@sosofbeds.co.uk</span>
             </div>
-            <div className='w-[33.3%] max-md:w-[100%] flex justify-center '>
+            <div className='w-[33.3%] max-md:w-[100%] max-xl:w-[33.33%] flex justify-center '>
               <span  className='gap-2 text-center'>Summer sale discount off 50%! Shop Now</span>
             </div>
-            <div className='w-[33.3%] max-md:w-[100%] flex justify-end max-md:justify-center'>
+            <div className='w-[33.3%] max-md:w-[100%] max-xl:w-[33.33%] flex justify-end max-md:justify-center'>
             <span  className='flex items-center gap-2'><i className='fas fa-location-dot'></i>Location</span>
             </div>
           </div>
@@ -270,14 +270,14 @@ const Navbar = () => {
             <div className="flex items-center w-[55%] justify-end gap-[10%] max-xl:gap-[5%]  max-xl:w-[100%] max-sm:h-[100%]">
               <Link href={"/"}>
                 <Image
-                  className="max-xl:w-32 max-sm:hidden lg:w-40 lg:h-18"
+                  className="max-xl:hidden lg:w-42 lg:h-18"
                   src={logo}
                   width={100}
                   height={50}
                   alt="logo"
                 />
                 <Image
-                  className="max-sm:w-25 max-sm:h-20 lg:hidden"
+                  className="max-sm:w-28 max-sm:h-20 lg:hidden"
                   src={logo}
                   width={100}
                   height={10}
@@ -408,7 +408,7 @@ const Navbar = () => {
                       <path
                         d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z"
                         stroke="#000"
-                        stroke-width="1"
+                        strokeWidth="1"
                       />
                     </svg>
                     <div className='absolute -right-[30%] -top-[45%] rounded-[50px] text-[.65rem] px-1 py-0 flex items-center justify-center bg-[#bb9369] font-bold text-white'>2</div>
@@ -1584,7 +1584,7 @@ const Navbar = () => {
           </nav> */}
         </header>
       </div>
-    </div>
+    // </div>
   );
 };
 

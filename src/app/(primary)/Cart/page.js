@@ -158,7 +158,7 @@ export default function Cart() {
                             <textarea className='h-[100px] resize-none w-[100%] border-[1px] p-2 text-start border-[#00acbb]' placeholder='How can we help you ?'></textarea>
                         </div>
                         <div className='flex flex-col gap-3'>
-                            <h4 className='text-md'>Coupn</h4>
+                            <h4 className='text-md'>Coupon</h4>
                             <span className='text-md'>Coupon code will work on checkout page</span>
                             <input type='text' placeholder='Coupon code' className='w-full py-2 px-3 border-[1px] border-[#00acbb]' />
                         </div>

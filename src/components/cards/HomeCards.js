@@ -1,27 +1,35 @@
 // components/HomeCards.js
 'use client'
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Image from "next/image";
 
 const HomeCards = ({ index, imageUrl, buttons }) => {
   const [showButtonIndex, setShowButtonIndex] = useState(null);
-
+  // const [he, setHe] = useState(null);
   
+  useEffect(() => {
+    // var widths = document.getElementById('hop').offsetWidth;
+    // document.getElementById('scal').style.height = widths+'px';
+    // console.log(document.getElementById('scal').offsetWidth)
+  });
  
   return (
-    <div className="relative">
+    // <div className="relative">
       <div
-        className="relative flex justify-center items-center bg-gray-200 cursor-pointer"
+        className="relative flex items-center justify-center bg-gray-200 cursor-pointer"
         onMouseEnter={() => setShowButtonIndex(index)}
         onMouseLeave={() => setShowButtonIndex(null)}
+        id='hop'
       >
         <Image
           src={imageUrl}
+          id="scal"
           width='500'
           height='400'
           alt={`Card ${index + 1}`}
-          className='scal'
-          style={{objectFit:'cover', width:'100%',height:'389px',}}
+          objectFit='cover'
+          className='scal max-md:h-[216px] lg:h-[388px]'
+          style={{ width:'100%'}}
         />
         <div className="absolute bottom-0 left-0 flex justify-center flex-col items-center w-[100%] shadow-xl max-md:max-md:shadow-none py-2 max-md:py-0 " style={{background: 'rgba(207, 206, 202, 0.7)'
         }}>
@@ -37,7 +45,7 @@ const HomeCards = ({ index, imageUrl, buttons }) => {
           )}
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 

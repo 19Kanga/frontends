@@ -409,22 +409,25 @@ const DetailsBed = ({details}) => {
   const Detail = ({item}) => {
     return (
       <div
-        className={`h-[5.25rem] w-[5.25rem] max-md:w-[5rem] max-md:h-[5rem] px-10 rounded-lg relative cursor-pointer 
+        className={`w-[100%] px-10 rounded-lg relative cursor-pointer 
           ${selectedImagePathType === item.image &&
-          " border-[1px] border-black px-10"
+          " border-[1px] border-black"
           }`}
         onClick={() =>{
           handleImageClickType(item.image);
           removeDepthOptions();
         }}
       >
+        <div className="w-full h-[5.25rem] rounded-md">
         <Image
           // add single image later
           src={item.image}
           alt="openbed"
+          
+          className='object-cover'
           layout="fill"
-          objectFit="contain"
         />
+        </div>
         {selectedImagePathType === item.image && (
           <div className="absolute -top-1 -right-[0.38rem]  bg-[#00acbb] p-1  rounded-full">
             <svg
@@ -661,7 +664,7 @@ const DetailsBed = ({details}) => {
               {/* Bed types section*/}
               <div className="bg-[#f1feff] pt-7 pb-13 px-4 mt-8 flex flex-col rounded-xl ">
                 <Head title={getTextForImageBedType().text}/>
-                <div className="grid w-full grid-cols-6 gap-4 pt-4 pb-10 my-3 text-sm justify-items-center max-xl:grid-cols-3 max-md:mt-14 max-lg:grid-cols-3 max-sm:items-center max-xl:gap-15 max-md:gap-28 max-sm:justify-between">
+                <div className="grid w-full grid-cols-6 gap-y-15 gap-4 pt-7 pb-10 text-sm max-xl:grid-cols-3 max-md:mt-5 max-lg:grid-cols-3 ">
                   {bedType?.map((x,i)=>
                     <Detail key={i} item={x} />
                   )}
@@ -947,7 +950,7 @@ const DetailsBed = ({details}) => {
                       <path
                         d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z"
                         stroke="#000"
-                        stroke-width="1"
+                        strokeWidth="1"
                       />
                     </svg>
                     </div>
