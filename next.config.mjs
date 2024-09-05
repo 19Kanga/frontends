@@ -3,12 +3,19 @@ const nextConfig = {
     reactStrictMode: true,
     // swcMinify: true,
     images: {
+        domains:['127.0.0.1','localhost'],
         remotePatterns: [
             {
-                protocol: 'https',
-                hostname: 'www.orangecube.art',
-                port: '',
-                pathname: '/orange-cube-main.png',
+                protocol: 'http',
+                hostname: '127.0.0.1',
+                port: '5000',
+                pathname: '/assets',
+            },
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+                port: '5000',
+                pathname: '/assets',
             },
         ],
     },

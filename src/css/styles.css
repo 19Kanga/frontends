@@ -120,6 +120,8 @@
 .mattress-content {
   top: 100%;
   left: 30%;
+  height:fit-content;
+  white-space:nowrap;
   /* background-color: red; */
   transform: translateX(-30%);
 }

@@ -1,16 +1,42 @@
 "use client"
-import React from 'react'
+import React, { useState,useEffect} from 'react'
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/assets/Sosoft-logo.png";
 import { useRouter } from "next/navigation";
+import { useAppDispatch,useAppSelector } from '@/app/Redux/Store/store';
+import { login,reset } from '@/app/Redux/Reducer/userSlice';
+import toast,{Toaster} from 'react-hot-toast';
 
 export default function Login() {
+    const dispatch =useAppDispatch()
+    const {isSuccess,token,isError,message} = useAppSelector(state=> state.userReducer)
     const router = useRouter()
-
-    const loginIn = () => {
-        router.push('/Dashboard')
+    const [password,setPassword]=useState('')
+    const [email, setEmail] = useState('')
+    const styles ={
+        padding:'16px',
+        backgroundColor:'green',
+        color:'white'
     }
+
+    const loginIn = async() => {
+        if (password === '' || email === '') {
+            alert('Error')
+        } else {
+            await dispatch(login({ email, password }))
+        }
+    }
+
+    useEffect(()=>{
+        if (isSuccess && token!==null) {
+            router.push('/');
+            toast.success(message,{position:'top-right',duration:6000,style:styles})
+        } 
+        if(!isSuccess && token===null) {
+            console.log(message)
+        }
+    },[isSuccess,reset,token,message])
 
     // const host= navigat
     return (
@@ -186,6 +212,7 @@ export default function Login() {
                                         <input
                                             type="email"
                                             placeholder="Enter your email"
+                                            onChange={(e)=>setEmail(e.target.value)}
                                             className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                                         />
 
@@ -217,6 +244,7 @@ export default function Login() {
                                         <input
                                             type="password"
                                             placeholder="Enter your password"
+                                            onChange={(e) => setPassword(e.target.value)}
                                             className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                                         />
 

@@ -1,15 +1,30 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
+import $ from 'jquery'
 
 export default function MenuComponent() {
+    $(function () {
+        let toggleValue = false;
+        $(document).on('click', '.settings-btn', function () {
+            toggleValue = !toggleValue
+            const pixel = $(this).siblings().prop('scrollHeight');
+            if (toggleValue) {
+                $(this).siblings().css('height', `${pixel}px`);
+                $(this).children().last().removeClass('fa-chevron-down').addClass('fa-chevron-up');
+            } else {
+                $(this).siblings().css('height', `0px`);
+                $(this).children().last().removeClass('fa-chevron-up').addClass('fa-chevron-down');
+            }
+        })
+    })
     return (
         <>
     <button className="settings-btn w-full md:hidden flex items-center justify-center gap-2 p-2 rounded bg-primary text-white">
-        <span className="capitalize">settings_menu</span>
+        <span className="capitalize">settings menu</span>
         <i className="fa-solid fa-chevron-down text-sm"></i>
     </button>
-    <div className="h-0 overflow-hidden md:h-auto md:overflow-auto transition-all duration-300 font-medium">
+    <div className="h-0 overflow-hidden md:h-auto md:overflow-auto max-md:my-1 transition-all duration-300 font-medium">
         <nav className="db-card p-3">
             <Link href='/Dashboard/settings/' className="db-tab-btn">
                 <i className="lab lab-line-company text-sm"></i>

@@ -1,17 +1,26 @@
 "use client"
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ClickOutside from "@/components/ClickOutside";
 import { useRouter } from "next/navigation";
+import { useAppDispatch,useAppSelector } from "@/app/Redux/Store/store";
+import { logout } from '@/app/Redux/Reducer/userSlice';
 
-const DropdownUser = () => {
+const DropdownUser = ({user}) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dispatch =useAppDispatch()
+  const {token} = useAppSelector(state=> state.userReducer)
   const router = useRouter()
 
-  const logout= ()=>{
-    router.push('/')
+  const logouts= ()=>{
+    dispatch(logout())
   }
+    useEffect(()=>{
+      if(token===null){
+        router.push('/')
+      }
+    },[token])
 
   return (
     <ClickOutside onClick={() => setDropdownOpen(false)} className="relative">
@@ -21,17 +30,17 @@ const DropdownUser = () => {
         href="#"
       >
         <span className="hidden text-right lg:block">
-          <span className="block text-sm font-medium text-black dark:text-white">
-            Thomas Anree
+          <span className="block text-sm font-medium text-black dark:text-white capitalize">
+            {user?.name}
           </span>
-          <span className="block text-xs">Admin</span>
+          <span className="block text-xs">{user?.role}</span>
         </span>
 
         <span className="h-12 w-12 rounded-full">
           <Image
             width={112}
             height={112}
-            src={"/images/user/user-01.png"}
+            src={user?.profile}
             style={{
               width: "auto",
               height: "auto",
@@ -120,7 +129,7 @@ const DropdownUser = () => {
               </Link>
             </li>
           </ul>
-          <button onClick={logout} className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+          <button onClick={logouts} className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
             <svg
               className="fill-current"
               width="22"

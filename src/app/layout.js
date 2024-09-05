@@ -6,6 +6,8 @@ import "@/css/style.css";
 import Providers from "./provider";
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import '@/font/iconly.min.css' // Adjusted path
+import { Suspense } from "react";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,10 +20,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      {/* <body> */}
-        <div className="backdrop"></div>
+        {/* <body> */}
+        <Toaster />
+        <div className="backdrop" style={{display:'block'}}></div>
         {/* <Navbar /> */}
-        <Providers>{children}</Providers>
+        <Providers>
+          <Suspense fallback={<p>Loading data...</p>}>
+            {children}
+          </Suspense>
+          </Providers>
         {/* <Footer /> */}
       </body>
     </html>

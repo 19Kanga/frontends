@@ -32,30 +32,17 @@ subTabButtons?.forEach((btnItem) => {
         btnItem?.classList?.add("active");
     })
 })
-// $(function () {
-//     let toggleValue = false;
-//     $(document).on('click', '.settings-btn', function () {
-//         toggleValue = !toggleValue
-//         const pixel = $(this).siblings().prop('scrollHeight');
-//         if (toggleValue) {
-//             $(this).siblings().css('height', `${pixel}px`);
-//             $(this).children().last().removeClass('fa-chevron-down').addClass('fa-chevron-up');
-//         } else {
-//             $(this).siblings().css('height', `0px`);
-//             $(this).children().last().removeClass('fa-chevron-up').addClass('fa-chevron-down');
-//         }
-//     })
-// })
+
 
   return (
     <>
       <Breadcrumb pageName="Settings"/>        
       <div className='row'>
-                <div class="col-12 md:col-4 xl:col-3">
+                <div className="col-12 md:col-4 xl:col-3">
                     <MenuComponent />
                 </div>
 
-                <div class="col-12 md:col-8 xl:col-9">
+                <div className="col-12 md:col-8 xl:col-9">
                     {children}
                 </div>
        </div>

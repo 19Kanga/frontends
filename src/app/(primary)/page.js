@@ -5,47 +5,19 @@ import React from "react";
 import { useEffect, useState } from "react";
 import CarouselSlider from "@/components/carousel/CarouselSlider";
 import HomeCards from "@/components/cards/HomeCards";
-import { Products } from '@/data/products';
-import pricematch from "@/assets/price-match-icon.png";
-import delivery from "@/assets/delivery-icon.png";
-import fabric from "@/assets/fabric-swatches.png";
-import trustpilot from "@/assets/trustpilot-icon.png";
+// import { Products } from '@/data/products';
 import ProductListMatress from '@/components/ProductListMatress';
 import Image from 'next/image'
-// import { Provider } from 'react-redux';
-// import { PersistGate } from 'redux-persist/integration/react';
-// import store from './Redux/Store/store'; // Adjust the path as necessary
-export default function Home() {
-  const images = [
-    "/divan-beds.jpg",
-    "/bed-factory-bed-frames.jpg",
-    "/bed-factory-wooden-beds.jpg",
-    "/bed-factory-mattresses.jpg",
-    "/bed-factory-metal-beds.jpg",
-    "/ottoman-beds.jpg",
-    "/tv-beds.jpg",
-    "/bunk.jpg",
-    "/divan-bed-base.jpg",
-    "/headboards.jpg",
-    "/custom-szie-beds_1.jpg",
-    "/view-all-beds_2.jpg",
-  ];
+import { getAllCategories } from '@/app/Redux/Reducer/categoriesSlice';
+import { useAppDispatch, useAppSelector } from '@/app/Redux/Store/store';
 
-  const buttons = [
-    { defaultText: "Divan Beds from €198", buttonText: "EXPLORE" },
-    { defaultText: "Bed frames from €89", buttonText: "EXPLORE" },
-    { defaultText: "Wooden frames from €99", buttonText: "EXPLORE" },
-    { defaultText: "Mattresses from €79", buttonText: "EXPLORE" },
-    { defaultText: "Metal Beds from €89", buttonText: "EXPLORE" },
-    { defaultText: "Ottoman Beds from €249", buttonText: "EXPLORE" },
-    { defaultText: "Bunk Beds", buttonText: "EXPLORE" },
-    { defaultText: "Tv Beds", buttonText: "EXPLORE" },
-    { defaultText: "Divan Base only", buttonText: "EXPLORE" },
-    { defaultText: "Headboards", buttonText: "EXPLORE" },
-    { defaultText: "Custom sizes", buttonText: "EXPLORE" },
-    { defaultText: "View all Beds", buttonText: "EXPLORE" },
-  ];
-
+export default function Home() { 
+  const dispatch = useAppDispatch();
+  const [buttons, setButtons] = useState([])
+  const { categories } = useAppSelector(state => state.categoriesReducer)
+  useEffect(() => {
+    dispatch(getAllCategories());
+  }, [getAllCategories])
   const [selected, setSelected] = useState("Featured")
     const [isOpen, setIsOpen] = useState(false);
     const [selectedGrid, setSelectedGrid] = useState(4);
@@ -65,12 +37,12 @@ export default function Home() {
       <div className='w-[100%]'>
         {/* <div className=''> */}
           <div className="grid grid-cols-3 gap-10 pb-10 overflow-x-hidden max-md:gap-y-10 max-sm:gap-x-5 max-sm:gap-y-5 max-xl:grid-cols-2">
-            {images.map((imageUrl, index) => (
+            {categories.map((x, index) => (
               <HomeCards
                 key={index}
                 index={index}
-                imageUrl={imageUrl}
-                buttons={buttons}
+                imageUrl={x.image}
+                buttons={x.name}
               />
             ))}
           </div>

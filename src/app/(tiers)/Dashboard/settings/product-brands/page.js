@@ -4,11 +4,11 @@ import React from 'react'
 export default function ProductBrands() {
     return (
         <>
-           <div id="company" class="db-card db-tab-div active">
-                <div class="db-card-header">
-                    <h3 class="db-card-title">Product Brands</h3>
+           <div id="company" className="db-card db-tab-div active">
+                <div className="db-card-header">
+                    <h3 className="db-card-title">Product Brands</h3>
                 </div>
-                <div class="db-card-body">
+                <div className="db-card-body">
                 </div>
             </div>
         </>

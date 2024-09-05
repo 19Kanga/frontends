@@ -115,7 +115,7 @@ const Dashboard= () => {
         </div>
         <ChatCard />
       </div>
-      <Image src='/images/loader.svg' width='100' height='100' />
+      <Image src='/images/loader.svg' alt="#1" width='100' height='100' />
       {/* <span className='w-full text-2xl font-bold text-center mt-25 h-50'>404 Error</span> */}
     </>
   );

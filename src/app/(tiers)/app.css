@@ -134,14 +134,7 @@
   visibility: visible;
   opacity: 1;
 }
-.backdrop.affiche {
-  visibility: visible;
-  opacity: 1;
-}
-.backdrop.show {
-  visibility: visible;
-  opacity: 1;
-}
+
 /* BUTTON */
 .db-btn {
   display: inline-flex;

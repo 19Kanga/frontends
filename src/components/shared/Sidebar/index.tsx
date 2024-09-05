@@ -465,7 +465,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   width={100}
                   height={1}
                   alt="logo"
-            />
+                    />
+                    
           </Link>
 
           <button
