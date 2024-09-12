@@ -9,7 +9,7 @@ export default function About() {
     return (
         <div className='col-12'>
             <Banner title='About Us' description='Ottoman Beds, Who are we ?'/>
-            <div className="flex flex-col justify-center items-center py-4">
+            <div className="flex flex-col justify-center items-center py-4 px-[4%]">
                 <div className="xl:w-[75%] xl:px-[10%] md:px-[5%] md:w-[85%] flex flex-col justify-center items-center">
                     <Image
                         className="max-xl:w-32 max-sm:w-24"

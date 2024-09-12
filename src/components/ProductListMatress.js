@@ -4,21 +4,21 @@ import React, { useEffect, useState, useRef, Suspense } from 'react'
 import ProductCardMatress from './ProductCardMatress'
 import ReactPaginate from 'react-paginate'
 
-const ProductListMatress = ({ selectedGrid, setSelectedGrid, pageType,CallingFrom }) => {
+const ProductListMatress = ({ selectedGrid, setSelectedGrid, pageType,CallingFrom,datas,categ }) => {
     const listRef = useRef()
     const isMattresses = pageType === 'Mattress';
     const isMattressesPocketSprung = pageType === 'PocketSprung';
      //pagination 
-    const itemsPerPage = 10
+    const itemsPerPage = 12
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + itemsPerPage;
-    const currentProducts = isMattresses ? Mattresses.slice(itemOffset, endOffset) : Products.slice(itemOffset, endOffset);
+    const currentProducts = isMattresses ? datas.slice(itemOffset, endOffset) : datas.slice(itemOffset, endOffset);
  
-    const pageCount = Math.ceil(Products.length / itemsPerPage);
+    const pageCount = Math.ceil(currentProducts.length / itemsPerPage);
 
     // Invoke when user click to request another page.
     const handlePageClick = (event) => {
-        const newOffset = (event.selected * itemsPerPage) % Products.length;
+        const newOffset = (event.selected * itemsPerPage) % datas.length;
         window.scrollTo({
             top: 0,
             behavior: "smooth"
@@ -28,10 +28,10 @@ const ProductListMatress = ({ selectedGrid, setSelectedGrid, pageType,CallingFro
     return (
         <div>
             <section id="Projects"
-                className={` ${selectedGrid === 2 ? "custom-grid" : "grid grid-cols-" + selectedGrid} ${selectedGrid !== 0 ? 'justify-items-center justify-center gap-6 ' : ''}mt-10 mb-5 `}>
-                    {/* {currentProducts.map((product, i) => ( */}
-                        <ProductCardMatress CallingFrom={CallingFrom} pageType={pageType}  selectedGrid={selectedGrid}    />
-                    {/* ))} */}
+                className={` ${selectedGrid === 2 ? "custom-grid" : "grid grid-cols-" + selectedGrid} ${selectedGrid !== 0 ? 'justify-items-center justify-center gap-6 max-md:grid-cols-2 ' : ''}mt-10 mb-5 `}>
+                    {currentProducts?.map((product, index) => (
+                        <ProductCardMatress key={index} categ={categ} item={product} CallingFrom={CallingFrom} pageType={pageType}  selectedGrid={selectedGrid}    />
+                    ))}
             </section>
             <hr className='text-primary' />
             <div className='flex justify-center mt-3'>
@@ -45,7 +45,7 @@ const ProductListMatress = ({ selectedGrid, setSelectedGrid, pageType,CallingFro
                     breakLabel="..."
                     nextLabel="Next"
                     onPageChange={handlePageClick}
-                    pageRangeDisplayed={5}
+                    pageRangeDisplayed={4}
                     pageCount={pageCount}
                     previousLabel="Previous"
                     renderOnZeroPageCount={null}

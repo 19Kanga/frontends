@@ -9,22 +9,25 @@ import HomeCards from "@/components/cards/HomeCards";
 import ProductListMatress from '@/components/ProductListMatress';
 import Image from 'next/image'
 import { getAllCategories } from '@/app/Redux/Reducer/categoriesSlice';
+import { getAllProducts } from '@/app/Redux/Reducer/productsSlice';
 import { useAppDispatch, useAppSelector } from '@/app/Redux/Store/store';
 
 export default function Home() { 
   const dispatch = useAppDispatch();
   const [buttons, setButtons] = useState([])
   const { categories } = useAppSelector(state => state.categoriesReducer)
+  const { products } = useAppSelector(state => state.productsReducer)
   useEffect(() => {
     dispatch(getAllCategories());
-  }, [getAllCategories])
+    dispatch(getAllProducts());
+  }, [dispatch,getAllCategories])
   const [selected, setSelected] = useState("Featured")
     const [isOpen, setIsOpen] = useState(false);
     const [selectedGrid, setSelectedGrid] = useState(4);
     const [openBottom, setOpenBottom] = useState(false);
     const handleClick = () => setIsOpen(!isOpen);
     const [mattresses, setMattresses] = useState([]);
-
+  // console.log(products)
   return (
     <main className="">
       <CarouselSlider />
@@ -59,9 +62,9 @@ export default function Home() {
       </div>
       <div className='trending-text-below'>Top view in this weeks</div>
         {/* <div className='grid grid-cols-2 gap-8 my-8 row lg:grid-cols-4 md:grid-cols-3'> */}
-        <div className='py-8 list'>
+        <div className='pb-5 list'>
         {/* {Products.slice(0, 16).map((item, i) => (<ProductListMatress key={i} {...item} index={i} />))} */}
-          <ProductListMatress CallingFrom='Mattress' pageType={'Mattress'} selectedGrid={selectedGrid} setSelectedGrid={setSelectedGrid} />
+          <ProductListMatress CallingFrom='Mattress' datas={products} categ={categories} pageType={'Mattress'} selectedGrid={selectedGrid} setSelectedGrid={setSelectedGrid} />
         </div>
         <div className='my-8 text-center'>
           <button className="btn btn-outline rounded-full font-bold border-[2px] px-4 py-1">Load More</button>

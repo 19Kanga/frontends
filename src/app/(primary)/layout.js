@@ -19,7 +19,7 @@ export default function MainLayout({ children }) {
         dispatch(getAllAttribute());
     }, [getAllMenus,getAllAttribute])
     // console.log(menus)
-    console.log(categories)
+    // console.log(categories)
     // console.log(attribute?.filter((z) => z.id ===2))
 
     return (

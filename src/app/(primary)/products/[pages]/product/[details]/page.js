@@ -8,13 +8,22 @@ import BedSizeTable from "@/components/BedSizeTable";
 import Faq from "@/components/Faq";
 import { useState, useEffect } from "react";
 import BaseProducts from "@/components/BaseProducts";
+import { useAppDispatch, useAppSelector } from '@/app/Redux/Store/store';
+import { getProductsById } from '@/app/Redux/Reducer/productsSlice';
 
 export default function DetailsPage(){
+    const dispatch = useAppDispatch();
      const [dimensionsOpen, setDimensionsOpen] = useState(false);
   const [faqOpen, setFaqOpen] = useState(false);
   const [descriptionOpen, setDescriptionOpen] = useState(false);
   const [reviewOpen, setReviewOpen] = useState(false);
-
+  const { productsId } = useAppSelector(state => state.productsReducer)
+  const router = useParams()
+  const { pages, details } = router
+  useEffect(() => {
+    dispatch(getProductsById(details));
+  }, [dispatch])
+  console.log(productsId)
   const dimensionsDropdown = () => {
     setDimensionsOpen(!dimensionsOpen);
     setFaqOpen(false);
@@ -43,14 +52,13 @@ export default function DetailsPage(){
     setDescriptionOpen(false);
   };
 
-    const router= useParams()
-    const {pages,details}=router
+  
     return(
         <>
         <div className='w-full px-[3%]'>
         {pages==='Mattress' ?
-            <DetailMatress id={details}/>:
-            <DetailsBed details={details}/>
+            <DetailMatress id={details} product={productsId}/>:
+            <DetailsBed details={details} product={productsId}/>
         }
         </div>
         <ProductbaseDropdown />

@@ -17,14 +17,14 @@ const dummyProduct = {
 };
 const sortOptions = [
     "Featured Featured Featured Featured ",
-    "Best selling",
+    "Sky uid 3'",
     "Alphabetically, A-Z",
     "Alphabetically, Z-A",
     "Price, low to high",
     "Price, high to low",
 ]
 
-export default function DetailMatress({id}){
+export default function DetailMatress({id,product}){
    const [isOpen, setIsOpen] = useState(false);
    const [selected, setSelected] = useState("Maitress")
     // const [openBottom, setOpenBottom] = useState(false);
@@ -84,7 +84,7 @@ export default function DetailMatress({id}){
             <div className="flex flex-col w-full max-xl:w-full max-lg:w-[70%] max-md:w-[90%] max-sm:w-full">
               <div className="max-sm:w-full w-[100%] min-h-[28em] relative max-md:min-h-[25em] max-sm:min-h-[20em]">
                 <Image
-                  src="/OttomanEndLiftBaseclosedBg.jpg"
+                  src={product.image}
                   alt="openbed"
                   layout="fill"
                   objectFit="cover"
@@ -96,7 +96,7 @@ export default function DetailMatress({id}){
           {/* Bed Size section */}
           <div className="w-full max-lg:mt-4 max-lg:text-center">
             <div>
-              <p className="text-[1rem] font-bold">{det}</p>
+              <p className="text-[1rem] font-bold">{product.name}</p>
             </div>
 
               <div className="mt-4">
@@ -111,10 +111,10 @@ export default function DetailMatress({id}){
                                     </svg>
                                 </button>
                             </div>
-                        {isOpen ? <div className="absolute right-0 z-10 w-full mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        {isOpen ? <div className="absolute right-0 z-10 w-full mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex="-1">
                                 {sortOptions.map((item, i) => (
                                     <div key={i} className="py-1" role="none" onClick={() => { setSelected(item); setIsOpen(false) }}>
-                                        <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-base-200" role="menuitem" tabindex="-1" id="menu-item-0">
+                                        <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-base-200" role="menuitem" tabIndex="-1" id="menu-item-0">
                                           <div className='flex items-center gap-5'>
                                              <div className="relative w-11 h-11">
                                                 <Image
@@ -131,7 +131,7 @@ export default function DetailMatress({id}){
                                 ))}
                         </div> : <div></div>}
                     </div>
-                    <p className="text-[#00acbb] font-bold text-[1.1rem] mt-3 mb-3">£113</p>
+                    <p className="text-[#00acbb] font-bold text-[1.1rem] mt-3 mb-3">£{product.discount_price}</p>
 
                   <div className="flex items-center gap-3 max-md:justify-center my-7">
                     <div className="flex border-black border-[1px] justify-between items-center rounded-2xl py-[0.45rem] px-3 w-1/5 text-sm">

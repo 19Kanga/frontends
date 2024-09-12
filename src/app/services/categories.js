@@ -17,7 +17,7 @@ const createCategories = async (userData) => {
 
 //getById
 const getCategoriesById = async (id) => {
-  const response = await axios.get(`${API_URL}/categories` + id);
+  const response = await axios.get(`${API_URL}/categories/` + id);
   return response.data;
 };
 
@@ -27,7 +27,7 @@ const getAllCategories = async()=> {
 };
 
 const DeleteCategories = async (id) => {
-  const response = await axios.delete(`${API_URL}/categories` + id);
+  const response = await axios.delete(`${API_URL}/categories/` + id);
   return response.data;
 };
 

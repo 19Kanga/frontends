@@ -6,14 +6,7 @@ import "../../css/styles.css";
 import Image from "next/image";
 import logo from "../../assets/Sosoft-logo.png";
 import search from "../../assets/search.svg";
-import phoneimg from "../../assets/phoneimg.png";
-import locationimg from "../../assets/location.svg";
-import userimg from "../../assets/userimg.svg";
-import basket from "../../assets/basket.svg";
-import pricematch from "../../assets/price-match-icon.png";
-import delivery from "../../assets/delivery-icon.png";
-import fabric from "../../assets/fabric-swatches.png";
-import trustpilot from "../../assets/trustpilot-icon.png";
+
 import "../../css/styles.css";
 import { useRouter } from "next/navigation";
 import Cart from '@/components/shared/Cart'
@@ -23,7 +16,7 @@ import DropdownUsers from '@/components/shared/DropdownUsers'
 const Navbar = ({ menus, categories, attribute }) => {
     const dispatch =useAppDispatch()
     const {user,token,isSucces,isError,message} = useAppSelector(state=> state.userReducer)
-    console.log(attribute)
+    // console.log(attribute)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [animationDirection, setAnimationDirection] = useState("");
   const router = useRouter()
@@ -250,6 +243,7 @@ const Navbar = ({ menus, categories, attribute }) => {
     };
   }, [isDropdownOpen]);
 
+
   return (
     // <div>
       <div className="">
@@ -366,29 +360,39 @@ const Navbar = ({ menus, categories, attribute }) => {
             {menus?.map((x, index) =>
               <div key={index} className="relative flex flex-col items-center dropdown">
                 <li className="p-3 cursor-pointer hover:bg-[#08c] capitalize hover:text-white  font-medium relative listitem">
-                  <Link href={'#'}>{categories?.find((y) => y.id == x.id_categorie).name}</Link>
+                  <Link href={'#'}>{x.name}</Link>
                 </li>
-                <div className="bottom-[3%] relative max-xl:bottom-[-3%] text-black max-lg:bottom-[-5%] white bg-white shadow-xl  z-20 dropdowncontent mattress-content hidden rounded-b-2xl">
-                  {attribute?.filter((w) => x.id_product_attribute == w.id).map((item, indexe) =>
-                    <ul key={indexe} className="px-10 py-8 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
-                      <li className="my-4 capitalize font-semibold text-[1rem] max-lg:text-[0.9rem]">
+                <div className="bottom-[3%] relative max-xl:bottom-[-3%] text-black max-lg:bottom-[-5%] white bg-white shadow-xl  z-20 dropdowncontent mattress-content hidden overflow-hidden rounded-b-2xl">
+                  {x.atr?.map((item, indexe) =>
+                    <ul key={indexe} className="px-10 py-7 pb-11 max-xl:px-5 max-xl:py-5 leading-8 max-lg:leading-7">
+                      <li className="my-2 capitalize font-semibold text-[1rem] max-lg:text-[0.9rem]">
                         {item.name}
                       </li>
+                      {x.opt?.map((w) => {
+                        if (w.id == item.id_products_attributes_option) {
+                          return <li key={w.id} className="">
+                                    <Link href={`/products/${x.name}/${w.name}`} className="hover:text-[#08c]">
+                                     {w.name}
+                                    </Link>
+                                  </li>
+                        }
+                      })}
                     </ul>
                   )}
                   
+                  {x.image!=='' &&
                   <ul className=" w-[180px] h-auto relative">
                     <Image
-                      src="/divan-beds-menu.jpg"
+                      src={x.image}
                       alt=""
                       layout="fill"
                       objectFit="cover"
                     />
-                  </ul>
+                  </ul>}
 
-                  <div className="absolute bg-[white] w-[100%] bottom-0 h-[35px]  border-t-[1px] rounded-b-2xl">
-                    <button onClick={() => { router.push(`/products/${categories?.filter((y) => y.id == x.id_categorie).map((z) => { return z.name })}`); exitBedDropdown() }} className="bg-[#08c] absolute right-[10%] flex gap-5 items-center text-sm text-white px-4 py-[0.6rem] capitalize  h-[100%] hover:bg-[#44bcf7] transition border-color text duration-100 ease-out delay-0">
-                      <span> View All {categories?.find((y) => y.id == x.id_categorie).name}</span>
+                  <div className="absolute bg-[white] w-[100%] bottom-0 h-[35px]  border-t-[1px]">
+                    <button onClick={() => { router.push(`/products/${x.name}`); exitBedDropdown() }} className="bg-[#08c] absolute right-[10%] flex gap-5 items-center text-sm text-white px-4 py-[0.6rem] capitalize  h-[100%] hover:bg-[#44bcf7] transition border-color text duration-100 ease-out delay-0">
+                      <span> View All {x.name}</span>
                       <i className="fa fa-chevron-right" aria-hidden="true"></i>
                     </button>
                   </div>
@@ -483,21 +487,21 @@ const Navbar = ({ menus, categories, attribute }) => {
                   </div>
 
                   <div className="py-3 leading-8">
-                    <div className="text-[0.9rem] px-4 py-2 cursor-pointer  ">
+                    <div onClick={()=>{router.push('/about-us');exitDropdown()}} className="text-[0.9rem] px-4 py-2 cursor-pointer  ">
                       About Us
                     </div>
-                    <div className="text-[0.9rem] px-4 py-2  cursor-pointer  ">
+                    {/* <div className="text-[0.9rem] px-4 py-2  cursor-pointer  ">
                       Delivery Information
-                    </div>
-                    <div className="text-[0.9rem] px-4 py-2  cursor-pointer">
+                    </div> */}
+                <div onClick={() => {router.push('/Faq'); exitDropdown()}} className="text-[0.9rem] px-4 py-2  cursor-pointer">
                       FAQs
                     </div>
-                    <div className="text-[0.9rem] px-4 py-2  cursor-pointer ">
+                    {/* <div className="text-[0.9rem] px-4 py-2  cursor-pointer ">
                       Advise Centre
                     </div>
                     <div className="text-[0.9rem] px-4 py-2  cursor-pointer">
                       Contact Us
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

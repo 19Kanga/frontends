@@ -7,6 +7,9 @@ import ProductListMatress from "@/components/ProductListMatress";
 import Banner from '@/components/shared/Banner'
 import {useParams} from 'next/navigation'
 import { useEffect, useState } from "react";
+import { useAppDispatch,useAppSelector } from "@/app/Redux/Store/store";
+import { getAllCategories } from '@/app/Redux/Reducer/categoriesSlice';
+import { getAllProducts } from '@/app/Redux/Reducer/productsSlice';
 const sortOptions = [
     "Featured",
     "Best selling",
@@ -19,6 +22,9 @@ const sortOptions = [
 ]
 
 const ProductListingPage = () => {
+    const dispatch =useAppDispatch()
+    const {products} = useAppSelector(state=> state.productsReducer)
+    const {categories} = useAppSelector(state=> state.categoriesReducer)
     const [selected, setSelected] = useState("Featured")
     const [isOpen, setIsOpen] = useState(false);
     const [openBottom, setOpenBottom] = useState(false);
@@ -26,6 +32,10 @@ const ProductListingPage = () => {
     const [selectedGrid, setSelectedGrid] = useState(4);
     const router= useParams();
     const {pages}=router
+    useEffect(() => {
+        dispatch(getAllCategories());
+        dispatch(getAllProducts());
+    }, [dispatch,getAllCategories])
     return (
 
         <div className="">
@@ -79,7 +89,7 @@ const ProductListingPage = () => {
                     </div>
                     <div className="list">
                         {pages!=='Mattress'? 
-                        <ProductList pageType={pages} selectedGrid={selectedGrid} setSelectedGrid={setSelectedGrid} />:
+                        <ProductList pageType={pages} selectedGrid={selectedGrid} datas={products} categ={categories} setSelectedGrid={setSelectedGrid} />:
                         <ProductListMatress CallingFrom={pages} pageType={pages} selectedGrid={selectedGrid} setSelectedGrid={setSelectedGrid} />
                         }
                     </div>

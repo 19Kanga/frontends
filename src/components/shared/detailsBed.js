@@ -7,11 +7,14 @@ import Image from "next/image";
 import SlipLids from "@/components/cards/SlipLids";
 import ColorPalette from "@/components/cards/ColorPalette";
 import Cart from '@/components/shared/Cart'
+import { useAppDispatch,useAppSelector } from "@/app/Redux/Store/store";
+import { getAllCategories } from '@/app/Redux/Reducer/categoriesSlice';
+import { getProductsImageById } from '@/app/Redux/Reducer/productImageSlice';
 // import "@/css/styles.css";
-import ProductbaseDropdown from "@/components/ProductbaseDropdown";
-import BedSizeTable from "@/components/BedSizeTable";
-import Faq from "@/components/Faq";
-import BaseProducts from "@/components/BaseProducts";
+// import ProductbaseDropdown from "@/components/ProductbaseDropdown";
+// import BedSizeTable from "@/components/BedSizeTable";
+// import Faq from "@/components/Faq";
+// import BaseProducts from "@/components/BaseProducts";
 
 export function Head ({title}) {
     return (
@@ -21,7 +24,7 @@ export function Head ({title}) {
     )
   }
 
-const DetailsBed = ({details}) => {
+const DetailsBed = ({details,product}) => {
   const buttonStyles = [{ padding: "0.25rem" }, { padding: "0.25rem" }];
 
   const [selectedImagePath, setSelectedImagePath] = useState("/single.png");
@@ -452,8 +455,22 @@ const DetailsBed = ({details}) => {
       </div>
     )
   } 
+  const [prof,setProf]=useState('')
+  const [ind,setInd]=useState(0)
+  // const det=details.replace(/[02%]/g, ' ')
+      const dispatch =useAppDispatch()
+    const {productsImageId} = useAppSelector(state=> state.productImageReducer)
+    // const {categories} = useAppSelector(state=> state.categoriesReducer)
+    useEffect(() => {
+        // dispatch(getAllCategories());
+        dispatch(getProductsImageById(product?.id));
+    }, [dispatch])
+      // console.log(productsImageId)
 
-  const det=details.replace(/[02%]/g, ' ')
+      const changeProfile=(x,y)=>{
+        setProf(x);
+        setInd(y)
+      }
   return (
     <div>
       <div className="mt-10 w-[100%] px-0 max-sm:px-1 max-sm:mt-5">
@@ -464,7 +481,7 @@ const DetailsBed = ({details}) => {
             <div className="flex flex-col w-full max-xl:w-full max-lg:w-[70%] max-md:w-[90%] max-sm:w-full">
               <div className="max-sm:w-full w-[100%] min-h-[27em] relative max-md:min-h-[25em] max-sm:min-h-[20em]">
                 <Image
-                  src="/OttomanEndLiftBaseclosedBg.jpg"
+                  src={prof===''?product.image:prof}
                   alt="openbed"
                   layout="fill"
                   objectFit="cover"
@@ -490,116 +507,17 @@ const DetailsBed = ({details}) => {
               </div>
 
               <div className="flex gap-1 w-[100%] h-[6.25rem] max-sm:h-[4rem] max-sm:w-full relative top-2">
-                <div className="w-1/4  max-sm:w-1/4  max-sm:h-[full] relative">
+                {productsImageId?.map((x,index)=>
+                <div className="w-1/4  max-sm:w-1/4  max-sm:h-[full] relative cursor-pointer" onClick={()=>changeProfile(x.image,index)}>
+                  <div className={`absolute w-[100%] h-[100%] opacity-80 z-50 bg-white ${index==ind? 'hidden':'block'}`}></div>
                   <Image
-                    src="/Ottoman_Bed_side_opening-small.jpg"
+                    src={x.image}
                     alt="openbed"
                     layout="fill"
                     objectFit="cover"
                   />
-                  {selectedImagePath ===
-                    "/Ottoman_Bed_side_opening-small.jpg" && (
-                    <div className="absolute top-0 right-0 p-1 mt-2 mr-2 bg-white rounded-full">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 text-[#00acbb]"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                  )}
                 </div>
-
-                <div className="w-1/4  max-sm:w-1/4 max-sm:h-[full] relative">
-                  <Image
-                    src="/Ottoman-Side.jpeg"
-                    alt="openbed"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                  {selectedImagePath === "/Ottoman-Side.jpeg" && (
-                    <div className="absolute top-0 right-0 p-1 mt-2 mr-2 bg-white rounded-full">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 text-[#00acbb]"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                  )}
-                </div>
-
-                <div className="w-1/4  max-sm:w-1/4 max-sm:h-[full] relative">
-                  <Image
-                    src="/Ottoman_Bed_side_opening.jpg"
-                    alt="openbed"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                  {selectedImagePath === "/Ottoman_Bed_side_opening.jpg" && (
-                    <div className="absolute top-0 right-0 p-1 mt-2 mr-2 bg-white rounded-full">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 text-[#00acbb]"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                  )}
-                </div>
-
-                <div className="w-1/4  max-sm:w-1/4 max-sm:h-[full] relative">
-                  <Image
-                    src="/Ottoman_Bed_side_opening-small.jpg"
-                    alt="openbed"
-                    objectFit="cover"
-                    layout="fill"
-                    className="-scale-x-100"
-                  />
-                  {selectedImagePath ===
-                    "/Ottoman_Bed_side_opening-small.jpg" && (
-                    <div className="absolute top-0 right-0 p-1 mt-2 mr-2 bg-white rounded-full">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 text-[#00acbb]"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                  )}
-                </div>
+                )}
               </div>
             </div>
           </div>
@@ -607,9 +525,9 @@ const DetailsBed = ({details}) => {
           {/* Bed Size section */}
           <div className="w-full max-lg:mt-8 max-lg:text-center">
             <div>
-              <p className="text-[1rem] font-bold">{det}</p>
+              <p className="text-[1rem] font-bold">{product.name}</p>
               <span className="text-[#00acbb] font-semibold text-[1rem]">
-                {amount}
+                £{product.discount_price}
               </span>
             </div>
 

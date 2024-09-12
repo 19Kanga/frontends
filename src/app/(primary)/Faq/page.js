@@ -6,7 +6,9 @@ export default function Faqpage(){
     return(
         <>
             <Banner title='Faq' />
-            <Faq />
+            <div className="px-[4%]">
+                <Faq />
+            </div>
         </>
     )
 }
