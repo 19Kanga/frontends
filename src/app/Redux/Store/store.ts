@@ -22,7 +22,7 @@ const persistConfig = {
   key: "root",
   storage,
   timeout: null,
-  blacklist: ['productsReducer', 'categoriesReducer','productImageReducer']
+  blacklist: ['productsReducer', 'categoriesReducer','productImageReducer','menuReducer']
 };
 const persistedReducer = persistReducer(persistConfig, reducers);
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
